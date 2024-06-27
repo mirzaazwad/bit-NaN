@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { register } from "@/app/lib/authentication.requests";
-import { IRegister } from "@/app/utils/signup";
+import { IRegister } from "@/app/utils/templates/signup";
 
 export const useRegister = () => {
   const {
