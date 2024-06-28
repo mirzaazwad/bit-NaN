@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import 'rsuite/dist/rsuite-no-reset.min.css';
+import { CustomProvider } from "rsuite";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
       <title>Quiz Application</title>
       <link rel="icon" type="image/x-icon" href="/Bit.png"></link>
       <body className={`${inter.className} w-full bg-white overflow-x-hidden`}>
-        {children}
+        <CustomProvider>{children}</CustomProvider>
       </body>
     </html>
   );

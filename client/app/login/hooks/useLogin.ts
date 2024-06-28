@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { login } from "@/app/lib/authentication.requests";
 import { FieldValues, useForm } from "react-hook-form";
-import { ILogin } from "@/app/utils/login";
+import { ILogin } from "@/app/utils/templates/login";
 
 export const useLogin = () => {
   const {
@@ -28,20 +28,26 @@ export const useLogin = () => {
       const result = await login(loginData);
 
       if (result.err) {
-        const errorMessage =
-          result.status !== 500 ? "Invalid Email or Password" : "Server Error";
-        setError("submit", { type: "custom", message: errorMessage });
+        handleLoginError(result.status);
       } else {
-        localStorage.setItem("access", result.token);
-        localStorage.setItem("refresh", result.refresh);
-
-        router.push("/users");
+        handleLoginSuccess(result);
       }
     } catch (error) {
       setError("submit", { type: "custom", message: "Server Error" });
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleLoginError = (status: number) => {
+    const errorMessage = status !== 500 ? "Invalid Email or Password" : "Server Error";
+    setError("submit", { type: "custom", message: errorMessage });
+  };
+
+  const handleLoginSuccess = (result: any) => {
+    localStorage.setItem("access", result.token);
+    localStorage.setItem("refresh", result.refresh);
+    router.push("/users");
   };
 
   return { onSubmit, loading, errors, register, handleSubmit };
