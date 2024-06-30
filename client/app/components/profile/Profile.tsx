@@ -1,0 +1,27 @@
+import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
+import { Avatar, Divider} from "rsuite";
+
+const Profile = () => {
+    return(
+        
+        <div className="rounded mt-1">
+            <div className={HeaderBarTheme}><h3 className="font-semibold text-xl text-white">Profile</h3></div>
+            <div className="w-full h-full flex items-center justify-center mt-4">
+                <div className="flex flex-col">
+                    <div>
+                        <Avatar color="yellow" bordered size="xxl" circle/>
+                    </div>
+                    <div>
+                        <div className="flex flex-row mt-2">
+                            <h3 className="font-normal text-lg">Username: </h3>&nbsp;
+                            <h3 className="font-semibold text-lg">Nibir</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <Divider/>
+        </div>
+    );
+};
+
+export default Profile;
