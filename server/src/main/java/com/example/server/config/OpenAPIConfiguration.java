@@ -34,6 +34,10 @@ import org.springframework.context.annotation.Configuration;
                         description = "Local ENV",
                         url = "http://localhost:8081"
                 ),
+                @Server(
+                        description = "CLIENT",
+                        url="http://localhost:3000"
+                )
         },
         security = {
                 @SecurityRequirement(
