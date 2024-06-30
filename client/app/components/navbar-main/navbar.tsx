@@ -33,10 +33,10 @@ const NavBar = () => {
                 setIsDropdownOpen(false);
             }}}>
                 <div className="w-full flex flex-wrap items-center justify-center mx-auto p-4">
-                    <div className="hidden md:flex items-center">
+                    <div className=" md:flex items-center">
                         <Image src="/images/Bit.gif" alt="logo" width={50} height={50} className="rounded-full" />
                     </div>
-                    <div className="hidden w-full md:block md:w-auto ml-auto" id="navbar-default">
+                    <div className=" w-full md:block md:w-auto ml-auto" id="navbar-default">
                         <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                             <Link href="/users/groups"><li className={`ms-4 me-4 ${currentPath === "/users/groups" ? "bg-yellow-400 border border-bitBrown text-bitBrown" : ""} rounded-lg px-4 py-2 mt-4 hover:bg-white hover:text-black hover:border-black`}>
                                 Groups
