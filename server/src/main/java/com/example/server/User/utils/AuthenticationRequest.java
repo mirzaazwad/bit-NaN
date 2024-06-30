@@ -1,4 +1,5 @@
-package com.example.server.User.controller;
+package com.example.server.User.utils;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
-    private String access;
-    private String refresh;
+public class AuthenticationRequest {
+    private String email;
+    String password;
 }

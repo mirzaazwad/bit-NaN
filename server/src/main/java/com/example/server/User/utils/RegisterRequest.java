@@ -1,4 +1,4 @@
-package com.example.server.User.controller;
+package com.example.server.User.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

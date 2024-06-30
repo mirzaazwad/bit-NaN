@@ -1,5 +1,6 @@
-package com.example.server.User.entity;
+package com.example.server.User;
 
+import com.example.server.User.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
