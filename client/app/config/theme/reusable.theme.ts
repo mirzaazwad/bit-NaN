@@ -1,0 +1,1 @@
+export const HeaderBarTheme: string = "bg-gray-800 border-2 border-black rounded-md flex justify-center drop-shadow-md";
