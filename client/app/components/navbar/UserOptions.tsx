@@ -1,13 +1,10 @@
 import { useOptionsButton } from "@/app/config/theme/navbar.theme";
 import UserOptionsNavLink from "./UserOptionsNavLink";
+import { INavigationComponents } from "@/app/utils/templates/navigation-components";
 
 interface IUserOptionsProps {
     currentPath: string;
-    navigationContents:{
-        href: string;
-        label: React.ReactNode;
-        icon: any;
-    }[];
+    navigationContents:INavigationComponents[];
 }
 
 const UserOptions = ({ currentPath,navigationContents }: IUserOptionsProps) => {

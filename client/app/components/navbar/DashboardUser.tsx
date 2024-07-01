@@ -3,14 +3,11 @@ import { IonIcon } from "@ionic/react";
 import { timerOutline } from "ionicons/icons";
 import { Dispatch, SetStateAction } from "react";
 import NavLink from "./NavLinks";
+import { INavigationComponents } from "@/app/utils/templates/navigation-components";
 
 interface IDropdownUserProps {
     currentPath: string;
-    navigationContents:{
-        href: string;
-        label: React.ReactNode;
-        icon: any;
-    }[];
+    navigationContents:INavigationComponents[];
     setOpenStudyTimer:Dispatch<SetStateAction<boolean>>;
 }
 

@@ -1,13 +1,11 @@
 import React from "react";
 import { topbarButton, topbarUlStyles } from "../../config/theme/navbar.theme";
 import NavLink from "./NavLinks";
+import { INavigationComponents } from "@/app/utils/templates/navigation-components";
 
 interface ITopbarMenuProps {
     currentPath: string;
-    navigationContents:{
-        href: string;
-        label: string;
-    }[];
+    navigationContents:INavigationComponents[];
     children?: React.ReactNode;
 }
 

@@ -2,14 +2,11 @@ import React from "react";
 import { dropDownButton, dropdownUlStyles } from "../../config/theme/navbar.theme";
 import NavLink from "./NavLinks";
 import { IonIcon } from "@ionic/react";
+import { INavigationComponents } from "@/app/utils/templates/navigation-components";
 
 interface IDropdownMenuProps {
     currentPath: string;
-    navigationContents:{
-        href: string;
-        label: React.ReactNode;
-        icon: any;
-    }[];
+    navigationContents:INavigationComponents[];
     children?: React.ReactNode;
 }
 
