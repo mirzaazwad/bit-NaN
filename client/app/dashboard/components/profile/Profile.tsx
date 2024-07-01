@@ -1,4 +1,4 @@
-import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
+import { HeaderBarTheme } from "@/app/config/theme/profile.theme";
 import { Avatar, Divider} from "rsuite";
 
 const Profile = () => {
@@ -14,6 +14,11 @@ const Profile = () => {
                     <div>
                         <div className="flex flex-row items-center justify-center mt-4">
                             <h3 className="font-semibold text-lg text-gray-800">@Nibir Kabir</h3>
+                            {
+                            /*
+                            Add Rating, Rank and Active Status
+                            */
+                            }
                         </div>
                     </div>
                 </div>
