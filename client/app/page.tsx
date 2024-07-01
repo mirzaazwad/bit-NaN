@@ -1,5 +1,5 @@
 import Footer from "./components/footer/Footer";
-import NavBar from "./components/navbar/NavBar";
+import NavBar from "./components/navbar/NavBarLoggedOut";
 import { homneScreen } from "./config/theme/global.theme";
 
 export default function Home() {

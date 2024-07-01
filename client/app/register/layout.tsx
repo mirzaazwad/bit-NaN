@@ -1,5 +1,5 @@
 import Footer from "@/app/components/footer/Footer";
-import NavBar from "../components/navbar/NavBar";
+import NavBar from "../components/navbar/NavBarLoggedOut";
 
 const RegisterLayout = ({
     children,

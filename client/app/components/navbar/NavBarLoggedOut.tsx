@@ -1,11 +1,9 @@
-// NavBar.tsx
-
 "use client";
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { IonIcon } from "@ionic/react";
-import { menuOutline } from "ionicons/icons";
+import { checkboxSharp, clipboardSharp, menuOutline, peopleSharp } from "ionicons/icons";
 import { navStyles, navInnerStyles, menuButtonStyles } from "../../config/theme/navbar.theme";
 import Logo from "./Logo";
 import TopbarMenu from "./TopbarMenu";
@@ -19,6 +17,12 @@ const NavBar: React.FC = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
+    const navigationContents=[
+        {href: "/", label: "Home",icon:clipboardSharp},
+        {href: "/login", label: "Login",icon:peopleSharp},
+        {href: "/register", label: "Register",icon:checkboxSharp}
+    ]
+
     return (
         <nav className={navStyles} onMouseLeave={() => setIsDropdownOpen(false)}>
             <div className={navInnerStyles}>
@@ -26,7 +30,7 @@ const NavBar: React.FC = () => {
                     <Logo size={75} />
                 </div>
                 <div className="hidden w-full md:block md:w-auto ml-auto" id="navbar-default">
-                    <TopbarMenu currentPath={currentPath} />
+                    <TopbarMenu currentPath={currentPath} navigationContents={navigationContents}/>
                 </div>
                 <div className="md:hidden w-full flex items-center justify-between" id="navbar-dropdown">
                     <div className={menuButtonStyles} onClick={toggleDropdown}>
@@ -36,7 +40,7 @@ const NavBar: React.FC = () => {
                         <Logo size={50} />
                     </div>
                 </div>
-                {isDropdownOpen && <DropdownMenu currentPath={currentPath} />}
+                {isDropdownOpen && <DropdownMenu currentPath={currentPath} navigationContents={navigationContents}/>}
             </div>
         </nav>
     );

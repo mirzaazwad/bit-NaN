@@ -1,16 +1,24 @@
-import Link from "next/link";
 import React from "react";
 import { topbarButton, topbarUlStyles } from "../../config/theme/navbar.theme";
+import NavLink from "./NavLinks";
 
 interface ITopbarMenuProps {
     currentPath: string;
+    navigationContents:{
+        href: string;
+        label: string;
+    }[];
+    children?: React.ReactNode;
 }
 
-const TopbarMenu = ({ currentPath }:ITopbarMenuProps) => (
+const TopbarMenu = ({ currentPath,navigationContents,children }:ITopbarMenuProps) => (
     <ul className={topbarUlStyles}>
-        <Link href="/"><li className={topbarButton(currentPath, "/")}>Home</li></Link>
-        <Link href="/login"><li className={topbarButton(currentPath, "/login")}>Login</li></Link>
-        <Link href="/register"><li className={topbarButton(currentPath, "/register")}>Register</li></Link>
+        {
+            navigationContents.map((content, index) => (
+                <NavLink key={index} href={content.href} currentPath={currentPath} theme={topbarButton}>{content.label}</NavLink>
+            ))
+        }
+        {children}
     </ul>
 );
 
