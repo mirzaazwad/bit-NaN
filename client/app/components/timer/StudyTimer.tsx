@@ -12,11 +12,16 @@ interface IStudyTimer {
 
 const StudyTimer = ({ show, setShow }: IStudyTimer) => {
   const {
-    settings: { pomodoroValue, restValue, handlePomodoroTime, handleRestTime },
-    session: { focus, sessions, setSessions },
-    timer: { minutes, seconds, percentage, disabled, handleStart },
+    settings,
+    session,
+    timer,
     error,
   } = useStudyTimer();
+  const  { focus } = session;
+  const { minutes,
+    seconds,
+    percentage,
+    disabled } = timer;
 
   const handleClose = () => {
     setShow(false);
@@ -39,15 +44,9 @@ const StudyTimer = ({ show, setShow }: IStudyTimer) => {
               <TimerProgress minutes={minutes} seconds={seconds} percentage={percentage} />
             </div>
             <TimerControls
-              pomodoroValue={pomodoroValue}
-              restValue={restValue}
-              sessions={sessions}
-              disabled={disabled}
-              error={error}
-              handlePomodoroTime={handlePomodoroTime}
-              handleRestTime={handleRestTime}
-              setSessions={setSessions}
-              handleStart={handleStart}
+              settings={settings}
+              timer={{ ...timer, error }}
+              session={session}
             />
           </div>
         </div>

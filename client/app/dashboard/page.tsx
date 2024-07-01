@@ -1,5 +1,5 @@
 "use client";
-import NavBar from "../components/navbar-main/navbar";
+import NavBar from "../components/navbar/signedin/temp";
 import Profile from "./components/profile/Profile";
 import ProgresWrapper from "./components/progress/ProgressWrapper.component";
 const Dashboard = () => {
