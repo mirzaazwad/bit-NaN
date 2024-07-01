@@ -1,4 +1,4 @@
-import { HeaderBarTheme } from "@/app/config/theme/profile.theme";
+import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
 import { Avatar, Divider} from "rsuite";
 
 const Profile = () => {
