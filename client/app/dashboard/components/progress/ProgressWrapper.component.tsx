@@ -1,5 +1,5 @@
 "use client";
-import { HeaderBarTheme } from "@/app/config/theme/profile.theme";
+import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
 import WeeklyProgress from "./WeeklyProgress.component";
 import DailyProgress from "./DailyProgress.component";
 
