@@ -26,7 +26,7 @@ export const useLogin = () => {
       };
 
       const result = await login(loginData);
-
+      console.log(result);
       if (result.err) {
         handleLoginError(result.status);
       } else {
@@ -45,9 +45,9 @@ export const useLogin = () => {
   };
 
   const handleLoginSuccess = (result: any) => {
-    localStorage.setItem("access", result.token);
+    localStorage.setItem("access", result.access);
     localStorage.setItem("refresh", result.refresh);
-    router.push("/users");
+    // router.push("/users");
   };
 
   return { onSubmit, loading, errors, register, handleSubmit };

@@ -3,7 +3,7 @@ import { IRegister } from "../utils/templates/signup";
 
 export async function login(data: ILogin) {
   try {
-    const result = await fetch("http://localhost:8000/api/users/login", {
+    const result = await fetch("http://localhost:8081/api/auth/authenticate", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -18,7 +18,7 @@ export async function login(data: ILogin) {
 
 export async function register(data: IRegister) {
   try {
-    const result = await fetch("http://localhost:8000/api/users/register", {
+    const result = await fetch("http://localhost:8081/api/auth/register", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

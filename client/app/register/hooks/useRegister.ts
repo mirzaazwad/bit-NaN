@@ -53,7 +53,7 @@ export const useRegister = () => {
           result.status === 500 ? "Server Error" : "Invalid Data Provided";
         setError("submit", { type: "custom", message: errorMessage });
       } else {
-        localStorage.setItem("access", result.token);
+        localStorage.setItem("access", result.access);
         localStorage.setItem("refresh", result.refresh);
         router.push("/users");
       }
