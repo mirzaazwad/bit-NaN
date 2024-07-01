@@ -1,14 +1,12 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { IonIcon } from "@ionic/react";
-import { checkboxSharp, clipboardSharp, menuOutline, peopleSharp } from "ionicons/icons";
+import {  menuOutline } from "ionicons/icons";
 import { navStyles, navInnerStyles, menuButtonStyles } from "../../config/theme/navbar.theme";
 import Logo from "./Logo";
 import TopbarMenu from "./TopbarMenu";
 import DropdownMenu from "./DropDownMenu";
 import { INavigationComponents } from "@/app/utils/templates/navigation-components";
+import { useDefaultNavBar } from "@/app/hooks/navbar/default";
 
 interface INavBarProps {
     topbarChildren?: React.ReactNode;
@@ -20,23 +18,9 @@ interface INavBarProps {
 
 
 const NavBar= ({topbarChildren,dropdownChildren,navigationContents,children}:INavBarProps) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const generateNavbarContents=()=>{
-        if(navigationContents){
-            return navigationContents;
-        }
-        return [
-            {href: "/", label: "Home",icon:clipboardSharp},
-            {href: "/login", label: "Login",icon:peopleSharp},
-            {href: "/register", label: "Register",icon:checkboxSharp}
-        ]
-    }
-    const currentPath = usePathname();
-
-
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+    const {currentPath,generateNavbarContents,
+        dropdown:{toggleDropdown,isDropdownOpen,setIsDropdownOpen}
+    }=useDefaultNavBar(navigationContents);
 
     return (
         <nav className={navStyles} onMouseLeave={() => setIsDropdownOpen(false)}>
