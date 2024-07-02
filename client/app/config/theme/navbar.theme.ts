@@ -40,5 +40,5 @@ export const topbarUlStyles: string = `
 `;
 
 export const dropdownUlStyles: string = `
-    w-full font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0
+    w-full font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0
 `;
