@@ -2,3 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+:root {
+    --rs-primary-50: #f2faff;
+    --rs-primary-100: #ffb300;
+    --rs-primary-200: #ffb300;
+    --rs-primary-300: #ffb300;
+    --rs-primary-400: #ffb300;
+    --rs-primary-500: #ffb300;
+    --rs-primary-600: #ffb300;
+    --rs-primary-700: #ffb300;
+    --rs-primary-800: #ffb300;
+    --rs-primary-900: #ffb300;
+
+    --rs-color-red: #f44336;
+    --rs-color-orange: #fa8900;
+    --rs-color-yellow: #ffb300;
+    --rs-color-green: #4caf50;
+    --rs-color-cyan: #00bcd4;
+    --rs-color-blue: #2196f3;
+    --rs-color-violet: #673ab7;
+  }
