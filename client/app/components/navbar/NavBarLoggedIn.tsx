@@ -35,7 +35,7 @@ const NavBarLoggedIn: React.FC = () => {
         <>
             <NavBar topbarChildren={<TopbarUser setOpenStudyTimer={setOpenStudyTimer} toggleUserOptionsDropDown={toggleUserOptionsDropDown} />}
                 dropdownChildren={<DropdownUser currentPath={currentPath} navigationContents={userOptionsNavigationContents} setOpenStudyTimer={setOpenStudyTimer} />}
-                onAuxClick={() => setUserOptionsOpen(false)}
+                onMouseLeave={() => setUserOptionsOpen(false)}
                 navigationContents={navigationContents}
             >
                 {userOptionsOpen && <UserOptions currentPath={currentPath} navigationContents={userOptionsNavigationContents} />}

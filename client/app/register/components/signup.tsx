@@ -4,9 +4,9 @@ import PasswordStrengthBar from "react-password-strength-bar";
 import { useRegister } from "../hooks/useRegister";
 import Loading from "@/app/loading";
 import { authenticationInputBox, authenticationInputBoxLabel, authenticationButton, authenticationCard, authenticationHyperLink, authenticationText } from "@/app/config/theme/authentication.theme";
-import { tailwindError } from "@/app/config/theme/global.theme";
 import { IonIcon } from "@ionic/react";
 import { logoGoogle } from "ionicons/icons";
+import { Message } from "rsuite";
 
 const RegisterCard = () => {
   const { onSubmit, loading, errors, register, handleSubmit, watch, setStrength } = useRegister();
@@ -18,9 +18,9 @@ const RegisterCard = () => {
       <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <h5 className="text-xl font-medium text-black">Register</h5>
         {errors.submit && (
-          <div className={tailwindError}>
+          <Message type="error" showIcon closable>
             {errors.submit.message instanceof String ? errors.submit.message : "Server Error"}
-          </div>
+          </Message>
         )}
         <div>
           <label className={authenticationInputBoxLabel()}>
@@ -33,9 +33,9 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.username && (
-            <div className={tailwindError}>
+            <Message type="error" showIcon closable>
               Username must be present
-            </div>
+            </Message>
           )}
         </div>
         <div>
@@ -49,9 +49,9 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.email && (
-            <div className={tailwindError}>
+            <Message type="error" showIcon closable>
               Invalid Email
-            </div>
+            </Message>
           )}
         </div>
         <div>
@@ -65,9 +65,9 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.password && (
-            <div className={tailwindError}>
+            <Message type="error" showIcon closable>
               Password should be of more than 8 characters, with at least one uppercase letter, one lowercase letter, one number and one special character
-            </div>
+            </Message>
           )}
           <PasswordStrengthBar
             password={watch("password")}
@@ -89,9 +89,9 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.confirmPassword && (
-            <div className={tailwindError}>
-              Passwords Do Not Match
-            </div>
+            <Message type="error" showIcon closable>
+              Passwords do not match
+            </Message>
           )}
         </div>
         <button

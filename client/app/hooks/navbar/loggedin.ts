@@ -20,7 +20,7 @@ export const useLoggedInNavbar = () => {
   const navigationContents = [
     { href: "/dashboard", label: "Dashboard", icon: clipboardSharp },
     { href: "/groups", label: "Groups", icon: peopleCircleSharp },
-    { href: "/forums", label: "Forums", icon: newspaperSharp },
+    { href: "/forum", label: "Forum", icon: newspaperSharp },
     { href: "/market", label: "Market", icon: pricetagSharp },
   ];
 
