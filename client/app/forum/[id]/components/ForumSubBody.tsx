@@ -7,13 +7,13 @@ import FloatingActionButton from "./FloatingActionButton";
 import NewQuestionModal from "./ForumNewQuestion";
 
 const ForumSubBody = () => {
-    const {responses}=useAIResponse();
+    const {responses,addComment}=useAIResponse();
     const [showNewQuestionModal, setShowNewQuestionModal] = useState(false);
     return (
         <div className="w-full flex flex-col justify-content-center items-center">
             {
                 responses.map((question: IQuestion, index: number) => (
-                    <ForumCard key={index} question={question} >
+                    <ForumCard key={index} question={question} addComment={addComment}  isSubForum={true}>
                         {question.answer}
                     </ForumCard>
                 ))
