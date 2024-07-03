@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from '../Icon';
+import Icon from '../general/Icon';
 import { footerIconList, footerIcons } from "../../config/theme/footer.theme";
 import { logoFacebook, logoInstagram, logoYoutube, logoLinkedin, logoGithub, logoGooglePlaystore } from "ionicons/icons";
 

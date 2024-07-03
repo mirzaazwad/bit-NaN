@@ -12,28 +12,33 @@ interface INavBarProps {
     topbarChildren?: React.ReactNode;
     dropdownChildren?: React.ReactNode;
     children?: React.ReactNode;
-    onAuxClick?: () => void;
+    onMouseLeave?: () => void;
     navigationContents?:INavigationComponents[];
 }
 
 
-const NavBar= ({topbarChildren,dropdownChildren,navigationContents,children}:INavBarProps) => {
+const NavBar= ({topbarChildren,dropdownChildren,navigationContents,onMouseLeave,children}:INavBarProps) => {
     const {currentPath,generateNavbarContents,
         dropdown:{toggleDropdown,isDropdownOpen,setIsDropdownOpen}
     }=useDefaultNavBar(navigationContents);
 
     return (
-        <nav className={navStyles} onMouseLeave={() => setIsDropdownOpen(false)}>
+        <nav className={navStyles} onMouseLeave={() => {
+            setIsDropdownOpen(false)
+            if(onMouseLeave){
+                onMouseLeave();
+        }}
+        }>
             <div className={navInnerStyles}>
-                <div className="hidden md:flex items-center">
+                <div className="hidden lg:flex items-center">
                     <Logo size={75} />
                 </div>
-                <div className="hidden w-full md:block md:w-auto ml-auto" id="navbar-default">
+                <div className="hidden w-full lg:block lg:w-auto ml-auto" id="navbar-default">
                     <TopbarMenu currentPath={currentPath} navigationContents={generateNavbarContents()}>
                         {topbarChildren}
                     </TopbarMenu>
                 </div>
-                <div className="md:hidden w-full flex items-center justify-between" id="navbar-dropdown">
+                <div className="lg:hidden w-full flex items-center justify-between" id="navbar-dropdown">
                     <div className={menuButtonStyles} onClick={toggleDropdown}>
                         <IonIcon icon={menuOutline} />
                     </div>
