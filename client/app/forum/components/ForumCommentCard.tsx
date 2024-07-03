@@ -2,13 +2,16 @@ import { forumButton } from "@/app/config/theme/forum.theme";
 import { IComments } from "@/app/utils/templates/comments";
 import { Card } from "react-bootstrap";
 import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
+import { useVotes } from "../hooks/useVotes";
 
 export interface IForumCommentCard {
     comment: IComments;
+    isSubForum:boolean
 }
 
 
-const ForumCommentCard = ({ comment }: IForumCommentCard) => {
+const ForumCommentCard = ({ comment,isSubForum }: IForumCommentCard) => {
+    const {upvotes,downvotes,upvote,downvote,isUpvoted,isDownvoted}=useVotes(comment.upvotes,comment.downvotes,comment.id,true,true,isSubForum);
     return (
         <Card className="w-full m-4 bg-bitBrown rounded-lg px-4 py-2 bg-white">
             <Card.Header>
@@ -19,8 +22,8 @@ const ForumCommentCard = ({ comment }: IForumCommentCard) => {
             <Card.Body className="flex flex-col justify-start bg-white rounded-lg">
                 <Card.Text>{comment.text}</Card.Text>
                 <div className="w-full flex flex-row justify-start">
-                    <button className={forumButton}><BiSolidUpArrow />{comment.upvotes}</button>
-                    <button className={forumButton}><BiSolidDownArrow />{comment.downvotes}</button>
+                    <button className={forumButton} onClick={()=>upvote()}><BiSolidUpArrow />{upvotes}</button>
+                    <button className={forumButton} onClick={()=>downvote()}><BiSolidDownArrow />{downvotes}</button>
                 </div>
             </Card.Body>
         </Card>

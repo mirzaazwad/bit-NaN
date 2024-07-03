@@ -1,5 +1,5 @@
 export interface IComments{
-    id: number;
+    id: string;
     text: string;
     author: string;
     date: string;

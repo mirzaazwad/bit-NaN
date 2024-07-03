@@ -5,7 +5,7 @@ import { useState } from "react";
 import { BiFilter } from "react-icons/bi";
 import { FaArrowLeft, FaClone } from "react-icons/fa";
 import CloneModal from "./CloneModal";
-import FilterModal from "./FilterModal";
+import FilterModal from "../../components/FilterModal";
 
 
 const ForumSubHeader = () => {
