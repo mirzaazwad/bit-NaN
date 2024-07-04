@@ -37,7 +37,7 @@ const StudyTimer = ({ show, setShow }: IStudyTimer) => {
       className="z-50 fixed inset-0 flex justify-center items-center h-[calc(100%-1rem)] max-h-full"
     >
       <div className="relative p-4 w-full max-w-2xl max-h-full">
-        <div className="relative bg-yellow-400 rounded-lg shadow">
+        <div className="relative bg-yellow-600 rounded-lg shadow">
           <ModalHeader focus={focus} disabled={disabled} handleClose={handleClose} />
           <div className="w-full flex">
             <div className="p-4 md:p-5 space-y-4 w-3/5">

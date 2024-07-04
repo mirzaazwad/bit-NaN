@@ -10,6 +10,9 @@ import { IQuestion } from "../hooks/useQuestion";
 import { useVotes } from "../hooks/useVotes";
 import ForumComment from "./ForumComment";
 import { IComments } from "@/app/utils/templates/comments";
+import { GoReport } from "react-icons/go";
+import { Tooltip, Whisper } from "rsuite";
+
 
 
 
@@ -42,6 +45,9 @@ const ForumCard = ({ question, children,addComment,isSubForum }: IForumCardProps
                     <button className={forumButton} onClick={() => upvote()}><BiSolidUpArrow />{upvotes}</button>
                     <button className={forumButton} onClick={() => downvote()}><BiSolidDownArrow />{downvotes}</button>
                     <button className={forumButton} onClick={() => toggleComments()}><IonIcon icon={chatbubbleEllipsesSharp} />{question.comments.length}</button>
+                    <Whisper trigger="hover" placement="topEnd" controlId={`control-id-button`} speaker={<Tooltip>Report this Response</Tooltip>}>
+                    <button className={forumButton} onClick={() => {}}><GoReport/></button>
+                    </Whisper>
                 </div>
             </Card.Body>
             {showComments && (<Card.Footer className="px-4 py-2">
