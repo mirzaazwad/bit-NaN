@@ -12,6 +12,9 @@ import ForumComment from "./ForumComment";
 import { IComments } from "@/app/utils/templates/comments";
 import { GoReport } from "react-icons/go";
 import { Tooltip, Whisper } from "rsuite";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import ForumLink from "./ForumLink";
 
 
 
@@ -19,13 +22,14 @@ import { Tooltip, Whisper } from "rsuite";
 interface IForumCardProps {
     question: IQuestion;
     children?: React.ReactNode;
-    addComment: (id:string,comment: IComments) => void;
-    isSubForum:boolean;
+    addComment: (id: string, comment: IComments) => void;
+    isSubForum: boolean;
 }
 
-const ForumCard = ({ question, children,addComment,isSubForum }: IForumCardProps) => {
+const ForumCard = ({ question, children, addComment, isSubForum }: IForumCardProps) => {
     const [showComments, setShowComments] = useState(false);
-    const { upvote, downvote, upvotes, downvotes } = useVotes(question.upvotes, question.downvotes, question.id, false, true,isSubForum);
+    const { upvote, downvote, upvotes, downvotes } = useVotes(question.upvotes, question.downvotes, question.id, false, true, isSubForum);
+    const router = useRouter();
 
     const toggleComments = () => {
         setShowComments(!showComments);
@@ -33,10 +37,12 @@ const ForumCard = ({ question, children,addComment,isSubForum }: IForumCardProps
 
     return (
         <Card className="w-11/12 m-4 bg-bitBrown rounded-lg px-4 py-2" onMouseLeave={() => setShowComments(false)}>
-            <Card.Header>
-                <Card.Title className="text-yellow-600 text-4xl">{question.question}</Card.Title>
-                <Card.Subtitle className="mb-2 text-white">Asked by <span className="font-bold">{question.author}</span> on {question.date}</Card.Subtitle>
-            </Card.Header>
+            <ForumLink isSubForum={isSubForum} question={question}>
+                <Card.Header>
+                    <Card.Title className="text-yellow-600 text-4xl">{question.question}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-white">Asked by <span className="font-bold">{question.author}</span> on {question.date}</Card.Subtitle>
+                </Card.Header>
+            </ForumLink>
             <Card.Body className="w-full flex flex-col justify-start bg-white rounded-lg">
                 {children && (<div className="w-full m-6">
                     {children}
@@ -46,7 +52,7 @@ const ForumCard = ({ question, children,addComment,isSubForum }: IForumCardProps
                     <button className={forumButton} onClick={() => downvote()}><BiSolidDownArrow />{downvotes}</button>
                     <button className={forumButton} onClick={() => toggleComments()}><IonIcon icon={chatbubbleEllipsesSharp} />{question.comments.length}</button>
                     <Whisper trigger="hover" placement="topEnd" controlId={`control-id-button`} speaker={<Tooltip>Report this Response</Tooltip>}>
-                    <button className={forumButton} onClick={() => {}}><GoReport/></button>
+                        <button className={forumButton} onClick={() => { }}><GoReport /></button>
                     </Whisper>
                 </div>
             </Card.Body>
@@ -56,10 +62,10 @@ const ForumCard = ({ question, children,addComment,isSubForum }: IForumCardProps
                 </div>
                 {
                     question.comments.map((comment, index) => (
-                        <ForumCommentCard comment={comment} key={index} isSubForum={isSubForum}/>
+                        <ForumCommentCard comment={comment} key={index} isSubForum={isSubForum} />
                     ))
                 }
-                <ForumComment addComment={addComment} id={String(question.comments.length)} post_id={question.id}/>
+                <ForumComment addComment={addComment} id={String(question.comments.length)} post_id={question.id} />
             </Card.Footer>)}
         </Card>
     );
