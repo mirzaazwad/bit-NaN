@@ -48,7 +48,7 @@ const NewQuestionModal = ({ show, setShow }: INewQuestionModalProps) => {
             </Modal.Body>
             <Modal.Footer className="bg-bitBrown px-4 py-2 flex flex-row justify-end rounded-lg">
                 <button className={forumButton} onClick={() => setShow(false)}><CgClose className="me-2" />Cancel</button>
-                <button className={forumButton}><BiSend className="me-2" />Ask</button>
+                <button className={forumButton}><BiSend className="me-2" />Send</button>
             </Modal.Footer>
         </Modal>
     );
