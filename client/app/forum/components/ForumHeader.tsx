@@ -14,7 +14,6 @@ const ForumHeader = () => {
     return ( 
         <div className="flex w-full md:flex-row flex-col justify-center items-center px-4 py-2">
             <SearchBar/>
-
             <button className={forumButton} onClick={()=>setShowFilterModal(true)}><BiFilter/> Filter</button>
             <button className={forumButton} onClick={()=>setShowNewChatModal(true)}><IonIcon icon={addSharp}></IonIcon> New Discussion</button>
             <ForumModal show={showNewChatModal} setShow={setShowNewChatModal}/>

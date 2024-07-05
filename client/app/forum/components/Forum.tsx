@@ -4,7 +4,7 @@ import ForumHeader from "./ForumHeader";
 
 const Forum = () => {
     return ( 
-        <div className="flex flex-col pt-16">
+        <div className="flex flex-col">
         <ForumHeader />
         <ForumBody />
       </div>
