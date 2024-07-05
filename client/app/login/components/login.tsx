@@ -3,9 +3,9 @@ import Loading from "@/app/loading";
 import Link from "next/link";
 import { useLogin } from "../hooks/useLogin";
 import { authenticationInputBox, authenticationInputBoxLabel,authenticationButton,authenticationCard,authenticationHyperLink,authenticationText } from "@/app/config/theme/authentication.theme";
-import { tailwindError } from "@/app/config/theme/global.theme";
 import { IonIcon } from "@ionic/react";
 import { logoGoogle } from "ionicons/icons";
+import { Message } from "rsuite";
 
 const LoginCard = () => {
   const {onSubmit,loading,errors,register,handleSubmit}=useLogin();
@@ -19,9 +19,9 @@ const LoginCard = () => {
       <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <h5 className="text-xl font-medium text-black">Login</h5>
         {errors.submit && (
-            <div className={tailwindError}>
-                {errors.submit.message instanceof String?errors.submit.message:"Server Error"}
-            </div>
+            <Message type="error" showIcon closable>
+              {errors.submit.message instanceof String?errors.submit.message:"Server Error"}
+            </Message>
         )}
         <div>
           <label className={authenticationInputBoxLabel()}>
@@ -34,9 +34,9 @@ const LoginCard = () => {
             className={authenticationInputBox()}
           />
           {errors.email && (
-            <div className={tailwindError}>
+            <Message type="error" showIcon closable>
               {errors.email.message instanceof String?errors.email.message:"Invalid Email"}
-            </div>
+            </Message>
           )}
         </div>
         <div>
@@ -50,9 +50,9 @@ const LoginCard = () => {
             className={authenticationInputBox()}
           />
           {errors.password && (
-          <div className={tailwindError}>
+          <Message type="error" showIcon closable>
             {errors.password.message instanceof String?errors.password.message:"Invalid Email"}
-          </div>
+          </Message>
         )}
         </div>
         <button

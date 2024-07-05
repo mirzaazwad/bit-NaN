@@ -2,7 +2,7 @@ import Footer from "@/app/components/footer/Footer";
 import NavBar from "../components/navbar/NavBarLoggedIn";
 
 
-const DashboardLayout = ({
+const ForumLayout = ({
     children,
   }: Readonly<{
     children: React.ReactNode;
@@ -19,4 +19,4 @@ const DashboardLayout = ({
      );
 }
  
-export default DashboardLayout;
+export default ForumLayout;
