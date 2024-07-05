@@ -10,7 +10,7 @@ const GoalsLayout = ({
     return ( 
         <div className="flex flex-col min-h-screen w-full">
             <NavBar/>
-            <main className="flex-grow min-h-screen">
+            <main className="flex-grow min-h-screen pt-32">
                 {children}
             </main>
             <Footer/>
