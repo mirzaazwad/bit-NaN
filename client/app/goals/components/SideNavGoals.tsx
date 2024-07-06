@@ -10,7 +10,6 @@ export default function SideNavGoals() {
     }
 
     const activeTab = useAppSelector(state => state.goal?.layoutType);
-    console.log(activeTab);
     return(
         <>
             <div className="flex h-full items-center justify-center w-full">
