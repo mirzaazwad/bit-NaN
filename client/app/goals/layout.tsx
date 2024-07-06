@@ -1,7 +1,6 @@
 import Footer from "@/app/components/footer/Footer";
 import NavBar from "../components/navbar/NavBarLoggedIn";
 
-
 const GoalsLayout = ({
     children,
   }: Readonly<{

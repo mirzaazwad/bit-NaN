@@ -3,7 +3,7 @@ import { goalReducer } from "./slices/goals-slice";
 import { TypedUseSelectorHook, createSelectorHook } from "react-redux";
 const appReducer = combineReducers({
     // Add reducers here
-    goals: goalReducer
+    goal: goalReducer
 });
 
 export const appStore = configureStore({

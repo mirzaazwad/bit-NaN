@@ -1,17 +1,18 @@
-import { Tabs } from "rsuite";
-import Tab from "rsuite/esm/Tabs/Tab";
+import SideNavGoals from "./components/SideNavGoals";
+
 const Goals = () => {
     return(
         <>
-        <div className="flex">
-            <Tabs defaultActiveKey="1" vertical>
-                <Tab eventKey="1" title="Month">
+        <div className="flex w-full min-h-screen">
+            <div className="flex flex-row w-full h-full">
+                <div className="flex w-1/4">
+                    <SideNavGoals />
+                </div>
+                <div className="flex w-1/2">
 
-                </Tab>
-                <Tab eventKey="2" title="Day">
-
-                </Tab>
-            </Tabs>
+                </div>
+                <div className="flex w-1/4"></div>
+            </div>
         </div>
         </>
     );
