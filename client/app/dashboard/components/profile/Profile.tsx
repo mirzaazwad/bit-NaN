@@ -1,3 +1,4 @@
+"use client";
 import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
 import { Avatar, Divider} from "rsuite";
 
@@ -12,9 +13,13 @@ const Profile = () => {
                         <Avatar color="yellow" bordered size="xxl" circle/>
                     </div>
                     <div>
-                        <div className="flex flex-row mt-2">
-                            <h3 className="font-normal text-lg">Username: </h3>&nbsp;
-                            <h3 className="font-semibold text-lg">Nibir</h3>
+                        <div className="flex flex-row items-center justify-center mt-4">
+                            <h3 className="font-semibold text-lg text-gray-800">@Nibir Kabir</h3>
+                            {
+                            /*
+                            Add Rating, Rank and Active Status
+                            */
+                            }
                         </div>
                     </div>
                 </div>
