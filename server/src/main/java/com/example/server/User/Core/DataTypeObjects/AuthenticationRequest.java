@@ -1,4 +1,4 @@
-package com.example.server.User.utils;
+package com.example.server.User.Core.DataTypeObjects;
 
 
 import lombok.AllArgsConstructor;

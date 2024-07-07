@@ -1,18 +1,16 @@
 package com.example.server.User;
 
 
-import com.example.server.User.enums.Role;
+import com.example.server.User.Core.Enums.Role;
 import com.example.server.config.JWTService;
-import com.example.server.User.utils.AuthenticationRequest;
-import com.example.server.User.utils.AuthenticationResponse;
-import com.example.server.User.utils.RegisterRequest;
+import com.example.server.User.Core.DataTypeObjects.AuthenticationRequest;
+import com.example.server.User.Core.DataTypeObjects.AuthenticationResponse;
+import com.example.server.User.Core.DataTypeObjects.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.ErrorResponse;
 
 @Service
 @RequiredArgsConstructor
