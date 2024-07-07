@@ -8,6 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.Date;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -17,13 +19,17 @@ public class TaskEntity {
     @Id
     public String id;
     @Field
+    private String userEmail;
+    @Field
     public String Title;
     @Field
     public String Description;
     @Field
-    public String StartDate;
+    public String Status;
     @Field
-    public String EndDate;
+    public Date StartTime;
+    @Field
+    public Date EndTime;
     @Field
     public String Notes;
 }
