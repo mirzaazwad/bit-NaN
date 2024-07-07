@@ -1,6 +1,6 @@
 package com.example.server.Goals.Controller;
 
-import com.example.server.Goals.Core.DataTypeObjects.TaskRequest;
+import com.example.server.Goals.Core.DataTransferObjects.TaskDto;
 import com.example.server.Goals.Core.Utils.Reusables;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GoalController {
 
     @PostMapping("/create")
-    public ResponseEntity<?> createTask(@RequestBody TaskRequest taskRequest){
+    public ResponseEntity<?> createTask(@RequestBody TaskDto taskRequest){
         return ResponseEntity.ok(Reusables.getCurrentUsername());
     }
 }
