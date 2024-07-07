@@ -1,4 +1,4 @@
-package com.example.server.Goals.Core.DataTypeObjects;
+package com.example.server.Goals.Core.DataTransferObjects;
 
 
 import lombok.AllArgsConstructor;
