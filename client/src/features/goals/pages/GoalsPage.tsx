@@ -1,4 +1,5 @@
 "use client";
+import AuthenticatedLayout from "../../../components/authentication/AuthenticatedLayout";
 import { useAppSelector } from "../../../stores/redux-store";
 import DailyGoals from "../components/DailyGoals";
 import MonthlyGoals from "../components/MonthlyGoals";
@@ -13,8 +14,8 @@ const GoalsPage = () => {
     }    
     
     return(
-        <>
-        <div className="flex w-full min-h-screen">
+       <AuthenticatedLayout>
+         <div className="flex w-full min-h-screen">
             <div className="flex flex-row w-full h-full">
                 <div className="flex w-1/4">
                     <SideNavGoals />
@@ -27,7 +28,7 @@ const GoalsPage = () => {
                 <div className="flex w-1/4"></div>
             </div>
         </div>
-        </>
+       </AuthenticatedLayout>
     );
 }
 

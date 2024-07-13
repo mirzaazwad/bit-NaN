@@ -1,13 +1,13 @@
 import { Footer } from "rsuite";
-import NavBar from "../../../components/navbar/NavBar";
+import NavBar from "../navbar/NavBar";
 
-const AuthenticationLayout = ({
+const UnAuthenticatedLayout = ({
     children,
   }: Readonly<{
     children: React.ReactNode;
   }>) => {
     return ( 
-        <div className="w-full">
+        <div className="w-full bg-white overflow-x-hidden">
             <NavBar/>
             {children}
             <Footer/>
@@ -15,4 +15,4 @@ const AuthenticationLayout = ({
      );
 }
  
-export default AuthenticationLayout;
+export default UnAuthenticatedLayout;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { login } from "../../../lib/authentication.requests";
 import { FieldValues, useForm } from "react-hook-form";
 import { ILogin } from "../../../utils/templates/login";
+import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
   const {
@@ -12,6 +13,7 @@ export const useLogin = () => {
   } = useForm();
 
   const [loading, setLoading] = useState(false);
+  const navigate=useNavigate();
 
   const onSubmit = async (data: FieldValues) => {
     setLoading(true);
@@ -43,7 +45,7 @@ export const useLogin = () => {
   const handleLoginSuccess = (result: any) => {
     localStorage.setItem("access", result.access);
     localStorage.setItem("refresh", result.refresh);
-    // router.push("/users");
+    navigate("/dashboard");
   };
 
   return { onSubmit, loading, errors, register, handleSubmit };

@@ -5,13 +5,16 @@ import './App.css'
 import { Provider } from 'react-redux'
 import { CustomProvider } from 'rsuite'
 import { appStore } from './stores/redux-store.ts'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider store={appStore}>
-      <CustomProvider>
-        <App />
-      </CustomProvider>
-    </Provider>
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <CustomProvider>
+          <App />
+        </CustomProvider>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
 )
