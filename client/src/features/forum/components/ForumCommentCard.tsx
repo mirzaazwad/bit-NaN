@@ -1,5 +1,5 @@
-import { forumButton } from "@/app/config/theme/forum.theme";
-import { IComments } from "@/app/utils/templates/comments";
+import { forumButton } from "../../../config/theme/forum.theme";
+import { IComments } from "../../../utils/templates/comments";
 import { Card } from "react-bootstrap";
 import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import { useVotes } from "../hooks/useVotes";

@@ -1,5 +1,5 @@
 "use client";
-import { forumButton } from "@/app/config/theme/forum.theme";
+import { forumButton } from "../../../config/theme/forum.theme";
 import { IonIcon } from "@ionic/react";
 import { chatbubbleEllipsesSharp } from "ionicons/icons";
 import { useState } from "react";
@@ -9,12 +9,11 @@ import ForumCommentCard from "./ForumCommentCard";
 import { IQuestion } from "../hooks/useQuestion";
 import { useVotes } from "../hooks/useVotes";
 import ForumComment from "./ForumComment";
-import { IComments } from "@/app/utils/templates/comments";
+import { IComments } from "../../../utils/templates/comments";
 import { GoReport } from "react-icons/go";
 import { Tooltip, Whisper } from "rsuite";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import ForumLink from "./ForumLink";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -29,7 +28,7 @@ interface IForumCardProps {
 const ForumCard = ({ question, children, addComment, isSubForum }: IForumCardProps) => {
     const [showComments, setShowComments] = useState(false);
     const { upvote, downvote, upvotes, downvotes } = useVotes(question.upvotes, question.downvotes, question.id, false, true, isSubForum);
-    const router = useRouter();
+    const navigate = useNavigate();
 
     const toggleComments = () => {
         setShowComments(!showComments);

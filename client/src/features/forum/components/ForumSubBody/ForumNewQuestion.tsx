@@ -1,10 +1,8 @@
-"use client";
-
-import DragDropFile from "@/app/components/general/DragDropFile";
+import DragDropFile from "../../../../components/general/DragDropFile";
 import {
     authenticationInputBoxLabel,
-} from "@/app/config/theme/authentication.theme";
-import { forumButton } from "@/app/config/theme/forum.theme";
+} from "../../../../config/theme/authentication.theme";
+import { forumButton } from "../../../../config/theme/forum.theme";
 import {
     Dispatch,
     SetStateAction,
@@ -12,10 +10,9 @@ import {
 } from "react";
 import {BiSend } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
-import dynamic from "next/dynamic";
-import { Message, Modal, Uploader } from "rsuite";
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import { Message, Modal } from "rsuite";
 import "react-quill/dist/quill.snow.css";
+import ReactQuill from "react-quill";
 
 interface INewQuestionModalProps {
     show: boolean;

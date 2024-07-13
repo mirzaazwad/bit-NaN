@@ -1,5 +1,5 @@
-import { authenticationInputBoxLabel } from "@/app/config/theme/authentication.theme";
-import { forumButton } from "@/app/config/theme/forum.theme";
+import { authenticationInputBoxLabel } from "../../../config/theme/authentication.theme";
+import { forumButton } from "../../../config/theme/forum.theme";
 import { Dispatch, SetStateAction, useState } from "react";
 import { DateRangePicker, InputGroup, InputNumber, Modal, SelectPicker } from "rsuite";
 

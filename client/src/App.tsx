@@ -7,6 +7,9 @@ import LoginPage from './features/user-authentication/pages/LoginPage'
 import RegisterPage from './features/user-authentication/pages/RegisterPage'
 import DashboardLayout from './features/dashboard/pages/DashboardLayout'
 import DashboardPage from './features/dashboard/pages/DashboardPage'
+import ForumLayout from './features/forum/pages/ForumLayout'
+import ForumPage from './features/forum/pages/ForumPage'
+import ForumSubPage from './features/forum/pages/ForumSubPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +30,12 @@ function App() {
       <Route path="/dashboard" element={<DashboardLayout>
         <DashboardPage/>
       </DashboardLayout>} />
+      <Route path="/forum" element={<ForumLayout>
+        <ForumPage/>
+      </ForumLayout>} />
+      <Route path="/forum/:id" element={<ForumLayout>
+        <ForumSubPage/>
+      </ForumLayout>} />
         </Routes>
       </BrowserRouter>
     </>

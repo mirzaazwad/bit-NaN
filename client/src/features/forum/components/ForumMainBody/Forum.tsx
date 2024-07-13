@@ -1,6 +1,5 @@
-import { Pagination } from "rsuite";
-import ForumBody from "./ForumBody";
 import ForumHeader from "./ForumHeader";
+import ForumBody from "./ForumBody";
 
 const Forum = () => {
     return ( 

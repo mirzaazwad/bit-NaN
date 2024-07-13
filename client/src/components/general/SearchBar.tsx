@@ -1,4 +1,4 @@
-import { searchButton } from "@/app/config/theme/search.theme";
+import { searchButton } from "../../config/theme/search.theme";
 import { IonIcon } from "@ionic/react";
 import { searchSharp } from "ionicons/icons";
 

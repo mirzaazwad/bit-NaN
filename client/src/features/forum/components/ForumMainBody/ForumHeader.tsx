@@ -1,12 +1,11 @@
-"use client";
-import { forumButton } from "@/app/config/theme/forum.theme";
+import { forumButton } from "../../../../config/theme/forum.theme";
 import { IonIcon } from "@ionic/react";
 import { addSharp } from "ionicons/icons";
-import SearchBar from "../../components/general/SearchBar";
+import SearchBar from "../../../../components/general/SearchBar";
 import ForumModal from "./ForumNewDiscussionModal";
 import { useState } from "react";
 import { BiFilter } from "react-icons/bi";
-import FilterModal from "./FilterModal";
+import FilterModal from "../FilterModal";
 
 const ForumHeader = () => {
     const [showNewChatModal, setShowNewChatModal] = useState(false);

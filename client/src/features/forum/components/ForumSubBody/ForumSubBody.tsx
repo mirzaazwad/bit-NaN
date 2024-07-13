@@ -1,8 +1,7 @@
-"use client";
 import { useState } from "react";
 import ForumCard from "../../components/ForumCard";
 import { IQuestion } from "../../hooks/useQuestion";
-import { useAIResponse } from "../hooks/useAIResponse";
+import { useAIResponse } from "../../hooks/useAIResponse";
 import FloatingActionButton from "./FloatingActionButton";
 import NewQuestionModal from "./ForumNewQuestion";
 

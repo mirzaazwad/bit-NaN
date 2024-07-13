@@ -1,5 +1,5 @@
-import Footer from "@/app/components/footer/Footer";
-import NavBar from "../components/navbar/NavBarLoggedIn";
+import Footer from "../../../components/footer/Footer";
+import NavBar from "../../../components/navbar/NavBarLoggedIn";
 
 
 const ForumLayout = ({

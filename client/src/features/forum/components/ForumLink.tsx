@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { IQuestion } from "../hooks/useQuestion";
 
 interface ILinkProps {
@@ -11,9 +11,9 @@ const ForumLink = ({children,isSubForum,question}:ILinkProps) => {
 
     if(!isSubForum){
         return (
-            <Link href={{pathname:`/forum/${question.id}`,query:{
+            <Link to={`/forum/${question.id}`} state={{
                 question:question.question,
-            }}}>
+            }}>
             {children}
             </Link>
         );

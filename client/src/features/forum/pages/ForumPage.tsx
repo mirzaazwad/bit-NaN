@@ -1,6 +1,6 @@
 "use client";
 
-import Forum from "./components/Forum";
+import Forum from "../components/ForumMainBody/Forum";
 
 const ForumPage = () => {
   return (

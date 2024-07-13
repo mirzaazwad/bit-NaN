@@ -1,5 +1,5 @@
-import { IQuestion, useQuestion } from "../hooks/useQuestion";
-import ForumCard from "./ForumCard";
+import { IQuestion, useQuestion } from "../../hooks/useQuestion";
+import ForumCard from "../ForumCard";
 
 const ForumBody = () => {
     const { questions,addComment } = useQuestion();
