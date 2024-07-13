@@ -1,9 +1,10 @@
-package com.example.server.User;
+package com.example.server.Authentication.Controller;
 
-import com.example.server.User.Core.DataTypeObjects.AuthenticationRequest;
-import com.example.server.User.Core.DataTypeObjects.AuthenticationResponse;
-import com.example.server.User.Core.DataTypeObjects.ErrorResponse;
-import com.example.server.User.Core.DataTypeObjects.RegisterRequest;
+import com.example.server.Authentication.Core.DataTypeObjects.AuthenticationRequest;
+import com.example.server.Authentication.Core.DataTypeObjects.AuthenticationResponse;
+import com.example.server.Authentication.Core.DataTypeObjects.ErrorResponse;
+import com.example.server.Authentication.Core.DataTypeObjects.RegisterRequest;
+import com.example.server.Authentication.Service.UserService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

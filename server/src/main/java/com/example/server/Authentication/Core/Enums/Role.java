@@ -1,4 +1,4 @@
-package com.example.server.User.Core.Enums;
+package com.example.server.Authentication.Core.Enums;
 
 public enum Role {
     USER,

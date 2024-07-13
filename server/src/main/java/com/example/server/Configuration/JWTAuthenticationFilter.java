@@ -1,4 +1,4 @@
-package com.example.server.config;
+package com.example.server.Configuration;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

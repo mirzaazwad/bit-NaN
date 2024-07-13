@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class TokenService {
+public class UserTokenService {
     private final TokenRepository tokenRepository;
     public String createToken(User user){
         return "";

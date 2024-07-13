@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { goalReducer } from "./slices/goals-slice";
-import { TypedUseSelectorHook, createSelectorHook } from "react-redux";
+import { useDispatch,useSelector } from 'react-redux'
+import { authReducer } from "./slices/auth-slide";
 const appReducer = combineReducers({
     // Add reducers here
-    goal: goalReducer
+    goal: goalReducer,
+    auth:authReducer
 });
 
 export const appStore = configureStore({
@@ -11,6 +13,8 @@ export const appStore = configureStore({
 });
 
 type AppStoreType = ReturnType<typeof appReducer>;
+export type AppDispatch = typeof appStore.dispatch
 
-export const useAppSelector = 
-        createSelectorHook() as TypedUseSelectorHook<AppStoreType>;
+export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppSelector = useSelector.withTypes<AppStoreType>()
+

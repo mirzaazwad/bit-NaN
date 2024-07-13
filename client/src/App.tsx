@@ -8,6 +8,10 @@ import ForumSubPage from './features/forum/pages/ForumSubPage'
 import GoalsPage from './features/goals/pages/GoalsPage'
 import PrivateOutlet from './components/authentication/PrivateOutlet'
 import PublicOutlet from './components/authentication/PublicOutlet'
+import Error404 from './components/error/error404'
+import Error500 from './components/error/error500'
+import Error401 from './components/error/error401'
+import Error403 from './components/error/error403'
 
 function App() {
 
@@ -24,6 +28,10 @@ function App() {
         <Route path="forum/:id" element={<ForumSubPage />} />
         <Route path="goals" element={<GoalsPage />} />
       </Route>
+      <Route path="/error404" element={<Error404/>}/>
+      <Route path="/error401" element={<Error401/>}/>
+      <Route path="/error403" element={<Error403/>}/>
+      <Route path="/error500" element={<Error500/>}/>
     </Routes>
   )
 }

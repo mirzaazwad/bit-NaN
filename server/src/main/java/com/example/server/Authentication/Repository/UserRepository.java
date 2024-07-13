@@ -1,5 +1,6 @@
-package com.example.server.User;
+package com.example.server.Authentication.Repository;
 
+import com.example.server.Authentication.Entity.UserEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

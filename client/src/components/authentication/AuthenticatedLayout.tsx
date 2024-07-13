@@ -1,4 +1,4 @@
-import { Footer } from "rsuite";
+import Footer from "../footer/Footer";
 import NavBarLoggedIn from "../navbar/NavBarLoggedIn";
 
 const AuthenticatedLayout = ({

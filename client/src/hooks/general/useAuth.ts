@@ -1,5 +1,14 @@
-export const useAuth=()=>{
-    const auth=true;
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../stores/redux-store";
 
-    return {auth};
+export const useAuth=()=>{
+    // const auth=useAppSelector((state)=>state.auth);
+    // const dispatch=useAppDispatch();
+
+    // const setAuth=(e:boolean)=>{
+        
+    // }
+    const [auth,setAuth]=useState(false);
+
+    return {auth,setAuth};
 }

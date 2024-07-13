@@ -18,7 +18,7 @@ const LoginCard = () => {
       <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <h5 className="text-xl font-medium text-black">Login</h5>
         {errors.submit && (
-            <Message type="error" showIcon closable>
+            <Message type="error" showIcon closable className="bg-red-600 text-white">
               {errors.submit.message instanceof String?errors.submit.message:"Server Error"}
             </Message>
         )}
@@ -33,7 +33,7 @@ const LoginCard = () => {
             className={authenticationInputBox()}
           />
           {errors.email && (
-            <Message type="error" showIcon closable>
+            <Message type="error" showIcon closable className="bg-red-600 text-white">
               {errors.email.message instanceof String?errors.email.message:"Invalid Email"}
             </Message>
           )}
@@ -49,7 +49,7 @@ const LoginCard = () => {
             className={authenticationInputBox()}
           />
           {errors.password && (
-          <Message type="error" showIcon closable>
+          <Message type="error" showIcon closable className="bg-red-600 text-white">
             {errors.password.message instanceof String?errors.password.message:"Invalid Email"}
           </Message>
         )}

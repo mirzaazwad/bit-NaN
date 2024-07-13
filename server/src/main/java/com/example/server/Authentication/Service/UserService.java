@@ -1,11 +1,13 @@
-package com.example.server.User;
+package com.example.server.Authentication.Service;
 
 
-import com.example.server.User.Core.Enums.Role;
-import com.example.server.config.JWTService;
-import com.example.server.User.Core.DataTypeObjects.AuthenticationRequest;
-import com.example.server.User.Core.DataTypeObjects.AuthenticationResponse;
-import com.example.server.User.Core.DataTypeObjects.RegisterRequest;
+import com.example.server.Authentication.Core.Enums.Role;
+import com.example.server.Authentication.Entity.UserEntity;
+import com.example.server.Authentication.Repository.UserRepository;
+import com.example.server.Configuration.JWTService;
+import com.example.server.Authentication.Core.DataTypeObjects.AuthenticationRequest;
+import com.example.server.Authentication.Core.DataTypeObjects.AuthenticationResponse;
+import com.example.server.Authentication.Core.DataTypeObjects.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

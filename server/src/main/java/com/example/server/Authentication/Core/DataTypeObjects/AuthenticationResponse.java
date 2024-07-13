@@ -1,4 +1,4 @@
-package com.example.server.User.Core.DataTypeObjects;
+package com.example.server.Authentication.Core.DataTypeObjects;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
