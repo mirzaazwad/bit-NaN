@@ -5,15 +5,16 @@ import com.example.server.Goals.Core.Interfaces.IGoalService;
 import com.example.server.Goals.Core.Utils.Reusables;
 import com.example.server.Goals.Entity.TaskEntity;
 import com.example.server.Goals.Repository.TaskRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor
 public class GoalService implements IGoalService {
 
-    @Autowired
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
     @Override
     public TaskEntity CreateTask(TaskRequest taskRequest) {

@@ -30,15 +30,6 @@ public class TokenEntity {
     private String accessToken;
     @Value("${application.security.jwt.refresh-token.expiration}")
     private static Integer expires_in;
-    @Field
-    @Builder.Default
-    private Date revoked_time= getRevokedTime();
-
-    private static Date getRevokedTime() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.SECOND, expires_in);
-        return calendar.getTime();
-    }
 }
 
 

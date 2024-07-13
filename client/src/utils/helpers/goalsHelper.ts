@@ -7,6 +7,7 @@ import { GoalType } from "../templates/Goals";
 class GoalsHelper{
     static async fetchGoalsByUser(): Promise<GoalType[]> {
         const response = await getData(API_ROUTES.goals.fetchByCurrentUser);
+        console.log(response);
         this.setData(response.data, goalActions.setGoals);
         return response.data as GoalType[];
     }

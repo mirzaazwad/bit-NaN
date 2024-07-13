@@ -10,8 +10,9 @@ class AxiosAuth {
                 requestConfig: InternalAxiosRequestConfig
               ): InternalAxiosRequestConfig {
                 const token = localStorage.getItem("access");
-          
-                requestConfig.headers.Authorization = `Bearer ${token}`;
+                if(token){
+                    requestConfig.headers.Authorization = `Bearer ${token}`;
+                }
 
                 return requestConfig;
             },

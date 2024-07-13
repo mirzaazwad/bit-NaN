@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import { register } from "../../../lib/authentication.requests";
 import { IRegister } from "../../../utils/templates/signup";
+import { useNavigate } from "react-router-dom";
+import AuthHelper from "../../../utils/helpers/authHelper";
 
 export const useRegister = () => {
   const {
@@ -12,7 +13,7 @@ export const useRegister = () => {
     formState: { errors },
   } = useForm();
   hookRegister("submit");
-  // const router = useRouter();
+  const navigate=useNavigate();
 
   const [strength, setStrength] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -42,22 +43,20 @@ export const useRegister = () => {
       email,
       password,
     };
-    try {
-      const response = await register(registerData);
-      const result = await response.json();
-
-      if (result.err) {
-        const errorMessage =
-          result.status === 500 ? "Server Error" : "Invalid Data Provided";
-        setError("submit", { type: "custom", message: errorMessage });
-      } else {
-        localStorage.setItem("access", result.access);
-        localStorage.setItem("refresh", result.refresh);
-        // router.push("/users");
+    try{
+      const result = await AuthHelper.registerUser(registerData);
+      if(!result.status){
+        setError("submit", { type: "custom", message: result.message });
       }
-    } catch (error) {
+      else{
+        navigate("/dashboard");
+      }
+    }
+    catch(error){
+      console.log(error);
       setError("submit", { type: "custom", message: "Server Error" });
-    } finally {
+    }
+    finally{
       setLoading(false);
     }
   };

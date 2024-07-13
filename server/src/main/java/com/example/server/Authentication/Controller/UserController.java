@@ -1,15 +1,13 @@
 package com.example.server.Authentication.Controller;
 
-import com.example.server.Authentication.Core.DataTypeObjects.AuthenticationRequest;
-import com.example.server.Authentication.Core.DataTypeObjects.AuthenticationResponse;
-import com.example.server.Authentication.Core.DataTypeObjects.ErrorResponse;
-import com.example.server.Authentication.Core.DataTypeObjects.RegisterRequest;
+import com.example.server.Authentication.Core.DataTypeObjects.*;
 import com.example.server.Authentication.Service.UserService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.token.TokenService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,15 +37,20 @@ public class UserController {
     )
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request){
-        AuthenticationResponse authenticationResponse = userService.register(request);
-        if(authenticationResponse.getMessage().equals("User already exists")){
-            ErrorResponse errorResponse = ErrorResponse.builder()
-                    .error(authenticationResponse.getMessage())
-                    .build();
-            return ResponseEntity.badRequest().body(errorResponse);
+        try{
+            AuthenticationResponse authenticationResponse = userService.register(request);
+            if(authenticationResponse.getMessage().equals("User already exists")){
+                ErrorResponse errorResponse = ErrorResponse.builder()
+                        .error(authenticationResponse.getMessage())
+                        .build();
+                return ResponseEntity.badRequest().body(errorResponse);
+            }
+            else{
+                return ResponseEntity.ok(authenticationResponse);
+            }
         }
-        else{
-            return ResponseEntity.ok(authenticationResponse);
+        catch (Exception e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 
@@ -67,14 +70,48 @@ public class UserController {
     )
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest request) {
-        AuthenticationResponse authenticationResponse = userService.authenticate(request);
-        if ("Bad credentials".equals(authenticationResponse.getMessage())) {
-            ErrorResponse errorResponse = ErrorResponse.builder()
-                    .error(authenticationResponse.getMessage())
-                    .build();
-            return ResponseEntity.badRequest().body(errorResponse);
+        try{
+            AuthenticationResponse authenticationResponse = userService.authenticate(request);
+            if ("Bad credentials".equals(authenticationResponse.getMessage())) {
+                ErrorResponse errorResponse = ErrorResponse.builder()
+                        .error(authenticationResponse.getMessage())
+                        .build();
+                return ResponseEntity.badRequest().body(errorResponse);
+            }
+            return ResponseEntity.ok(authenticationResponse);
         }
-        return ResponseEntity.ok(authenticationResponse);
+        catch (Exception e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/refresh-token")
+    public ResponseEntity<?> refresh(@RequestBody TokenRequest request){
+        try{
+            TokenResponse tokenResponse=userService.getToken(request);
+            if ("Token not found".equals(tokenResponse.getMessage())) {
+                ErrorResponse errorResponse = ErrorResponse.builder()
+                        .error(tokenResponse.getMessage())
+                        .build();
+                return ResponseEntity.badRequest().body(errorResponse);
+            }
+            else if ("Bad credentials".equals(tokenResponse.getMessage())) {
+                ErrorResponse errorResponse = ErrorResponse.builder()
+                        .error(tokenResponse.getMessage())
+                        .build();
+                return ResponseEntity.badRequest().body(errorResponse);
+            }
+            else if ("Failed Delete of Refresh Token".equals(tokenResponse.getMessage())) {
+                ErrorResponse errorResponse = ErrorResponse.builder()
+                        .error(tokenResponse.getMessage())
+                        .build();
+                return ResponseEntity.badRequest().body(errorResponse);
+            }
+            return ResponseEntity.ok(tokenResponse);
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
 }
