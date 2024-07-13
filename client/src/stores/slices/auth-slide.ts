@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-export interface Goal {
+export interface IAuth {
   auth: boolean;
   refresh:string;
   access:string;
 }
 
-const initialAuthState: Goal = {
+const initialAuthState: IAuth = {
     auth: false,  
     refresh:"",
     access:""
@@ -21,9 +21,11 @@ export const authSlice = createSlice({
         },
         setRefreshToken: (state, action: PayloadAction<string>) => {
             state.refresh = action.payload;
+            localStorage.setItem("refresh",action.payload);
         },
         setAccessToken: (state, action: PayloadAction<string>) => {
             state.access = action.payload;
+            localStorage.setItem("access",action.payload);
         },
     },
 });

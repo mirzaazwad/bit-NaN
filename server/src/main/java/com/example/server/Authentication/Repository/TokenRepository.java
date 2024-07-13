@@ -7,8 +7,7 @@ import java.util.Optional;
 
 public interface TokenRepository extends MongoRepository<TokenEntity,String> {
     Optional<TokenEntity> findByRefreshToken(String refreshToken);
-    Optional<TokenEntity> findByEmail(String email);
-    Optional<TokenEntity> findByAccessToken(String accessToken);
+    Optional<TokenEntity> deleteByRefreshToken(String refreshToken);
 }
 
 

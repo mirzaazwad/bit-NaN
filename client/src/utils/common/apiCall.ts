@@ -4,7 +4,9 @@ async function handleRequest<T>(request: () => Promise<T>): Promise<T | any> {
     try {
         return await request();
     } catch (error: any) {
-        return JSON.parse(error.message);
+        return {
+            error:error.message
+        };
     }
 }
 
