@@ -55,7 +55,7 @@ public class JWTService {
                 .compact();
     }
 
-    public boolean isTokenValiid(String token,UserDetails userDetails) {
+    public boolean isTokenValid(String token, UserDetails userDetails) {
         final String email=extract(token);
         return (email.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }

@@ -10,6 +10,9 @@ export const API_ROUTES = {
     },
     auth:{
         login: `${BASE_URL}/api/v1/auth/authenticate`,
-        register: `${BASE_URL}/api/v1/auth/register`
+        register: `${BASE_URL}/api/v1/auth/register`,
+        verify: `${BASE_URL}/api/v1/auth/verify-access`,
+        refresh: `${BASE_URL}/api/v1/auth/refresh-token`,
+        logout: `${BASE_URL}/api/v1/auth/logout`
     }
 }

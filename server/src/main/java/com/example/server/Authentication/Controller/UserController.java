@@ -89,28 +89,31 @@ public class UserController {
     public ResponseEntity<?> refresh(@RequestBody TokenRequest request){
         try{
             TokenResponse tokenResponse=userService.getToken(request);
-            if ("Token not found".equals(tokenResponse.getMessage())) {
-                ErrorResponse errorResponse = ErrorResponse.builder()
-                        .error(tokenResponse.getMessage())
-                        .build();
-                return ResponseEntity.badRequest().body(errorResponse);
+            switch (tokenResponse.getMessage()) {
+                case "Token not found", "Bad credentials", "Failed Delete of Refresh Token", "Token Expired" -> {
+                    ErrorResponse errorResponse = ErrorResponse.builder()
+                            .error(tokenResponse.getMessage())
+                            .build();
+                    return ResponseEntity.badRequest().body(errorResponse);
+                }
+                case null, default -> {
+                    return ResponseEntity.ok(tokenResponse);
+                }
             }
-            else if ("Bad credentials".equals(tokenResponse.getMessage())) {
-                ErrorResponse errorResponse = ErrorResponse.builder()
-                        .error(tokenResponse.getMessage())
-                        .build();
-                return ResponseEntity.badRequest().body(errorResponse);
-            }
-            else if ("Failed Delete of Refresh Token".equals(tokenResponse.getMessage())) {
-                ErrorResponse errorResponse = ErrorResponse.builder()
-                        .error(tokenResponse.getMessage())
-                        .build();
-                return ResponseEntity.badRequest().body(errorResponse);
-            }
-            return ResponseEntity.ok(tokenResponse);
         }
         catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/verify-access")
+    public ResponseEntity<?> verify(@RequestBody TokenVerificationRequest request){
+        try{
+            TokenVerificationResponse tokenVerificationResponse=userService.verify(request);
+            return ResponseEntity.ok(tokenVerificationResponse);
+        }
+        catch (Exception e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 
