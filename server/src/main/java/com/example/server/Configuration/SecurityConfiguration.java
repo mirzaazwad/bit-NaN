@@ -9,14 +9,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
-
-import static com.example.server.Authentication.Core.Enums.Role.USER;
-import static com.example.server.Authentication.Core.Enums.Permission.*;
 
 @Configuration
 @EnableWebSecurity
@@ -25,6 +20,7 @@ public class SecurityConfiguration {
 
     private final JWTAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
+    private  final LogoutService logoutHandler;
 
 
     @Bean
@@ -48,11 +44,11 @@ public class SecurityConfiguration {
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                .logout(logout ->
+                        logout.logoutUrl("/api/v1/auth/logout")
+                                .addLogoutHandler(logoutHandler)
+                                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
+                )
                 .build();
-//                .logout(logout ->
-//                        logout.logoutUrl("/api/v1/auth/logout")
-//                                .addLogoutHandler(logoutHandler)
-//                                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
-//                );
     }
 }

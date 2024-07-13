@@ -6,11 +6,27 @@ export interface IAuth {
   access:string;
 }
 
+const getRefreshToken=():string=>{
+    if(localStorage.getItem("refresh")!==null){
+        return localStorage.getItem("refresh") as string;
+    }
+    return ""
+}
+
+const getAccessToken=():string=>{
+    if(localStorage.getItem("access")!==null){
+        return localStorage.getItem("access") as string;
+    }
+    return ""
+}
+
 const initialAuthState: IAuth = {
     auth: false,  
-    refresh:"",
-    access:""
+    refresh: getRefreshToken(),
+    access:getAccessToken()
 };
+
+
 
 export const authSlice = createSlice({
     name: "goal",

@@ -12,6 +12,7 @@ import Error404 from './components/error/error404'
 import Error500 from './components/error/error500'
 import Error401 from './components/error/error401'
 import Error403 from './components/error/error403'
+import LogOut from './features/user-authentication/pages/LogOut'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="forum" element={<ForumPage />} />
         <Route path="forum/:id" element={<ForumSubPage />} />
         <Route path="goals" element={<GoalsPage />} />
+        <Route path="logout" element={<LogOut/>}/>
       </Route>
       <Route path="/error404" element={<Error404/>}/>
       <Route path="/error401" element={<Error401/>}/>
