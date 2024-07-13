@@ -2,10 +2,12 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { goalReducer } from "./slices/goals-slice";
 import { useDispatch,useSelector } from 'react-redux'
 import { authReducer } from "./slices/auth-slide";
+import { modalReducer } from "./slices/modal-slice";
 const appReducer = combineReducers({
     // Add reducers here
     goal: goalReducer,
-    auth:authReducer
+    auth:authReducer,
+    modal: modalReducer,
 });
 
 export const appStore = configureStore({
