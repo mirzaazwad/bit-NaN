@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { login } from "../../../lib/authentication.requests";
 import { FieldValues, useForm } from "react-hook-form";
 import { ILogin } from "../../../utils/templates/login";
+import { useNavigate } from "react-router-dom";
+import AuthHelper from "../../../utils/helpers/authHelper";
+import { IAuthResponseType } from "../../../utils/templates/AuthResponseType";
 
 export const useLogin = () => {
   const {
@@ -12,6 +14,7 @@ export const useLogin = () => {
   } = useForm();
 
   const [loading, setLoading] = useState(false);
+  const navigate=useNavigate();
 
   const onSubmit = async (data: FieldValues) => {
     setLoading(true);
@@ -21,30 +24,22 @@ export const useLogin = () => {
         password: data.password,
       };
 
-      const result = await login(loginData);
-      console.log(result);
-      if (result.err) {
-        handleLoginError(result.status);
-      } else {
-        handleLoginSuccess(result);
+      const result:IAuthResponseType = await AuthHelper.loginUser(loginData);
+      if(!result.status){
+        setError("submit", { type: "custom", message: result.message });
       }
+      else{
+        navigate('/dashboard');
+      }
+      
     } catch (error) {
+      console.log(error);
       setError("submit", { type: "custom", message: "Server Error" });
     } finally {
       setLoading(false);
     }
   };
 
-  const handleLoginError = (status: number) => {
-    const errorMessage = status !== 500 ? "Invalid Email or Password" : "Server Error";
-    setError("submit", { type: "custom", message: errorMessage });
-  };
-
-  const handleLoginSuccess = (result: any) => {
-    localStorage.setItem("access", result.access);
-    localStorage.setItem("refresh", result.refresh);
-    // router.push("/users");
-  };
 
   return { onSubmit, loading, errors, register, handleSubmit };
 };
