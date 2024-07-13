@@ -1,10 +1,10 @@
 "use client";
-import { useAppSelector } from "../stores/redux-store";
-import DailyGoals from "./components/DailyGoals";
-import MonthlyGoals from "./components/MonthlyGoals";
-import SideNavGoals from "./components/SideNavGoals";
+import { useAppSelector } from "../../../stores/redux-store";
+import DailyGoals from "../components/DailyGoals";
+import MonthlyGoals from "../components/MonthlyGoals";
+import SideNavGoals from "../components/SideNavGoals";
 
-const Goals = () => {
+const GoalsPage = () => {
 
     const activeTab = useAppSelector(state => state.goal?.layoutType);
 
@@ -31,4 +31,4 @@ const Goals = () => {
     );
 }
 
-export default Goals;
+export default GoalsPage;

@@ -5,6 +5,7 @@ import {
   pricetagSharp,
   settingsSharp,
   logOutSharp,
+  checkboxSharp,
 } from "ionicons/icons";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -21,6 +22,7 @@ export const useLoggedInNavbar = () => {
   const navigationContents = [
     { href: "/dashboard", label: "Dashboard", icon: clipboardSharp },
     { href: "/groups", label: "Groups", icon: peopleCircleSharp },
+    { href: "/goals", label: "Goals", icon: checkboxSharp },
     { href: "/forum", label: "Forum", icon: newspaperSharp },
     { href: "/market", label: "Market", icon: pricetagSharp },
   ];

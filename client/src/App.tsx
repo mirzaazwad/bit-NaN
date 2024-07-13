@@ -10,6 +10,8 @@ import DashboardPage from './features/dashboard/pages/DashboardPage'
 import ForumLayout from './features/forum/pages/ForumLayout'
 import ForumPage from './features/forum/pages/ForumPage'
 import ForumSubPage from './features/forum/pages/ForumSubPage'
+import GoalsLayout from './features/goals/pages/GoalsLayout'
+import GoalsPage from './features/goals/pages/GoalsPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,6 +38,9 @@ function App() {
       <Route path="/forum/:id" element={<ForumLayout>
         <ForumSubPage/>
       </ForumLayout>} />
+      <Route path="/goals" element={<GoalsLayout>
+        <GoalsPage/>
+      </GoalsLayout>} />
         </Routes>
       </BrowserRouter>
     </>
