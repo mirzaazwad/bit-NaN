@@ -15,3 +15,5 @@ class GoalsHelper{
         appStore.dispatch(actionCreator(data));
     }
 }
+
+export default GoalsHelper;

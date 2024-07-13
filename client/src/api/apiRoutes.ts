@@ -1,4 +1,4 @@
-const BASE_URL = process.env.API_URL;
+const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 export const API_ROUTES = {
     goals : {
         create: `${BASE_URL}/api/goals/create`,

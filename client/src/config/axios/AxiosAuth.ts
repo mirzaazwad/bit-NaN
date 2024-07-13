@@ -1,9 +1,7 @@
 import Axios, {AxiosInstance, AxiosRequestConfig, InternalAxiosRequestConfig, AxiosResponse} from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 class AxiosAuth {
     private axiosInstance: AxiosInstance;
-    private navigate = useNavigate();
     
     constructor(){
         this.axiosInstance = Axios.create();
@@ -27,7 +25,7 @@ class AxiosAuth {
             (response: AxiosResponse) => response,
             (error) => {
                 if(error.response?.status === 401){
-                    this.handleUnauthorized();
+                    console.log("Unauthorized");
                 }
                 return Promise.reject(error);
             }
@@ -49,11 +47,6 @@ class AxiosAuth {
     public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
         return this.axiosInstance.delete<T>(url, config);
     }
-
-    private handleUnauthorized(){
-        this.navigate("/login");
-    }
-
 }
 
 export default new AxiosAuth();
