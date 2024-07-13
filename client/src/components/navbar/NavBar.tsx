@@ -1,12 +1,11 @@
-"use client";
 import { IonIcon } from "@ionic/react";
 import {  menuOutline } from "ionicons/icons";
 import { navStyles, navInnerStyles, menuButtonStyles } from "../../config/theme/navbar.theme";
 import Logo from "./Logo";
 import TopbarMenu from "./TopbarMenu";
 import DropdownMenu from "./DropDownMenu";
-import { INavigationComponents } from "@/app/utils/templates/navigation-components";
-import { useDefaultNavBar } from "@/app/hooks/navbar/default";
+import { INavigationComponents } from "../../utils/templates/navigation-components";
+import { useDefaultNavBar } from "../../hooks/navbar/default";
 
 interface INavBarProps {
     topbarChildren?: React.ReactNode;

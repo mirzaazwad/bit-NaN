@@ -1,6 +1,6 @@
-import { useOptionsButton } from "@/app/config/theme/navbar.theme";
+import { useOptionsButton } from "../../config/theme/navbar.theme";
 import UserOptionsNavLink from "./UserOptionsNavLink";
-import { INavigationComponents } from "@/app/utils/templates/navigation-components";
+import { INavigationComponents } from "../../utils/templates/navigation-components";
 
 interface IUserOptionsProps {
     currentPath: string;

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export interface INavLinkProps {
     href: string;
@@ -9,7 +9,7 @@ export interface INavLinkProps {
 
 const NavLink = ({ href, currentPath, theme, children }: INavLinkProps) => {
     return (
-        <Link href={href}>
+        <Link to={href}>
                 <li className={theme(currentPath, href)}>{children}</li>
         </Link>
     );

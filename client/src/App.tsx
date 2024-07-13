@@ -1,25 +1,34 @@
 import { useState } from 'react'
-import './App.css'
+import HomeLayout from './pages/HomeLayout'
+import HomePage from './pages/HomePage'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AuthenticationLayout from './features/user-authentication/pages/AuthenticationLayout'
+import LoginPage from './features/user-authentication/pages/LoginPage'
+import RegisterPage from './features/user-authentication/pages/RegisterPage'
+import DashboardLayout from './features/dashboard/pages/DashboardLayout'
+import DashboardPage from './features/dashboard/pages/DashboardPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeLayout>
+        <HomePage/>
+      </HomeLayout>} />
+      <Route path="/login" element={<AuthenticationLayout>
+        <LoginPage/>
+      </AuthenticationLayout>} />
+      <Route path="/register" element={<AuthenticationLayout>
+        <RegisterPage/>
+      </AuthenticationLayout>} />
+      <Route path="/dashboard" element={<DashboardLayout>
+        <DashboardPage/>
+      </DashboardLayout>} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

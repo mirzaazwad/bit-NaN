@@ -1,5 +1,5 @@
 import { IonIcon } from "@ionic/react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export interface IUserOptionsNavLinkProps {
     href: string;
@@ -11,7 +11,7 @@ export interface IUserOptionsNavLinkProps {
 
 const UserOptionsNavLink = ({ href, currentPath,iconName, theme, children }: IUserOptionsNavLinkProps) => {
     return (
-        <Link href={href}>
+        <Link to={href}>
             <li className={theme(currentPath,href)}>
                 <IonIcon icon={iconName}></IonIcon> {children}
             </li>

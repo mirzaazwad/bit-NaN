@@ -1,15 +1,9 @@
-"use client";
-
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { clipboardSharp, logOutSharp, newspaperSharp, peopleCircleSharp, pricetagSharp, settingsSharp } from "ionicons/icons";
-
 import UserOptions from "./UserOptions";
 import StudyTimer from "../timer/StudyTimer";
 import TopbarUser from "./TopbarUser";
-import DropdownUser from "./DashboardUser";
+import DropdownUser from "./DropDownUser";
 import NavBar from "./NavBar";
-import { useLoggedInNavbar } from "@/app/hooks/navbar/loggedin";
+import { useLoggedInNavbar } from "../../hooks/navbar/loggedin";
 
 
 

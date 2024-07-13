@@ -5,8 +5,8 @@ import {
   menuOutline,
   peopleSharp,
 } from "ionicons/icons";
-import { INavigationComponents } from "@/app/utils/templates/navigation-components";
-import { usePathname } from "next/navigation";
+import { useLocation } from 'react-router-dom';
+import { INavigationComponents } from "../../utils/templates/navigation-components";
 
 export const useDefaultNavBar = (
   navigationContents: INavigationComponents[] | undefined
@@ -22,8 +22,8 @@ export const useDefaultNavBar = (
       { href: "/register", label: "Register", icon: checkboxSharp },
     ];
   };
-  const currentPath = usePathname();
-
+  const location = useLocation();
+  const currentPath=location.pathname;
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };

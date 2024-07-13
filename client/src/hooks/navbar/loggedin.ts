@@ -6,13 +6,14 @@ import {
   settingsSharp,
   logOutSharp,
 } from "ionicons/icons";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const useLoggedInNavbar = () => {
   const [userOptionsOpen, setUserOptionsOpen] = useState(false);
   const [openStudyTimer, setOpenStudyTimer] = useState(false);
-  const currentPath = usePathname();
+  const location = useLocation();
+  const currentPath=location.pathname;
   const toggleUserOptionsDropDown = () => {
     setUserOptionsOpen(!userOptionsOpen);
   };
