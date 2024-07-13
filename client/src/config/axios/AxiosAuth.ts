@@ -9,7 +9,7 @@ class AxiosAuth {
             function AuthTokenInject(
                 requestConfig: InternalAxiosRequestConfig
               ): InternalAxiosRequestConfig {
-                const token = localStorage.getItem("token");
+                const token = localStorage.getItem("access");
           
                 requestConfig.headers.Authorization = `Bearer ${token}`;
 
