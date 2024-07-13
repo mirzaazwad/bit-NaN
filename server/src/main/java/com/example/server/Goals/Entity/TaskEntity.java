@@ -17,19 +17,19 @@ import java.util.Date;
 @Document(collection = "tasks")
 public class TaskEntity {
     @Id
-    public String id;
+    private String id;
     @Field
     private String userEmail;
     @Field
-    public String Title;
+    private String title;
     @Field
-    public String Description;
+    private String description;
     @Field
-    public String Status;
+    private String status;
     @Field
-    public Date StartTime;
+    private Date startTime;
     @Field
-    public Date EndTime;
+    private Date endTime;
     @Field
-    public String Notes;
+    private String notes;
 }

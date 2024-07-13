@@ -32,12 +32,12 @@ public class GoalService implements IGoalService {
         TaskEntity updatedTask = TaskEntity.builder()
                 .id(id)
                 .userEmail(Reusables.getCurrentUsername())
-                .Title(taskRequest.getTitle())
-                .Description(taskRequest.getDescription())
-                .StartTime(taskRequest.getStartTime())
-                .EndTime(taskRequest.getEndTime())
-                .Status(taskRequest.getStatus())
-                .Notes(taskRequest.getNotes())
+                .title(taskRequest.getTitle())
+                .description(taskRequest.getDescription())
+                .startTime(taskRequest.getStartTime())
+                .endTime(taskRequest.getEndTime())
+                .status(taskRequest.getStatus())
+                .notes(taskRequest.getNotes())
                 .build();
         TaskEntity savedTask = this.taskRepository.save(updatedTask);
         return savedTask;
@@ -56,13 +56,13 @@ public class GoalService implements IGoalService {
 
     private TaskEntity ConvertToEntity(TaskRequest taskRequest){
         return TaskEntity.builder()
-                .Title(taskRequest.getTitle())
+                .title(taskRequest.getTitle())
                 .userEmail(Reusables.getCurrentUsername())
-                .Description(taskRequest.getDescription())
-                .Status(taskRequest.getStatus())
-                .StartTime(taskRequest.getStartTime())
-                .EndTime(taskRequest.getEndTime())
-                .Notes(taskRequest.getNotes())
+                .description(taskRequest.getDescription())
+                .status(taskRequest.getStatus())
+                .startTime(taskRequest.getStartTime())
+                .endTime(taskRequest.getEndTime())
+                .notes(taskRequest.getNotes())
                 .build();
     }
 

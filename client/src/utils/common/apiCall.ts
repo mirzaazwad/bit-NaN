@@ -1,4 +1,4 @@
-import AxiosAuth from "@/app/config/axios/AxiosAuth";
+import AxiosAuth from "../../config/axios/AxiosAuth";
 
 async function handleRequest<T>(request: () => Promise<T>): Promise<T | any> {
     try {

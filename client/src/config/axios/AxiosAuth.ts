@@ -38,6 +38,18 @@ class AxiosAuth {
         return this.axiosInstance.get<T>(url, config);
     }
 
+    public post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        return this.axiosInstance.post<T>(url, data, config);
+    }
+
+    public put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        return this.axiosInstance.put<T>(url, data, config);
+    }
+
+    public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        return this.axiosInstance.delete<T>(url, config);
+    }
+
     private handleUnauthorized(){
         this.navigate("/login");
     }
