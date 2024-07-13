@@ -5,7 +5,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Request;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,8 +21,8 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
-    private JWTService jwtService;
-    private UserDetailsService userDetailsService;
+    private final JWTService jwtService;
+    private final UserDetailsService userDetailsService;
 
     @Override
     protected void doFilterInternal(
@@ -38,7 +37,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
             jwt= authenticationHeader.substring(7);
-            email= jwtService.extract(jwt);
+            email=this.jwtService.extract(jwt);
             if(email!=null && SecurityContextHolder.getContext().getAuthentication()==null){
                 UserDetails userDetails=this.userDetailsService.loadUserByUsername(email);
                 if(jwtService.isTokenValiid(jwt,userDetails)){

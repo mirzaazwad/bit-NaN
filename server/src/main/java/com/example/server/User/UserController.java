@@ -1,9 +1,9 @@
 package com.example.server.User;
 
-import com.example.server.User.utils.AuthenticationRequest;
-import com.example.server.User.utils.AuthenticationResponse;
-import com.example.server.User.utils.ErrorResponse;
-import com.example.server.User.utils.RegisterRequest;
+import com.example.server.User.Core.DataTypeObjects.AuthenticationRequest;
+import com.example.server.User.Core.DataTypeObjects.AuthenticationResponse;
+import com.example.server.User.Core.DataTypeObjects.ErrorResponse;
+import com.example.server.User.Core.DataTypeObjects.RegisterRequest;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
