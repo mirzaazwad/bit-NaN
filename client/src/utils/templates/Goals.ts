@@ -1,3 +1,5 @@
+import { GoalStatus } from "../enums/GoalEnum";
+
 export interface GoalType{
     id:string,
     title:string,
@@ -6,5 +8,5 @@ export interface GoalType{
     startTime: Date,
     endTime: Date,
     notes:string,
-    status:string,
+    status:GoalStatus,
 }
