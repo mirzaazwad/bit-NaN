@@ -1,9 +1,10 @@
 import Axios, {AxiosInstance, AxiosRequestConfig, InternalAxiosRequestConfig, AxiosResponse} from 'axios';
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 
 class AxiosAuth {
     private axiosInstance: AxiosInstance;
-
+    private navigate = useNavigate();
+    
     constructor(){
         this.axiosInstance = Axios.create();
         this.axiosInstance.interceptors.request.use(
@@ -36,21 +37,9 @@ class AxiosAuth {
     public get<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
         return this.axiosInstance.get<T>(url, config);
     }
-    
-    public post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return this.axiosInstance.post<T>(url, data, config);
-    }
-
-    public put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return this.axiosInstance.put<T>(url, data, config);
-    }
-    public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
-        return this.axiosInstance.delete<T>(url, config);
-    }
 
     private handleUnauthorized(){
-        const router = useRouter();
-        router.push('/login');
+        this.navigate("/login");
     }
 
 }
