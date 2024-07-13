@@ -1,5 +1,6 @@
 "use client";
 import { useAppSelector } from "../../../stores/redux-store";
+import GoalsHelper from "../../../utils/helpers/goalsHelper";
 import DailyGoals from "../components/DailyGoals";
 import MonthlyGoals from "../components/MonthlyGoals";
 import SideNavGoals from "../components/SideNavGoals";
@@ -11,6 +12,8 @@ const GoalsPage = () => {
     const renderGoals = () => {
         return (activeTab === "daily") ? <DailyGoals /> : <MonthlyGoals />;
     }    
+
+    GoalsHelper.fetchGoalsByUser();
     
     return(
         <>
