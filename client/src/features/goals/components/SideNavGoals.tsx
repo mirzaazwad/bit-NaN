@@ -1,7 +1,7 @@
 "use client";
-import { SideNavButtonTheme } from "@/app/config/theme/reusable.theme";
-import { appStore, useAppSelector } from "@/app/stores/redux-store";
-import { goalActions } from "@/app/stores/slices/goals-slice";
+import { SideNavButtonTheme } from "../../../config/theme/reusable.theme";
+import { appStore, useAppSelector } from "../../../stores/redux-store";
+import { goalActions } from "../../../stores/slices/goals-slice";
 
 export default function SideNavGoals() {
 

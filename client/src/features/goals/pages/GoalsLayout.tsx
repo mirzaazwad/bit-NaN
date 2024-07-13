@@ -1,5 +1,6 @@
-import Footer from "@/app/components/footer/Footer";
-import NavBar from "../components/navbar/NavBarLoggedIn";
+import Footer from "../../../components/footer/Footer";
+import NavBarLoggedIn from "../../../components/navbar/NavBarLoggedIn";
+
 
 const GoalsLayout = ({
     children,
@@ -8,7 +9,7 @@ const GoalsLayout = ({
   }>) => {
     return ( 
         <div className="flex flex-col min-h-screen w-full">
-            <NavBar/>
+            <NavBarLoggedIn/>
             <main className="flex-grow min-h-screen pt-32">
                 {children}
             </main>

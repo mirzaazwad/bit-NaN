@@ -1,4 +1,4 @@
-import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
+import { HeaderBarTheme } from "../../../config/theme/reusable.theme";
 
 type Props = {
     name: string;
