@@ -28,6 +28,12 @@ public class TokenEntity {
     private Role role;
     @Field
     private String accessToken;
+    @Field
+    @Builder.Default
+    private Boolean expired=false;
+    @Field
+    @Builder.Default
+    private Boolean revoked=false;
     @Value("${application.security.jwt.refresh-token.expiration}")
     private static Integer expires_in;
 }

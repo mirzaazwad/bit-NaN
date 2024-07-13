@@ -11,6 +11,7 @@ import com.example.server.Configuration.JWTService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,7 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final JWTService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final UserDetailsService userDetailsService;
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user=userRepository.findByEmail(request.getEmail());
@@ -70,21 +72,39 @@ public class UserService {
                     ()->new Exception("Token not found")
             );
             String email=tokenFound.getEmail();
-            Role role=tokenFound.getRole();
-            Date issued_time=tokenFound.getIssued_time();
             var user=userRepository.findByEmail(email).orElseThrow(
                     ()->new Exception("Bad credentials")
             );
-            tokenRepository.deleteByRefreshToken(request.getRefresh()).orElseThrow(
+            var token=tokenRepository.findByRefreshToken(request.getRefresh()).orElseThrow(
                     ()->new Exception("Failed Delete of Refresh Token")
             );
+            if(jwtService.isTokenExpired(token.getRefreshToken())){
+                token.setExpired(true);
+                token.setRevoked(true);
+                tokenRepository.save(token);
+                throw new Exception("Token Expired");
+            }
             var accessToken=jwtService.generateToken(user);
-            var token=TokenEntity.builder().accessToken(accessToken).refreshToken(request.getRefresh()).issued_time(issued_time).role(role).email(email).build();
+            token.setAccessToken(accessToken);
             tokenRepository.save(token);
             return TokenResponse.builder().access(accessToken).message("Successfully Authenticated").build();
         }
         catch(Exception e){
             return TokenResponse.ErrorResponse(e.getMessage());
+        }
+    }
+
+    public TokenVerificationResponse verify(TokenVerificationRequest request){
+        try{
+            String email=this.jwtService.extract(request.getAccess());
+            var userDetails=userDetailsService.loadUserByUsername(email);
+            if(jwtService.isTokenValid(request.getAccess(), userDetails)){
+                return TokenVerificationResponse.builder().verified(true).build();
+            }
+            return TokenVerificationResponse.builder().verified(false).build();
+        }
+        catch(Exception e){
+            return TokenVerificationResponse.builder().verified(false).build();
         }
     }
 }

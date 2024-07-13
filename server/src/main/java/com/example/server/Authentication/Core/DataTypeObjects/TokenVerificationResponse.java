@@ -1,6 +1,5 @@
 package com.example.server.Authentication.Core.DataTypeObjects;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TokenRequest {
-    private String refresh;
+public class TokenVerificationResponse {
+    private Boolean verified;
 }
