@@ -1,9 +1,7 @@
 import Axios, {AxiosInstance, AxiosRequestConfig, InternalAxiosRequestConfig, AxiosResponse} from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 class AxiosAuth {
     private axiosInstance: AxiosInstance;
-    private navigate = useNavigate();
     
     constructor(){
         this.axiosInstance = Axios.create();
@@ -11,7 +9,7 @@ class AxiosAuth {
             function AuthTokenInject(
                 requestConfig: InternalAxiosRequestConfig
               ): InternalAxiosRequestConfig {
-                const token = localStorage.getItem("token");
+                const token = localStorage.getItem("access");
           
                 requestConfig.headers.Authorization = `Bearer ${token}`;
 
@@ -27,7 +25,7 @@ class AxiosAuth {
             (response: AxiosResponse) => response,
             (error) => {
                 if(error.response?.status === 401){
-                    this.handleUnauthorized();
+                    console.log("Unauthorized");
                 }
                 return Promise.reject(error);
             }
@@ -38,10 +36,17 @@ class AxiosAuth {
         return this.axiosInstance.get<T>(url, config);
     }
 
-    private handleUnauthorized(){
-        this.navigate("/login");
+    public post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        return this.axiosInstance.post<T>(url, data, config);
     }
 
+    public put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        return this.axiosInstance.put<T>(url, data, config);
+    }
+
+    public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+        return this.axiosInstance.delete<T>(url, config);
+    }
 }
 
 export default new AxiosAuth();

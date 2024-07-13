@@ -1,4 +1,3 @@
-import { HeaderBarTheme } from "@/app/config/theme/reusable.theme";
 import TaskContainer from "./TaskContainer";
 
 export default function DailyGoals() {
