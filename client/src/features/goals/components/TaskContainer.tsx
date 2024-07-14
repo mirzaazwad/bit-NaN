@@ -19,29 +19,31 @@ export default function TaskContainer (props:Props) {
 
     return(
         <>
-            <div className="rounded w-full bg-gray-100 max-h-screen">
+            <div className="rounded w-full bg-gray-100 max-h-screen overflow-y-auto">
                 <div className={HeaderBarTheme}><h3 className="font-semibold text-xl text-white">{props.name}</h3></div>
-                <div className="py-2 flex flex-col items-center justify-center">
-                    {props.goals.length > 0 ? (props.goals.map((goal: GoalType, index: number) => (
-                        <React.Fragment key={index}>
-                            <Goal goal={goal}/>
-                        </React.Fragment>
-                    ))): (
-                        <>
-                            <div className="px-2">
-                                <p>No Tasks to show</p>
+                <div className="overflow-y-auto">
+                    <div className="py-1 flex flex-col items-center justify-center ">
+                        {props.goals.length > 0 ? (props.goals.map((goal: GoalType, index: number) => (
+                            <React.Fragment key={index}>
+                                <Goal goal={goal}/>
+                            </React.Fragment>
+                        ))): (
+                            <>
+                                <div className="px-2">
+                                    <p>No Tasks to show</p>
+                                </div>
+                            </>
+                        )}
+                        {props.name === "ToDo" ? (
+                            <div className="w-full">
+                                <Button className="w-full" block appearance="subtle" onClick={renderModal}>
+                                    Create new task
+                                </Button>
                             </div>
-                        </>
-                    )}
-                    {props.name === "ToDo" ? (
-                        <div className="w-full">
-                            <Button className="w-full" block appearance="subtle" onClick={renderModal}>
-                                Create new task
-                            </Button>
-                        </div>
-                    ):(
-                        <></>
-                    )}
+                        ):(
+                            <></>
+                        )}
+                    </div>
                 </div>
             </div>
         </>

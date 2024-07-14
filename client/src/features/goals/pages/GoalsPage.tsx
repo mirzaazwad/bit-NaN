@@ -14,34 +14,43 @@ const GoalsPage = () => {
 
     const renderGoals = () => {
         return (activeTab === "daily") ? <DailyGoals /> : <MonthlyGoals />;
-    }    
+    }
 
     const fetchGoals = async () => {
         await GoalsHelper.fetchGoalsByUser();
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchGoals();
     }, [loading === false]);
-    
-    return(
-       <AuthenticatedLayout>
-         <div className="flex w-full min-h-screen">
-            <div className="flex flex-row w-full h-full">
-                <div className="flex w-1/4">
-                    
-                </div>
-                <div className="flex w-1/2 w-full">
-                    <div className="p-4 w-full">
-                    {renderGoals()}
+
+    return (
+        <AuthenticatedLayout>
+            <div className="flex w-full min-h-screen">
+                <div className="flex flex-col w-full ">
+                    {activeTab === "daily" ? (
+                        <div className="flex w-full items-center justify-center">
+                            <div className="text-center p-4 bg-white shadow-lg rounded-lg">
+                                <p className="text-3xl text-blue-500 font-bold">{new Date().toLocaleDateString()}</p>
+                            </div>
+                        </div>
+                    ) : (<></>)}
+                    <div className="flex flex-row w-full h-full">
+                        <div className="flex w-1/4">
+
+                        </div>
+                        <div className="flex w-1/2 w-full">
+                            <div className="p-4 w-full">
+                                {renderGoals()}
+                            </div>
+                        </div>
+                        <div className="flex w-1/4">
+                            <SideNavGoals />
+                        </div>
                     </div>
                 </div>
-                <div className="flex w-1/4">
-                    <SideNavGoals />
-                </div>
             </div>
-        </div>
-       </AuthenticatedLayout>
+        </AuthenticatedLayout>
     );
 }
 

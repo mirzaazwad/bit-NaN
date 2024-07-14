@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'rsuite';
+import { useState } from 'react';
+import { Modal, Button, IconButton } from 'rsuite';
 import { ModalControlUtils } from '../../utils/helpers/modalHelper';
 import { appStore, useAppSelector } from '../../stores/redux-store';
 import { goalCardBadgeTheme, goalCardHeaderTheme } from '../../config/theme/reusable.theme';
@@ -9,7 +9,7 @@ import { GoalStatus } from '../../utils/enums/GoalEnum';
 import { GoalType } from '../../utils/templates/Goals';
 import { loaderActions } from '../../stores/slices/loader-slice';
 import GoalsHelper from '../../utils/helpers/goalsHelper';
-
+import TrashIcon from '@rsuite/icons/Trash';
 const GoalDetailModal = () => {
     const data = useAppSelector(state => state.modal?.data);
 
@@ -47,17 +47,33 @@ const GoalDetailModal = () => {
         ModalControlUtils.removeModal();
         appStore.dispatch(loaderActions.turnOnWithMessage("Saving Task..."));
         GoalsHelper.AddOrEditNewTask(goalData)
-        .then(() => {
-          
-        })
-        .catch((error) => {
-          
-          console.error('Error saving task:', error);
-        })
-        .finally(() => {
-          appStore.dispatch(loaderActions.turnOff());
-        });
+            .then(() => {
+
+            })
+            .catch((error) => {
+
+                console.error('Error saving task:', error);
+            })
+            .finally(() => {
+                appStore.dispatch(loaderActions.turnOff());
+            });
     }
+
+    const deleteEvent = () => {
+        ModalControlUtils.removeModal();
+        appStore.dispatch(loaderActions.turnOnWithMessage("Deleting Task..."));
+        GoalsHelper.deleteTask(goalData.id)
+            .then(() => {
+
+            })
+            .catch((error) => {
+
+                console.error('Error saving task:', error);
+            })
+            .finally(() => {
+                appStore.dispatch(loaderActions.turnOff());
+            });
+    } 
 
     return (
         <>
@@ -146,18 +162,32 @@ const GoalDetailModal = () => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer className='p-2'>
-                    <Button
-                        onClick={handleSubmit}
-                        appearance='primary'
-                        className={`${goalCardHeaderTheme(goalData.status)}`}
-                    >Save</Button>
-                    <Button
-                        onClick={removeModal}
-                        appearance="primary"
-                        className={`${goalCardHeaderTheme(goalData.status)}`}
-                    >
-                        Close
-                    </Button>
+                    <div className='flex flex-row w-full'>
+                        <div className='flex justify-start w-1/2'>
+                            <IconButton
+                                onClick={deleteEvent}
+                                appearance='subtle'
+                                className={`${goalCardHeaderTheme(goalData.status)} hover:text-black hover:bg-gray-700`}
+                                icon={<TrashIcon />}
+                            >
+                                <span className='text-white '>Delete</span>
+                            </IconButton> 
+                        </div>
+                        <div className='flex justify-end w-1/2'>
+                            <Button
+                                onClick={handleSubmit}
+                                appearance='primary'
+                                className={`${goalCardHeaderTheme(goalData.status)} hover:text-white hover:bg-gray-700`}
+                            >Save</Button>
+                            <Button
+                                onClick={removeModal}
+                                appearance="primary"
+                                className={`${goalCardHeaderTheme(goalData.status)} hover:text-white hover:bg-gray-700`}
+                            >
+                                Close
+                            </Button>
+                        </div>
+                    </div>
                 </Modal.Footer>
             </Modal>
         </>

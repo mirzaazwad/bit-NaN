@@ -1,7 +1,7 @@
 import { API_ROUTES } from "../../api/apiRoutes";
 import { appStore } from "../../stores/redux-store";
 import { goalActions } from "../../stores/slices/goals-slice";
-import { getData, postData, putData } from "../common/apiCall";
+import { deleteData, getData, postData, putData } from "../common/apiCall";
 import { GoalStatus } from "../enums/GoalEnum";
 import { GoalType } from "../templates/Goals";
 
@@ -39,6 +39,11 @@ class GoalsHelper{
 
     static async updateTask(data: GoalType): Promise<GoalType> {
         const response = await putData(`${API_ROUTES.goals.update}/${data.id}`, data);
+        return response.data;
+    }
+
+    static async deleteTask(id: string): Promise<void> {
+        const response = await deleteData(`${API_ROUTES.goals.delete}/${id}`);
         return response.data;
     }
 
