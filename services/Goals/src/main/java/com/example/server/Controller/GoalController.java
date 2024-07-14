@@ -1,7 +1,7 @@
-package com.example.server.Goals.Controller;
+package com.example.server.Controller;
 
-import com.example.server.Goals.Core.DataTransferObjects.TaskRequest;
-import com.example.server.Goals.Core.DataTransferObjects.ErrorResponse;
+import com.example.server.Core.DataTransferObjects.TaskRequest;
+import com.example.server.Core.DataTransferObjects.ErrorResponse;
 import com.example.server.Service.GoalService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/v1/goals")
+@RequestMapping("/goals")
 @RequiredArgsConstructor
 @Tag(name="Goals")
 public class GoalController {
