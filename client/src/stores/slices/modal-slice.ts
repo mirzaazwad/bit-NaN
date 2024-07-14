@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ModalStoreType } from "../../utils/templates/modalType";
+import { ModalName } from "../../utils/enums/ModalEnums";
 
 const initState: ModalStoreType = {
     type: "",
@@ -18,7 +19,7 @@ const modalSlice = createSlice({
         },
         updateModalType: (
             state: ModalStoreType,
-            action: PayloadAction<string>
+            action: PayloadAction<ModalName>
         ) =>{
             state.type = action.payload;
         },

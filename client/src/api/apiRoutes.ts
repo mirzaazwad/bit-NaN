@@ -6,7 +6,7 @@ export const API_ROUTES = {
         fetchByCurrentUser: `${BASE_URL}/api/v1/goals/fetch`,
         update: `${BASE_URL}/api/v1/goals/update`,
         fetchBYId: `${BASE_URL}/api/v1/goals/fetch`,
-        delete: `${BASE_URL}/api/v1/goals/delete`
+        delete: `${BASE_URL}/api/v1/goals`
     },
     auth:{
         login: `${BASE_URL}/api/v1/auth/authenticate`,
