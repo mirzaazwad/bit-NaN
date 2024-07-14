@@ -37,7 +37,7 @@ const Goal = (props: Props) => {
                 </h3>
             </div>
             <div className="p-4">
-                <p className="text-gray-600 max-h-20 overflow-y-auto">{props.goal.description}</p>
+                <p className="text-gray-600 h-20 overflow-y-auto">{props.goal.description}</p>
                 <div className="mt-4 flex justify-between items-center">
                     <span className="text-sm text-gray-500">
                         {new Date(props.goal.startTime).toLocaleDateString()}

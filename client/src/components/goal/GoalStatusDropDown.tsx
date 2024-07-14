@@ -5,7 +5,7 @@ import { goalCardBadgeTheme } from '../../config/theme/reusable.theme';
 
 interface Props {
     currentStatus: string;
-    onChangeStatus: (status: string) => void;
+    onChangeStatus: (status: GoalStatus) => void;
 }
 
 const statuses = [GoalStatus.ToDo, GoalStatus.InProgress, GoalStatus.Done];

@@ -7,20 +7,24 @@ export interface ILoader {
 
 const initialState: ILoader = {
     isLoading: false,
-    message: ''
+    message: 'Loading...'
 }
 
 const loaderSlice = createSlice({
     name: 'loader',
     initialState:initialState,
     reducers: {
-        turnOn: (state: ILoader, action: PayloadAction<ILoader>) => {
+        turnOn: (state: ILoader) => {
             state.isLoading = true;
-            state.message = action.payload.message;
         },
         turnOff: (state:ILoader) => {
             state.isLoading = false;
             state.message = '';
+        },
+        turnOnWithMessage: (state: ILoader, action: PayloadAction<string>) => {
+            state.isLoading = true;
+            state.message = action.payload;
+        
         }
     }
 });

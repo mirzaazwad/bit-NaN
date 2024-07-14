@@ -13,7 +13,7 @@ import Error500 from './components/error/error500'
 import Error401 from './components/error/error401'
 import Error403 from './components/error/error403'
 import LogOut from './features/user-authentication/pages/LogOut'
-import { Suspense, lazy } from 'react'
+import {Suspense, lazy } from 'react'
 import 'rsuite/dist/rsuite.min.css';
 const ModalSelector = lazy(() => import('./components/ModalSelector'));
 
@@ -39,7 +39,7 @@ function App() {
         <Route path="/error403" element={<Error403 />} />
         <Route path="/error500" element={<Error500 />} />
       </Routes>
-      <Suspense>
+      <Suspense fallback={null}>
         <ModalSelector />
       </Suspense>
     </>
