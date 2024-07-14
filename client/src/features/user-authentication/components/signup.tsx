@@ -17,7 +17,7 @@ const RegisterCard = () => {
       <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <h5 className="text-xl font-medium text-black">Register</h5>
         {errors.submit && (
-          <Message type="error" showIcon closable>
+          <Message type="error" showIcon closable className="bg-red-600 text-white">
             {errors.submit.message instanceof String ? errors.submit.message : "Server Error"}
           </Message>
         )}
@@ -32,7 +32,7 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.username && (
-            <Message type="error" showIcon closable>
+            <Message type="error" showIcon closable className="bg-red-600 text-white">
               Username must be present
             </Message>
           )}
@@ -48,7 +48,7 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.email && (
-            <Message type="error" showIcon closable>
+            <Message type="error" showIcon closable className="bg-red-600 text-white">
               Invalid Email
             </Message>
           )}
@@ -64,7 +64,7 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.password && (
-            <Message type="error" showIcon closable>
+            <Message type="error" showIcon closable className="bg-red-600 text-white">
               Password should be of more than 8 characters, with at least one uppercase letter, one lowercase letter, one number and one special character
             </Message>
           )}
@@ -88,7 +88,7 @@ const RegisterCard = () => {
             className={authenticationInputBox()}
           />
           {errors.confirmPassword && (
-            <Message type="error" showIcon closable>
+            <Message type="error" showIcon closable className="bg-red-600 text-white">
               Passwords do not match
             </Message>
           )}
