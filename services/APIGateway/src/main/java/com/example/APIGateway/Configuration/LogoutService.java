@@ -1,5 +1,5 @@
 package com.example.APIGateway.Configuration;
-import com.example.APIGateway.Authentication.Repository.TokenRepository;
+import com.example.APIGateway.Repository.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
