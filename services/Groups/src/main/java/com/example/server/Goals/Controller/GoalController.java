@@ -2,12 +2,9 @@ package com.example.server.Goals.Controller;
 
 import com.example.server.Goals.Core.DataTransferObjects.TaskRequest;
 import com.example.server.Goals.Core.DataTransferObjects.ErrorResponse;
-import com.example.server.Goals.Core.Interfaces.IGoalService;
-import com.example.server.Goals.Entity.TaskEntity;
-import com.example.server.Goals.Service.GoalService;
+import com.example.server.Service.GoalService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
