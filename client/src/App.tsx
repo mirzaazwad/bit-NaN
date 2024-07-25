@@ -15,6 +15,7 @@ import Error403 from './components/error/error403'
 import LogOut from './features/user-authentication/pages/LogOut'
 import {Suspense, lazy } from 'react'
 import 'rsuite/dist/rsuite.min.css';
+import Groups from './features/groups/pages/Groups'
 const ModalSelector = lazy(() => import('./components/ModalSelector'));
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="forum" element={<ForumPage />} />
           <Route path="forum/:id" element={<ForumSubPage />} />
           <Route path="goals" element={<GoalsPage />} />
+          <Route path="groups" element={<Groups />}/>
           <Route path="logout" element={<LogOut />} />
         </Route>
         <Route path="/error404" element={<Error404 />} />
