@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderBarTheme } from "../../../config/theme/reusable.theme";
+import { HeaderBarTheme, taskContainerLayout, taskContainerWrapperTheme } from "../../../config/theme/reusable.theme";
 import { GoalType } from "../../../utils/templates/Goals";
 import Goal from "../../../components/goal/Goal";
 import { Button } from "rsuite";
@@ -9,6 +9,7 @@ import { ModalName } from "../../../utils/enums/ModalEnums";
 type Props = {
     name: string;
     goals: GoalType[] | [];
+    view: string;
 }
 
 export default function TaskContainer (props:Props) {
@@ -19,10 +20,10 @@ export default function TaskContainer (props:Props) {
 
     return(
         <>
-            <div className="rounded w-full bg-gray-100 max-h-screen overflow-y-auto">
+            <div className={`${taskContainerWrapperTheme(props.view)}`}>
                 <div className={HeaderBarTheme}><h3 className="font-semibold text-xl text-white">{props.name}</h3></div>
                 <div className="overflow-y-auto">
-                    <div className="py-1 flex flex-col items-center justify-center ">
+                    <div className={`py-1 ${taskContainerLayout(props.view)}`}>
                         {props.goals.length > 0 ? (props.goals.map((goal: GoalType, index: number) => (
                             <React.Fragment key={index}>
                                 <Goal goal={goal}/>

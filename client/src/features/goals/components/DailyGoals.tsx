@@ -10,13 +10,13 @@ export default function DailyGoals() {
         <>
             <div className="flex flex-row w-full">
                 <div className="flex w-1/3 p-1">
-                    <TaskContainer name="ToDo" goals ={toDoGoals}/>
+                    <TaskContainer name="ToDo" goals ={toDoGoals} view="broad"/>
                 </div>
                 <div className="flex w-1/3 p-1">
-                    <TaskContainer name="In Progress" goals={inProgressGoals}/>
+                    <TaskContainer name="In Progress" goals={inProgressGoals} view="broad"/>
                 </div>
                 <div className="flex w-1/3 p-1">
-                    <TaskContainer name="Done" goals={doneGoals}/>  
+                    <TaskContainer name="Done" goals={doneGoals} view="broad"/>  
                 </div>
             </div>
         </>
