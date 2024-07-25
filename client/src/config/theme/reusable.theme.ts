@@ -17,3 +17,14 @@ export const goalCardHeaderTheme =(status:string): string =>{
 export const goalCardBadgeTheme = (status: string): string => {
     return `inline-block px-2 py-1 text-xs font-semibold rounded ${status === GoalStatus.Done ? 'bg-green-200 text-green-800' : status === GoalStatus.InProgress ? 'bg-yellow-200 text-yellow-800' : 'bg-blue-200 text-blue-800'}`;
 }
+
+export const taskContainerWrapperTheme = (view: string): string => {
+    return `${view === "broad" ? "rounded w-full bg-gray-100 max-h-screen overflow-y-auto":"rounded mt-1"}`;
+}
+
+export const taskContainerLayout = (view:string): string => {
+    return `${view === "broad" ? 
+    "flex flex-col items-center justify-center" 
+    : 
+    "flex flex-row justify-start"}`;
+}

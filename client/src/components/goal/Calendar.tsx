@@ -3,7 +3,6 @@ import moment from 'moment';
 import { useAppSelector } from '../../stores/redux-store';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { ModalControlUtils } from '../../utils/helpers/modalHelper';
-import { goalActions } from '../../stores/slices/goals-slice';
 import { ModalName } from '../../utils/enums/ModalEnums';
 
 const Calendar = () => {

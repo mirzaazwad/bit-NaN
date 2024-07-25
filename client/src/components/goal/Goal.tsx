@@ -40,7 +40,7 @@ const Goal = (props: Props) => {
                 <p className="text-gray-600 h-20 overflow-y-auto">{props.goal.description}</p>
                 <div className="mt-4 flex justify-between items-center">
                     <span className="text-sm text-gray-500">
-                        {new Date(props.goal.startTime).toLocaleDateString()}
+                        Deadline: {new Date(props.goal.endTime).toLocaleDateString()}
                     </span>
                     <span className={goalCardBadgeTheme(props.goal.status)}>
                         {props.goal.status}
