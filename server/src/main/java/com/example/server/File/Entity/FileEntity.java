@@ -29,4 +29,11 @@ public class FileEntity {
     @Field
     private String category;
 
+    public FileEntity(String user, String name, String url, Date uploadDateTime, String category) {
+        this.user = user;
+        this.name = name;
+        this.url = url;
+        this.uploadDateTime = uploadDateTime;
+        this.category = category;
+    }
 }

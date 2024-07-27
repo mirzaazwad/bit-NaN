@@ -32,7 +32,7 @@ public class CloudinaryConfig {
     }
 
     public static String constructFileUrl(MultipartFile file){
-        String name = file.getName();
+        String name = file.getOriginalFilename();
         String formattedDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
         return name + "$_" + formattedDate;

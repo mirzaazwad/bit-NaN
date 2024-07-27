@@ -2,6 +2,7 @@ package com.example.server.File.Controller;
 
 import com.example.server.File.Core.DataTransferObjects.FileRequest;
 import com.example.server.File.Core.Interfaces.ICloudinaryService;
+import com.example.server.File.Service.MongoDBService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,16 +19,16 @@ import java.util.Map;
 public class FileController {
 
     private final ICloudinaryService service;
-
+    private final MongoDBService mongoDBService;
     @PostMapping(value = "/upload", consumes = {"multipart/form-data"})
     public ResponseEntity<?> uploadFile(@RequestPart("file") MultipartFile file, @RequestParam("category") String category){
         try{
             FileRequest fileRequest = new FileRequest(file, category);
             Map uploadResult = service.uploadFile(fileRequest.getFile());
-            System.out.println(uploadResult);
+            mongoDBService.saveFileInfo(fileRequest, category, uploadResult);
             return ResponseEntity.ok("File uploaded successfully");
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error uploading file");
+            return ResponseEntity.status(500).body("Error uploading file "+e);
         }
     }
 }
