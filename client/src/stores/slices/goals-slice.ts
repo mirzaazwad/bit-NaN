@@ -4,11 +4,13 @@ import { GoalType } from "../../utils/templates/Goals";
 export interface Goal {
   layoutType: string;
   goals: GoalType[];
+  currentGoals: GoalType[];
 }
 
 const initGoalState: Goal = {
     layoutType: "daily",  
     goals: [],
+    currentGoals: [],
 };
 
 export const goalSlice = createSlice({
@@ -20,6 +22,9 @@ export const goalSlice = createSlice({
         },
         setGoals: (state, action: PayloadAction<GoalType[]>) => {
             state.goals = action.payload;
+        },
+        setCurrentGoals: (state, action: PayloadAction<GoalType[]>) => {
+            state.currentGoals = action.payload;
         }
     },
 });

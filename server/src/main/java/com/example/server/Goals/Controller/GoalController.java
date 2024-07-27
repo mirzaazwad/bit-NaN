@@ -3,11 +3,8 @@ package com.example.server.Goals.Controller;
 import com.example.server.Goals.Core.DataTransferObjects.TaskRequest;
 import com.example.server.Goals.Core.DataTransferObjects.ErrorResponse;
 import com.example.server.Goals.Core.Interfaces.IGoalService;
-import com.example.server.Goals.Entity.TaskEntity;
-import com.example.server.Goals.Service.GoalService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name="Goals")
 public class GoalController {
 
-    private final GoalService goalService;
+    private final IGoalService goalService;
     @PostMapping("/create")
     public ResponseEntity<?> createTask(@RequestBody TaskRequest taskRequest){
         try{
@@ -29,10 +26,20 @@ public class GoalController {
             return ResponseEntity.internalServerError().body(errorResponse);
         }
     }
-    @GetMapping("/fetch")
+    @GetMapping("/fetchAll")
     public ResponseEntity<?> fetchTasks(){
         try{
             return ResponseEntity.ok(goalService.FetchAllTasksByCurrentUser());
+        }catch(Exception e){
+            System.out.println("Exception occurred: " + e);
+            ErrorResponse errorResponse = new ErrorResponse("An error occurred while fetching tasks: " + e.getMessage());
+            return ResponseEntity.internalServerError().body(errorResponse);
+        }
+    }
+    @GetMapping("/fetchToday")
+    public ResponseEntity<?> fetchTodayTasks(){
+        try{
+            return ResponseEntity.ok(goalService.FetchCurrentDayTasksByUser());
         }catch(Exception e){
             System.out.println("Exception occurred: " + e);
             ErrorResponse errorResponse = new ErrorResponse("An error occurred while fetching tasks: " + e.getMessage());
