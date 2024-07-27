@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -25,7 +26,14 @@ public class GoalService implements IGoalService {
     @Override
     public List<TaskEntity> FetchAllTasksByCurrentUser() {
         String user = Reusables.getCurrentUsername();
-        return this.taskRepository.findUserByUserEmail(user);
+        return this.taskRepository.findByUserEmail(user);
+    }
+
+    @Override
+    public List<TaskEntity> FetchCurrentDayTasksByUser(){
+        String user = Reusables.getCurrentUsername();
+        LocalDateTime now = LocalDateTime.now();
+        return this.taskRepository.findTasksByUserAndDateRange(user, now);
     }
 
     @Override
