@@ -12,6 +12,12 @@ class GoalsHelper{
         return response.data as GoalType[];
     }
 
+    static async fetchGoalsOfToday(): Promise<GoalType[]> {
+        const response = await getData(API_ROUTES.goals.fetchByDate);
+        this.setData(response.data, goalActions.setCurrentGoals);
+        return response.data as GoalType[];
+    }
+
     static setData<T>(data: T, actionCreator: (data: T) => any): void {
         appStore.dispatch(actionCreator(data));
     }

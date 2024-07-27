@@ -4,7 +4,7 @@ import TaskContainer from "./TaskContainer";
 
 export default function DailyGoals() {
 
-    const goals = useAppSelector(state => state.goal.goals);
+    const goals = useAppSelector(state => state.goal.currentGoals);
     const [toDoGoals, inProgressGoals, doneGoals] = GoalsHelper.separateGoals(goals);
     return(
         <>
