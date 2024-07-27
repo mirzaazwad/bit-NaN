@@ -17,8 +17,8 @@ const GoalsPage = () => {
     }
 
     const fetchGoals = async () => {
-        await GoalsHelper.fetchGoalsByUser();
         await GoalsHelper.fetchGoalsOfToday();
+        await GoalsHelper.fetchGoalsByUser();
     }
 
     useEffect(() => {

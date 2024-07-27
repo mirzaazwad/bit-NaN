@@ -4,26 +4,25 @@ import com.example.server.File.Core.DataTransferObjects.FileRequest;
 import com.example.server.File.Core.Interfaces.ICloudinaryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/file")
+@RequestMapping("/api/v1/files")
 @RequiredArgsConstructor
 @Tag(name="Files")
 public class FileController {
 
     private final ICloudinaryService service;
 
-    @PostMapping("/upload")
-    public ResponseEntity<?> uploadFile(@RequestBody FileRequest fileRequest){
+    @PostMapping(value = "/upload", consumes = {"multipart/form-data"})
+    public ResponseEntity<?> uploadFile(@RequestPart("file") MultipartFile file, @RequestParam("category") String category){
         try{
+            FileRequest fileRequest = new FileRequest(file, category);
             Map uploadResult = service.uploadFile(fileRequest.getFile());
             System.out.println(uploadResult);
             return ResponseEntity.ok("File uploaded successfully");
