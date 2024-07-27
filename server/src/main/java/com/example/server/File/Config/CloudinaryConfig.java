@@ -5,7 +5,10 @@ import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Configuration
@@ -26,5 +29,12 @@ public class CloudinaryConfig {
                 "unique_filename", false,
                 "overwrite", false
         );
+    }
+
+    public static String constructFileUrl(MultipartFile file){
+        String name = file.getName();
+        String formattedDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+
+        return name + "$_" + formattedDate;
     }
 }
