@@ -5,6 +5,7 @@ type Props = {
     size: Size;
     image: any;
     setImage: (value: any) => void;
+    type?: string;
 }
 const ImageComponent = (props: Props) => {
 
@@ -31,7 +32,7 @@ const ImageComponent = (props: Props) => {
                     src={props.image}
                 >
 
-                    {!props.image && <PeoplesIcon />}
+                    {!props.image && (props.type === "profile" ? null : <PeoplesIcon />)}
                 </Avatar>
             </label>
             <input

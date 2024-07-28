@@ -1,6 +1,6 @@
 import { HeaderBarTheme } from "../../../config/theme/reusable.theme";
 import GroupMinimal from "../../../components/group/GroupMinimal";
-import AddButton from "../../../components/common/AddButton";
+import AddButton from "../../../components/general/AddButton";
 import { ModalControlUtils } from "../../../utils/helpers/modalHelper";
 import { ModalName } from "../../../utils/enums/ModalEnums";
 const GroupList = () => {

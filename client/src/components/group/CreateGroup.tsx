@@ -1,10 +1,10 @@
 import { Button, Modal } from "rsuite";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import { InputComponent } from "../goal/CommonComponents";
-import AddMembers from "../common/AddMembers";
+import AddMembers from "../general/AddMembers";
 import { Tag } from "../../utils/templates/Groups";
 import { useState } from "react";
-import ImageComponent from "../common/ImageComponent";
+import ImageComponent from "../general/ImageComponent";
 
 const CreateGroup = () => {
 
