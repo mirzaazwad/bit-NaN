@@ -1,4 +1,4 @@
-import AddButton from "../../../components/group/AddButton";
+import AddButton from "../../../components/common/AddButton";
 import UserMinimal from "../../../components/userdetails/UserMinimal";
 import { HeaderBarTheme } from "../../../config/theme/reusable.theme";
 
