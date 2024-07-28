@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -26,7 +27,11 @@ public class FileController {
             FileRequest fileRequest = new FileRequest(file, category);
             Map uploadResult = service.uploadFile(fileRequest.getFile());
             mongoDBService.saveFileInfo(fileRequest, category, uploadResult);
-            return ResponseEntity.ok("File uploaded successfully");
+
+            Map<String, Object> responseObj = new HashMap<>();
+            responseObj.put("url", uploadResult.get("url"));
+            responseObj.put("message", "File uploaded successfully");
+            return ResponseEntity.ok(responseObj);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error uploading file "+e);
         }
