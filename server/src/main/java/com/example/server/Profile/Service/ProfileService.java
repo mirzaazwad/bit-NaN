@@ -35,5 +35,11 @@ public class ProfileService implements IProfileService {
         this.repository.save(newProfile);
     }
 
+    @Override
+    public ProfileEntity getCurrentUserProfile(){
+        String currentUserEmail = Reusables.getCurrentUsername();
+        List<ProfileEntity> profiles = this.repository.findByUserEmail(currentUserEmail);
 
+        return profiles.isEmpty() ? new ProfileEntity() : profiles.get(0);
+    }
 }

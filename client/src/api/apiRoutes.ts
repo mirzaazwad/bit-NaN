@@ -20,7 +20,8 @@ export const API_ROUTES = {
         upload: `${BASE_URL}/api/v1/files/upload`
     },
     profile:{
-        update: `${BASE_URL}/api/v1/profile/update`
+        update: `${BASE_URL}/api/v1/profile/update`,
+        fetch: `${BASE_URL}/api/v1/profile/`
     },
     groups:{
         create: `${BASE_URL}/api/v1/groups/create`

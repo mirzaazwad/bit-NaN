@@ -1,5 +1,5 @@
 import { API_ROUTES } from "../../api/apiRoutes";
-import { postData } from "../common/apiCall";
+import { getData, postData } from "../common/apiCall";
 import { FileType } from "../enums/FileEnums";
 import FileHelper from "./fileHelper";
 
@@ -22,6 +22,11 @@ class ProfileHelper{
 
         const response = await postData(API_ROUTES.profile.update, request);
         return response.data;
+    }
+
+    static async getProfile(): Promise<any>{
+        const response = await getData(API_ROUTES.profile.fetch);
+        return response.data.profile;
     }
 }
 

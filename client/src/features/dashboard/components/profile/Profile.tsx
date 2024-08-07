@@ -3,8 +3,9 @@ import { Button, Divider } from "rsuite";
 import EditIcon from '@rsuite/icons/Edit';
 import { InputComponent } from "../../../../components/goal/CommonComponents";
 import ImageComponent from "../../../../components/general/ImageComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProfileHelper from "../../../../utils/helpers/profileHelper";
+import FileHelper from "../../../../utils/helpers/fileHelper";
 const Profile = () => {
 
     const [image, setImage] = useState(undefined);
@@ -16,12 +17,26 @@ const Profile = () => {
                 username: username,
                 picture: image 
             }
-            const response = await ProfileHelper.updateProfile(data);
-            console.log(response);
+            await ProfileHelper.updateProfile(data);
         }catch(error){
             console.log(error);
         }
     }
+
+    const fetchData = async () => {
+        try{
+            const response = await ProfileHelper.getProfile();
+            const image = await FileHelper.getFile(response.picture);
+            setImage(image);
+            setUsername(response.userName);
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
 
     return (
 
