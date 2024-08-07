@@ -2,20 +2,25 @@ import { Button, Modal } from "rsuite";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import { InputComponent } from "../goal/CommonComponents";
 import AddMembers from "../general/AddMembers";
-import { Tag } from "../../utils/templates/Groups";
+import { GroupRequest, Tag } from "../../utils/templates/Groups";
 import { useState } from "react";
 import ImageComponent from "../general/ImageComponent";
+import GroupsHelper from "../../utils/helpers/groupsHelper";
 
 const CreateGroup = () => {
 
     const [members, setMembers] = useState<Tag[]>([]);
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState(undefined);
     const [name, setName] = useState<string>("");
 
-    const handleSubmit = () => {
-        console.log("Name: ", name);
-        console.log("Members: ", members);
-        console.log("Image: ", image);
+    const handleSubmit = async () => {
+        const data: GroupRequest = {
+            name:name,
+            image: image,
+            members: members
+        }
+
+        await GroupsHelper.createGroup(data);
     }   
 
     return (
@@ -53,6 +58,7 @@ const CreateGroup = () => {
                         <div className="flex items-center justify-center cursor-pointer">
                             <ImageComponent
                                 size="xxl"
+                                type="group"
                                 image = {image}
                                 setImage={setImage}
                             />

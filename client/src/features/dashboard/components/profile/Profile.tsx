@@ -1,9 +1,27 @@
 import { HeaderBarTheme } from "../../../../config/theme/reusable.theme";
-import { Divider } from "rsuite";
+import { Button, Divider } from "rsuite";
 import EditIcon from '@rsuite/icons/Edit';
 import { InputComponent } from "../../../../components/goal/CommonComponents";
 import ImageComponent from "../../../../components/general/ImageComponent";
+import { useState } from "react";
+import ProfileHelper from "../../../../utils/helpers/profileHelper";
 const Profile = () => {
+
+    const [image, setImage] = useState(undefined);
+    const [username, setUsername] = useState<string>("");
+
+    const handleSubmit = async () => {
+        try{
+            const data = {
+                username: username,
+                picture: image 
+            }
+            const response = await ProfileHelper.updateProfile(data);
+            console.log(response);
+        }catch(error){
+            console.log(error);
+        }
+    }
 
     return (
 
@@ -24,20 +42,30 @@ const Profile = () => {
                        <ImageComponent
                             size="xxl"
                             type="profile"
-                            image=""
-                            setImage={() => {}}
+                            image={image}
+                            setImage={setImage}
                         />
                     </div>
                     <div>
                         <div className="flex flex-row items-center justify-center mt-4">  
                             <InputComponent
                                 placeholder="UserName"
-                                value=""
+                                value={username}
+                                onChange={setUsername}
                                 className="font-semibold text-lg text-gray-800"
                             />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="w-full flex justify-end px-3">
+                <Button
+                    appearance="primary"
+                    className="bg-slate-700 hover:bg-slate-500 focus:bg-slate-500"
+                    onClick={handleSubmit}
+                >
+                    Save
+                </Button>
             </div>
             <Divider />
         </div>
