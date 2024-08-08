@@ -15,5 +15,15 @@ export const API_ROUTES = {
         verify: `${BASE_URL}/api/v1/auth/verify-access`,
         refresh: `${BASE_URL}/api/v1/auth/refresh-token`,
         logout: `${BASE_URL}/api/v1/auth/logout`
+    },
+    files:{
+        upload: `${BASE_URL}/api/v1/files/upload`
+    },
+    profile:{
+        update: `${BASE_URL}/api/v1/profile/update`,
+        fetch: `${BASE_URL}/api/v1/profile/`
+    },
+    groups:{
+        create: `${BASE_URL}/api/v1/groups/create`
     }
 }

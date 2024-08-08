@@ -1,7 +1,7 @@
-"use client";
 import { useEffect } from "react";
 import AuthenticatedLayout from "../../../components/authentication/AuthenticatedLayout";
-import { useAppSelector } from "../../../stores/redux-store";
+import { appStore, useAppSelector } from "../../../stores/redux-store";
+import {loaderActions} from "../../../stores/slices/loader-slice";
 import GoalsHelper from "../../../utils/helpers/goalsHelper";
 import DailyGoals from "../components/DailyGoals";
 import MonthlyGoals from "../components/MonthlyGoals";
@@ -10,20 +10,27 @@ import SideNavGoals from "../components/SideNavGoals";
 const GoalsPage = () => {
 
     const activeTab = useAppSelector(state => state.goal?.layoutType);
-    const loading = useAppSelector(state => state.loader.isLoading);
 
     const renderGoals = () => {
         return (activeTab === "daily") ? <DailyGoals /> : <MonthlyGoals />;
     }
 
     const fetchGoals = async () => {
-        await GoalsHelper.fetchGoalsByUser();
-        await GoalsHelper.fetchGoalsOfToday();
+        try{
+            appStore.dispatch(loaderActions.turnOn());
+            await GoalsHelper.fetchGoalsOfToday();
+            await GoalsHelper.fetchGoalsByUser();
+        }catch(error){
+            console.log(error);
+        }finally{
+            appStore.dispatch(loaderActions.turnOff());
+        }
+        
     }
 
     useEffect(() => {
         fetchGoals();
-    }, [loading === false]);
+    }, []);
 
     return (
         <AuthenticatedLayout>

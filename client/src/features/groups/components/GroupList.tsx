@@ -1,7 +1,13 @@
 import { HeaderBarTheme } from "../../../config/theme/reusable.theme";
 import GroupMinimal from "../../../components/group/GroupMinimal";
-import AddButton from "../../../components/group/AddButton";
+import AddButton from "../../../components/general/AddButton";
+import { ModalControlUtils } from "../../../utils/helpers/modalHelper";
+import { ModalName } from "../../../utils/enums/ModalEnums";
 const GroupList = () => {
+
+    const createGroupModal = () => {
+        ModalControlUtils.updateModalType(ModalName.CreateGroup);
+    }
     return (
         <>
             <div className="flex flex-col w-full mt-1 rounded-md  px-1 max-h-screen">
@@ -16,7 +22,9 @@ const GroupList = () => {
                         </div>
                     </div>
                     <div className="w-full flex p-2">
-                        <AddButton tip="Create a new group" />
+                        <AddButton 
+                            tip="Create a new group" 
+                            onClick={createGroupModal}/>
                     </div>
                 </div>
             </div>

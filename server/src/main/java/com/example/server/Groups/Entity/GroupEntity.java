@@ -1,4 +1,4 @@
-package com.example.server.File.Entity;
+package com.example.server.Groups.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,19 +8,21 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "files")
-public class File {
+@Document(collection = "groups")
+public class GroupEntity {
     @Id
     private String id;
     @Field
-    private String[] users;
-    @Field
     private String name;
     @Field
-    private String url;
-
+    private List<String> users;
+    @Field
+    @Builder.Default
+    private String picture = null;
 }
