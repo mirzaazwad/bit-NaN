@@ -41,7 +41,6 @@ public class SecurityConfiguration {
 
         return http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
-                .cors(ServerHttpSecurity.CorsSpec::disable)
                 .authorizeExchange(auth -> auth
                         .pathMatchers(WHITELIST_URL).permitAll()
                         .anyExchange().authenticated()
