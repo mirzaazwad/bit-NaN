@@ -1,9 +1,6 @@
 package APIGateway.Service;
 
-import APIGateway.Core.DataTypeObjects.TokenRequest;
-import APIGateway.Core.DataTypeObjects.TokenResponse;
-import APIGateway.Core.DataTypeObjects.TokenVerificationRequest;
-import APIGateway.Core.DataTypeObjects.TokenVerificationResponse;
+import APIGateway.Core.DataTypeObjects.*;
 import APIGateway.Repository.TokenRepository;
 import APIGateway.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -56,5 +53,11 @@ public class TokenService {
         catch(Exception e){
             return Mono.error(e);
         }
+    }
+
+    public Mono<LogoutResponse> logout(LogoutRequest logoutRequest) {
+        return tokenRepository.deleteByRefreshToken(logoutRequest.getRefresh())
+                .flatMap(tokenEntity -> Mono.just(LogoutResponse.builder().message("Logout Successful").build()))
+                .switchIfEmpty(Mono.error(new RuntimeException("Token Not Found Logout Failed")));
     }
 }

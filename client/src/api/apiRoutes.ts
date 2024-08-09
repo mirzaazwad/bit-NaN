@@ -14,7 +14,7 @@ export const API_ROUTES = {
         register: `${BASE_URL}/api/auth/register`,
         verify: `${BASE_URL}/api/token/verify`,
         refresh: `${BASE_URL}/api/token/access`,
-        logout: `${BASE_URL}/api/auth/logout`
+        logout: `${BASE_URL}/api/token/logout`
     },
     files:{
         upload: `${BASE_URL}/api/files/upload`

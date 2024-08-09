@@ -33,4 +33,11 @@ public class TokenController {
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new TokenVerificationResponse(e.getMessage()))));
     }
+
+    @PostMapping("/logout")
+    public Mono<ResponseEntity<LogoutResponse>> logout(@RequestBody LogoutRequest request) {
+        return tokenService.logout(request)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e->Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new LogoutResponse(e.getMessage()))));
+    }
 }
