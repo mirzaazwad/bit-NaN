@@ -7,17 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Groups" />
         <module name="APIGateway" />
         <module name="ServiceRegistry" />
         <module name="Goals" />
         <module name="File" />
-        <module name="Groups" />
         <module name="Profile" />
+        <module name="Forum" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Forum" target="21" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
