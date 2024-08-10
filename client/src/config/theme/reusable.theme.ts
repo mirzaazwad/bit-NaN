@@ -24,7 +24,7 @@ export const taskContainerWrapperTheme = (view: string): string => {
 
 export const taskContainerLayout = (view:string): string => {
     return `${view === "broad" ? 
-    "flex flex-col items-center justify-center" 
+    "flex flex-col justify-content-center items-center " 
     : 
-    "flex flex-row justify-start"}`;
+    "flex flex-row justify-start ms-6"}`;
 }
