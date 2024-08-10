@@ -2,17 +2,28 @@ const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 export const API_ROUTES = {
     goals : {
-        create: `${BASE_URL}/api/v1/goals/create`,
-        fetchByCurrentUser: `${BASE_URL}/api/v1/goals/fetch`,
-        update: `${BASE_URL}/api/v1/goals/update`,
-        fetchBYId: `${BASE_URL}/api/v1/goals/fetch`,
-        delete: `${BASE_URL}/api/v1/goals/delete`
+        create: `${BASE_URL}/api/goals/create`,
+        fetchByCurrentUser: `${BASE_URL}/api/goals/fetchAll`,
+        update: `${BASE_URL}/api/goals/update`,
+        fetchBYId: `${BASE_URL}/api/goals/fetch`,
+        fetchByDate: `${BASE_URL}/api/goals/fetchToday`,
+        delete: `${BASE_URL}/api/goals`
     },
     auth:{
-        login: `${BASE_URL}/api/v1/auth/authenticate`,
-        register: `${BASE_URL}/api/v1/auth/register`,
-        verify: `${BASE_URL}/api/v1/auth/verify-access`,
-        refresh: `${BASE_URL}/api/v1/auth/refresh-token`,
-        logout: `${BASE_URL}/api/v1/auth/logout`
+        login: `${BASE_URL}/api/auth/login`,
+        register: `${BASE_URL}/api/auth/register`,
+        verify: `${BASE_URL}/api/token/verify`,
+        refresh: `${BASE_URL}/api/token/access`,
+        logout: `${BASE_URL}/api/token/logout`
+    },
+    files:{
+        upload: `${BASE_URL}/api/files/upload`
+    },
+    profile:{
+        update: `${BASE_URL}/api/profile/update`,
+        fetch: `${BASE_URL}/api/profile/`
+    },
+    groups:{
+        create: `${BASE_URL}/api/groups/create`
     }
 }

@@ -1,12 +1,13 @@
 import { shallowEqual } from "react-redux";
 import { useAppSelector } from "../stores/redux-store"
-import React from "react";
+import React, { memo } from "react";
 import { ModalName } from "../utils/enums/ModalEnums";
 import GoalDetailModal from "./goal/GoalDetailModal";
+import CreateGroup from "./group/CreateGroup";
 
 const ModalSelector = () =>{
     const currentSelectedModal = useAppSelector(
-        (state) => state.modal.type,
+        (state) => state.modal?.type,
         shallowEqual
     );
 
@@ -15,10 +16,13 @@ const ModalSelector = () =>{
             <React.Fragment>
                 {currentSelectedModal == ModalName.GoalDetails && (
                     <GoalDetailModal />
+                )},
+                {currentSelectedModal == ModalName.CreateGroup && (
+                    <CreateGroup />
                 )}
             </React.Fragment>
         </>
     )
 }
 
-export default ModalSelector;
+export default memo(ModalSelector);

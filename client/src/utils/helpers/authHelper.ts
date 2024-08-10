@@ -83,7 +83,9 @@ class AuthHelper{
     }
 
     static async logout():Promise<boolean>{
-        await postData(API_ROUTES.auth.logout,{});
+        await postData(API_ROUTES.auth.logout,{
+            refresh: localStorage.getItem("refresh")
+        });
         localStorage.clear();
         this.setData(false,authActions.setAuthStatus);
         return true;
