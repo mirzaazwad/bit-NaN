@@ -24,6 +24,7 @@ export const API_ROUTES = {
         fetch: `${BASE_URL}/api/v1/profile/`
     },
     groups:{
-        create: `${BASE_URL}/api/v1/groups/create`
+        create: `${BASE_URL}/api/v1/groups/create`,
+        fetch: `${BASE_URL}/api/v1/groups/all`,
     }
 }

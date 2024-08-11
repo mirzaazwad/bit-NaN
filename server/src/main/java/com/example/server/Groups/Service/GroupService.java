@@ -8,6 +8,8 @@ import com.example.server.Groups.Repository.GroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class GroupService implements IGroupService {
@@ -21,5 +23,9 @@ public class GroupService implements IGroupService {
                 .picture(request.getPicture())
                 .build();
         this.groupRepository.save(group);
+    }
+    @Override
+    public List<GroupEntity> fetchGroups(){
+        return groupRepository.getAllByUsersContains(Reusables.getCurrentUsername());
     }
 }
