@@ -1,26 +1,27 @@
 package Forum.Configuration;
 
-import Forum.Core.Utils.Reusables;
-import jakarta.servlet.*;
-import jakarta.servlet.http.HttpServletRequest;
+import Forum.Ollama.Core.Utils.Reusables;
+import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;
-
-import java.io.IOException;
+import org.springframework.web.server.ServerWebExchange;
+import org.springframework.web.server.WebFilter;
+import org.springframework.web.server.WebFilterChain;
+import reactor.core.publisher.Mono;
 
 @Configuration
-public class TokenFilter implements Filter {
+public class TokenFilter implements WebFilter {
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException,ServletException {
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String authorizationHeader=httpRequest.getHeader("Authorization");
-        if(authorizationHeader==null || !authorizationHeader.startsWith("Bearer ")){
-            throw new ServletException("Invalid Authorization Token");
-        }
-        else{
+    @NonNull
+    public Mono<Void> filter(ServerWebExchange exchange,@NonNull WebFilterChain chain) {
+        String authorizationHeader =exchange.getRequest().getHeaders().getFirst("Authorization");
+        if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             String token=authorizationHeader.substring(7);
             Reusables.setToken(token);
-            filterChain.doFilter(request, response);
+            return chain.filter(exchange);
+        }
+        else{
+            throw new RuntimeException("Invalid Authorization Token");
         }
     }
 }
