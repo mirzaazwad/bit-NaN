@@ -1,4 +1,4 @@
-package Forum.Forum.Core.DataTypeObjects.Forum;
+package Forum.Forum.Core.DataTypeObjects.Forum.Request;
 
 import lombok.Data;
 

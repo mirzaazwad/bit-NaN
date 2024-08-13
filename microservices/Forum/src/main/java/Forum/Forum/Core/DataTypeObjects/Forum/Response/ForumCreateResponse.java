@@ -1,18 +1,18 @@
-package Forum.Forum.Core.DataTypeObjects.Forum;
+package Forum.Forum.Core.DataTypeObjects.Forum.Response;
 
 import Forum.Forum.Core.Enums.ForumType;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Data
-public class ForumFindResponse {
-    private UUID id;
+@Builder
+public class ForumCreateResponse {
+    private String id;
     private String title;
     private String description;
     private LocalDate created;
-    private LocalDate modified;
     private Long stars;
     private Long reviews;
     private String userEmail;

@@ -1,6 +1,6 @@
 package Forum.Forum.Repository;
 
-import Forum.Forum.Core.DataTypeObjects.Forum.ForumFindResponse;
+import Forum.Forum.Core.DataTypeObjects.Forum.Response.ForumFindResponse;
 import Forum.Forum.Model.ForumEntity;
 import lombok.NonNull;
 import org.springframework.data.r2dbc.repository.Query;

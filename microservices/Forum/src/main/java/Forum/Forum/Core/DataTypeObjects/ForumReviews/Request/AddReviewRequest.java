@@ -1,8 +1,6 @@
-package Forum.Forum.Core.DataTypeObjects.ForumReviews;
+package Forum.Forum.Core.DataTypeObjects.ForumReviews.Request;
 
 import lombok.Data;
-
-import java.util.UUID;
 
 @Data
 public class AddReviewRequest {

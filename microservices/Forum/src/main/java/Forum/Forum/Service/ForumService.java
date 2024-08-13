@@ -1,6 +1,11 @@
 package Forum.Forum.Service;
-
-import Forum.Forum.Core.DataTypeObjects.Forum.*;
+import Forum.Forum.Core.DataTypeObjects.Forum.Request.ForumCreateRequest;
+import Forum.Forum.Core.DataTypeObjects.Forum.Request.ForumDeleteRequest;
+import Forum.Forum.Core.DataTypeObjects.Forum.Request.ForumUpdateRequest;
+import Forum.Forum.Core.DataTypeObjects.Forum.Response.ForumCreateResponse;
+import Forum.Forum.Core.DataTypeObjects.Forum.Response.ForumDeleteResponse;
+import Forum.Forum.Core.DataTypeObjects.Forum.Response.ForumFindResponse;
+import Forum.Forum.Core.DataTypeObjects.Forum.Response.ForumUpdateResponse;
 import Forum.Forum.Model.ForumEntity;
 import Forum.Forum.Repository.ForumRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +21,7 @@ public class ForumService {
 
     private final ForumRepository forumRepository;
 
-    public Mono<ForumEntity> create(ForumCreateRequest request) {
+    public Mono<ForumCreateResponse> create(ForumCreateRequest request) {
         return forumRepository.save(
                 ForumEntity.builder()
                         .title(request.getTitle())
@@ -29,17 +34,34 @@ public class ForumService {
                         .userEmail(request.getUserEmail())
                         .isRemoved(false)
                         .build()
-        );
+        ).map(forumEntity -> ForumCreateResponse.builder()
+                .title(forumEntity.getTitle())
+                .description(forumEntity.getDescription())
+                .type(forumEntity.getType())
+                .stars(forumEntity.getStars())
+                .reviews(forumEntity.getReviews())
+                .created(forumEntity.getCreated())
+                .userEmail(forumEntity.getUserEmail())
+                .build());
     }
 
-    public Mono<ForumEntity> update(ForumUpdateRequest request) {
+    public Mono<ForumUpdateResponse> update(ForumUpdateRequest request) {
         return forumRepository.findById(request.getId())
                 .flatMap(existingForum -> {
                     existingForum.setTitle(request.getTitle());
                     existingForum.setDescription(request.getDescription());
                     existingForum.setModified(LocalDate.now());
                     return forumRepository.save(existingForum);
-                });
+                }).map(forumEntity -> ForumUpdateResponse.builder()
+                        .title(forumEntity.getTitle())
+                        .description(forumEntity.getDescription())
+                        .type(forumEntity.getType())
+                        .stars(forumEntity.getStars())
+                        .reviews(forumEntity.getReviews())
+                        .created(forumEntity.getCreated())
+                        .userEmail(forumEntity.getUserEmail())
+                        .modified(forumEntity.getModified())
+                        .build());
     }
 
     public Mono<ForumDeleteResponse> delete(ForumDeleteRequest request){
@@ -47,7 +69,8 @@ public class ForumService {
                 .flatMap(existingForum -> {
                     existingForum.setModified(LocalDate.now());
                     existingForum.setIsRemoved(true);
-                    return forumRepository.save(existingForum).then(Mono.just(ForumDeleteResponse.builder().success(true).build()));
+                    return forumRepository.save(existingForum)
+                            .then(Mono.just(ForumDeleteResponse.builder().success(true).build()));
                 });
     }
 

@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.sql.Date;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -15,9 +16,9 @@ import java.sql.Date;
 @Table(name="chat_documents")
 public class ChatDocumentsEntity {
     @Id
-    private String id;
+    private UUID id;
     @Column("chat_id")
-    private String chatId;
+    private UUID chatId;
     @Column("user_email")
     private String userEmail;
     @Column("document")

@@ -1,4 +1,4 @@
-package Forum.Forum.Repository;
+package Forum.Chat.Repository;
 
 import Forum.Forum.Core.DataTypeObjects.ForumReviews.Response.ReviewFindResponse;
 import Forum.Forum.Model.ForumReviewsEntity;
@@ -8,7 +8,7 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface ForumReviewsRepository extends ReactiveCrudRepository<ForumReviewsEntity,String> {
+public interface ChatDocumentsRepository extends ReactiveCrudRepository<ForumReviewsEntity,String> {
     @NonNull
     @Query("select " +
             "forum_reviews.id, forum_reviews.review, forum_reviews.forum_id," +

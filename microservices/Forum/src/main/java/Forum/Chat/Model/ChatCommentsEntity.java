@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.sql.Date;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -15,17 +16,19 @@ import java.sql.Date;
 @Table(name="chat_comments")
 public class ChatCommentsEntity {
     @Id
-    private String id;
+    private UUID id;
     @Column("chat_id")
-    private String chatId;
+    private UUID chatId;
     @Column("user_email")
     private String userEmail;
     @Column("comment")
     private String comment;
+    @Column("upvotes")
+    private Long upvotes;
+    @Column("downvotes")
+    private Long downvotes;
     @Column("created")
     private Date created;
-    @Column("modified")
-    private Date modified;
     @Column("is_removed")
     private Boolean isRemoved;
 }

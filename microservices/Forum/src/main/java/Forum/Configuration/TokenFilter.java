@@ -1,6 +1,6 @@
 package Forum.Configuration;
 
-import Forum.Ollama.Core.Utils.Reusables;
+import Forum.CoreUtils.Reusables;
 import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.server.ServerWebExchange;

@@ -1,4 +1,4 @@
-package Forum.Ollama.Core.Utils;
+package Forum.CoreUtils;
 
 import Forum.CoreService.JWTService;
 import org.springframework.beans.factory.annotation.Autowired;

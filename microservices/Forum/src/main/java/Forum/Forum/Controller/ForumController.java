@@ -1,8 +1,8 @@
 package Forum.Forum.Controller;
 
-import Forum.Forum.Core.DataTypeObjects.Forum.ForumCreateRequest;
-import Forum.Forum.Core.DataTypeObjects.Forum.ForumDeleteRequest;
-import Forum.Forum.Core.DataTypeObjects.Forum.ForumUpdateRequest;
+import Forum.Forum.Core.DataTypeObjects.Forum.Request.ForumCreateRequest;
+import Forum.Forum.Core.DataTypeObjects.Forum.Request.ForumDeleteRequest;
+import Forum.Forum.Core.DataTypeObjects.Forum.Request.ForumUpdateRequest;
 import Forum.Forum.Service.ForumService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
