@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,32 +21,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.API Gateway.executor": "Run",
-    "Spring Boot.APIGatewayApplication.executor": "Run",
-    "Spring Boot.GoalsApplication.executor": "Run",
-    "Spring Boot.ServerApplication (1).executor": "Run",
-    "Spring Boot.ServerApplication.executor": "Run",
-    "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "git-widget-placeholder": "Groups",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Projects/bit-NaN/services/Groups/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.APIGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GoalsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServerApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Groups&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Projects/bit-NaN/services/Groups/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projects\bit-NaN\services\Groups\src\main\resources" />
@@ -66,59 +63,42 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.API Gateway">
-    <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ALTERNATIVE_JRE_PATH" value="21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="APIGateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="APIGateway.ApiGatewayApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="File" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="File.FileApplication" />
+  <component name="RunManager" selected="Spring Boot.APIGatewayApplication">
+    <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="server (1)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.APIGateway.APIGatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Goals" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
+      <module name="server (3)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.server.GoalsApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Groups" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
+    <configuration name="ServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="server (4)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.server.ServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Profile" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
+    <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="server (2)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.server.ServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ServiceRegistry" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ServiceRegistry.ServiceRegistryApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.FileApplication" />
-      <item itemvalue="Spring Boot.GoalsApplication" />
-      <item itemvalue="Spring Boot.GroupsApplication" />
-      <item itemvalue="Spring Boot.ProfileApplication" />
-      <item itemvalue="Spring Boot.ServiceRegistryApplication" />
-      <item itemvalue="Spring Boot.API Gateway" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -138,7 +118,7 @@
       <workItem from="1721928956195" duration="864000" />
       <workItem from="1721929961760" duration="11000" />
       <workItem from="1722002838624" duration="1187000" />
-      <workItem from="1723370536017" duration="896000" />
+      <workItem from="1723370194344" duration="198000" />
     </task>
     <servers />
   </component>
