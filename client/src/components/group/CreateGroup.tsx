@@ -6,6 +6,8 @@ import { GroupRequest, Tag } from "../../utils/templates/Groups";
 import { useState } from "react";
 import ImageComponent from "../general/ImageComponent";
 import GroupsHelper from "../../utils/helpers/groupsHelper";
+import { appStore } from "../../stores/redux-store";
+import { loaderActions } from "../../stores/slices/loader-slice";
 
 const CreateGroup = () => {
 
@@ -14,13 +16,22 @@ const CreateGroup = () => {
     const [name, setName] = useState<string>("");
 
     const handleSubmit = async () => {
-        const data: GroupRequest = {
-            name:name,
-            image: image,
-            members: members
+        try{
+            appStore.dispatch(loaderActions.turnOnWithMessage("Creating Group..."));
+            const data = {
+                name:name,
+                image: image,
+                members: members
+            }
+    
+            await GroupsHelper.createGroup(data);
+            await GroupsHelper.fetchGroups();
+        }catch(e){
+            console.error(e);
+        }finally{
+            appStore.dispatch(loaderActions.turnOff());
+            ModalControlUtils.removeModal();
         }
-
-        await GroupsHelper.createGroup(data);
     }   
 
     return (
