@@ -27,7 +27,7 @@ class GroupsHelper{
             name:data.name 
         }
 
-        const response = await postData(API_ROUTES.groups.create, data);
+        const response = await postData(API_ROUTES.groups.create, request);
         return response.data;
     }
 
@@ -35,9 +35,10 @@ class GroupsHelper{
         appStore.dispatch(actionCreator(data));
     }
 
-    static async fetchGroups(): Promise<void>{
+    static async fetchGroups(): Promise<any>{
         const response = await getData(API_ROUTES.groups.fetch);
         this.setData(response.data.groups, groupActions.setGroups);
+        return response.data.groups;
     }
 }
 

@@ -7,16 +7,22 @@ import { appStore, useAppSelector } from "../../../stores/redux-store";
 import { loaderActions } from "../../../stores/slices/loader-slice";
 import GroupsHelper from "../../../utils/helpers/groupsHelper";
 import { useEffect } from "react";
+import { groupActions } from "../../../stores/slices/group-slice";
 const GroupList = () => {
 
     const createGroupModal = () => {
         ModalControlUtils.updateModalType(ModalName.CreateGroup);
     }
 
+    const groupSelected = useAppSelector(state => state.group.selectedGroup);
+
     const fetchData = async () => {
         try{
             appStore.dispatch(loaderActions.turnOn());
-            await GroupsHelper.fetchGroups();
+            const res = await GroupsHelper.fetchGroups();
+            if(res.length > 0 && groupSelected === undefined){
+                appStore.dispatch(groupActions.setSelectedGroup(res[0]));
+            }
         }catch(e){
             console.log(e);
         }finally{
@@ -44,7 +50,13 @@ const GroupList = () => {
                                 <>
                                     {groups.map((group) => {
                                         return(
-                                            <GroupMinimal key={group.id} name={group.name} id={group.id} image={group.picture}/>
+                                            <GroupMinimal 
+                                                onClick={()=>{appStore.dispatch(groupActions.setSelectedGroup(group))}}
+                                                key={group.id} 
+                                                name={group.name} 
+                                                id={group.id} 
+                                                image={group.picture}
+                                            />
                                         );
                                     })}
                                 </>
