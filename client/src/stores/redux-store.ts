@@ -4,12 +4,14 @@ import { useDispatch,useSelector } from 'react-redux'
 import { authReducer } from "./slices/auth-slide";
 import { modalReducer } from "./slices/modal-slice";
 import { loaderReducer } from "./slices/loader-slice";
+import { groupReducer } from "./slices/group-slice";
 const appReducer = combineReducers({
     // Add reducers here
     goal: goalReducer,
     auth:authReducer,
     modal: modalReducer,
     loader:loaderReducer,
+    group: groupReducer,
 });
 
 export const appStore = configureStore({

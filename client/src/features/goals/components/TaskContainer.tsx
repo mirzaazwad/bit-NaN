@@ -7,7 +7,7 @@ import { ModalControlUtils } from "../../../utils/helpers/modalHelper";
 import { ModalName } from "../../../utils/enums/ModalEnums";
 
 type Props = {
-    name: string;
+    name?: string;
     goals: GoalType[] | [];
     view: string;
 }
@@ -21,7 +21,7 @@ export default function TaskContainer (props:Props) {
     return(
         <>
             <div className={`${taskContainerWrapperTheme(props.view)}`}>
-                <div className={HeaderBarTheme}><h3 className="font-semibold text-xl text-white">{props.name}</h3></div>
+                {props.name &&(<div className={HeaderBarTheme}><h3 className="font-semibold text-xl text-white">{props.name}</h3></div>)}
                 <div className="overflow-y-auto">
                     <div className={`py-1 ${taskContainerLayout(props.view)}`}>
                         {props.goals.length > 0 ? (props.goals.map((goal: GoalType, index: number) => (

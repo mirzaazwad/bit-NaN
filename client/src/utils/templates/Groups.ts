@@ -4,7 +4,14 @@ export type Tag = {
 }
 
 export type GroupRequest = {
-    image?: File | undefined;
+    image?: any;
     members?: Tag[];
     name: string;
+}
+
+export type GroupType = {
+    id: string;
+    name: string;
+    users: string[];
+    picture?: any;
 }
