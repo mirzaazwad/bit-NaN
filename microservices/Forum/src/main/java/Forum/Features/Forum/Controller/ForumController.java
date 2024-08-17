@@ -56,7 +56,7 @@ public class ForumController {
         }
     }
 
-    @GetMapping("/find")
+    @GetMapping("/findAll")
     public ResponseEntity<?> findAll() {
         try{
             return ResponseEntity.ok(forumService.getAll());

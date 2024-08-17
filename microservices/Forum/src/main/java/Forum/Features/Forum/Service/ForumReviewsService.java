@@ -28,19 +28,19 @@ public class ForumReviewsService {
     public Mono<ReviewCreateResponse> addReview(AddReviewRequest request){
         return forumReviewsRepository.save(
                 ForumReviewsEntity.builder()
-                        .forumId(UUID.fromString(request.getId()))
+                        .forumId(request.getForumId())
                         .userEmail(request.getUserEmail())
                         .review(request.getReview())
                         .created(LocalDate.now())
                         .modified(LocalDate.now())
                         .isRemoved(false)
                         .build()
-        ).flatMap(forumReviewsEntity -> forumRepository.findById(forumReviewsEntity.getForumId().toString())
+        ).flatMap(forumReviewsEntity -> forumRepository.findById(forumReviewsEntity.getForumId())
                 .flatMap(forumEntity -> {
                     forumEntity.setReviews(forumEntity.getReviews() + 1);
                     return forumRepository.save(forumEntity);
                 }).then(Mono.just(ReviewCreateResponse.builder()
-                                .id(forumReviewsEntity.getId().toString())
+                                .id(forumReviewsEntity.getId())
                                 .email(forumReviewsEntity.getUserEmail())
                                 .created(forumReviewsEntity.getCreated())
                                 .forumId(forumReviewsEntity.getForumId().toString())
@@ -53,7 +53,7 @@ public class ForumReviewsService {
                 .flatMap(existingForumReview -> {
                     existingForumReview.setIsRemoved(true);
                     return forumReviewsRepository.save(existingForumReview)
-                            .flatMap(forumReviewsEntity -> forumRepository.findById(forumReviewsEntity.getForumId().toString())
+                            .flatMap(forumReviewsEntity -> forumRepository.findById(forumReviewsEntity.getForumId())
                                     .flatMap(forumEntity -> {
                                         forumEntity.setReviews(forumEntity.getReviews() - 1);
                                         return forumRepository.save(forumEntity)
@@ -68,11 +68,11 @@ public class ForumReviewsService {
                     existingForumReview.setReview(request.getReview());
                     return forumReviewsRepository.save(existingForumReview)
                             .map(forumReviewsEntity -> ReviewUpdateResponse.builder()
-                                    .id(forumReviewsEntity.getId().toString())
+                                    .id(forumReviewsEntity.getId())
                                     .email(forumReviewsEntity.getUserEmail())
                                     .created(forumReviewsEntity.getCreated())
                                     .modified(forumReviewsEntity.getModified())
-                                    .forumId(forumReviewsEntity.getForumId().toString())
+                                    .forumId(forumReviewsEntity.getForumId())
                                     .review(forumReviewsEntity.getReview())
                                     .build());
                 });

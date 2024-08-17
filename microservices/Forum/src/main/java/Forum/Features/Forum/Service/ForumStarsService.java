@@ -26,18 +26,18 @@ public class ForumStarsService {
     public Mono<StarCreateResponse> addStar(AddStarRequest request) {
         return forumStarsRepository.save(
                 ForumStarsEntity.builder()
-                        .forumId(UUID.fromString(request.getForumId()))
+                        .forumId(request.getForumId())
                         .userEmail(request.getUserEmail())
                         .created(LocalDate.now())
                         .modified(LocalDate.now())
                         .build()
-        ).flatMap(forumStarsEntity -> forumRepository.findById(forumStarsEntity.getForumId().toString())
+        ).flatMap(forumStarsEntity -> forumRepository.findById(forumStarsEntity.getForumId())
                 .flatMap(forumEntity -> {
                     forumEntity.setStars(forumEntity.getStars() + 1);
                     return forumRepository.save(forumEntity);
                 }).then(Mono.just(StarCreateResponse.builder()
-                        .id(forumStarsEntity.getId().toString())
-                        .forumId(forumStarsEntity.getForumId().toString())
+                        .id(forumStarsEntity.getId())
+                        .forumId(forumStarsEntity.getForumId())
                         .userEmail(forumStarsEntity.getUserEmail())
                         .created(forumStarsEntity.getCreated())
                         .build())));
@@ -46,7 +46,7 @@ public class ForumStarsService {
     public Mono<StarDeleteResponse> deleteStar(DeleteStarRequest request) {
         return forumStarsRepository.findById(request.getId())
                 .flatMap(existingStar -> forumStarsRepository.delete(existingStar)
-                        .then(forumRepository.findById(existingStar.getForumId().toString()))
+                        .then(forumRepository.findById(existingStar.getForumId()))
                         .flatMap(forumEntity -> {
                             forumEntity.setStars(forumEntity.getStars() - 1);
                             return forumRepository.save(forumEntity);

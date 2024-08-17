@@ -8,6 +8,8 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 public interface ForumRepository extends ReactiveCrudRepository<ForumEntity,String> {
     @NonNull
     @Query("select " +
@@ -16,6 +18,14 @@ public interface ForumRepository extends ReactiveCrudRepository<ForumEntity,Stri
             "forum.reviews, forum.user_email, forum.type " +
             "FROM public.forum AS forum WHERE forum.id=CAST($1 AS UUID) AND forum.is_removed=false")
     Mono<ForumFindResponse> findOneById(@NonNull String id);
+
+    @NonNull
+    @Query("select " +
+            "forum.id, forum.title, forum.description, " +
+            "forum.created, forum.modified, forum.stars, " +
+            "forum.reviews, forum.user_email, forum.type, forum.is_removed " +
+            "FROM public.forum AS forum WHERE forum.id=CAST($1 AS UUID) AND forum.is_removed=false")
+    Mono<ForumEntity> findById(@NonNull UUID id);
 
     @NonNull
     @Query("select " +

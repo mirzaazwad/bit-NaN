@@ -42,7 +42,7 @@ public class ForumStarsController {
         }
     }
 
-    @GetMapping("/find-all/{forumId}")
+    @GetMapping("/findAll/{forumId}")
     public ResponseEntity<?> findAllStars(@PathVariable String forumId) {
         try {
             return ResponseEntity.ok(forumStarsService.getAllStarsForForum(forumId));

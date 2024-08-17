@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -26,7 +26,7 @@ public class ChatEntity {
     @Column("response")
     private String response;
     @Column("created")
-    private Date created;
+    private LocalDate created;
     @Column("upvotes")
     private Long upvotes;
     @Column("downvotes")

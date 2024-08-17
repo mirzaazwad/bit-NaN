@@ -35,6 +35,7 @@ public class ForumService {
                         .isRemoved(false)
                         .build()
         ).map(forumEntity -> ForumCreateResponse.builder()
+                .id(forumEntity.getId())
                 .title(forumEntity.getTitle())
                 .description(forumEntity.getDescription())
                 .type(forumEntity.getType())
@@ -53,6 +54,7 @@ public class ForumService {
                     existingForum.setModified(LocalDate.now());
                     return forumRepository.save(existingForum);
                 }).map(forumEntity -> ForumUpdateResponse.builder()
+                        .id(forumEntity.getId())
                         .title(forumEntity.getTitle())
                         .description(forumEntity.getDescription())
                         .type(forumEntity.getType())
