@@ -8,6 +8,8 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 public interface ChatDocumentsRepository extends ReactiveCrudRepository<ChatDocumentsEntity,String> {
     @NonNull
     @Query("select " +
@@ -22,4 +24,11 @@ public interface ChatDocumentsRepository extends ReactiveCrudRepository<ChatDocu
             "chat_documents.created, chat_documents.document, chat_documents.user_email "+
             "FROM public.chat_documents AS chat_documents WHERE chat_documents.chat_id=CAST($1 AS UUID) AND  chat_documents.is_removed=false")
     Flux<ChatDocumentFindResponse> findAllSelected(String id);
+
+    @NonNull
+    @Query("select " +
+            "chat_documents.id, chat_documents.document, chat_documents.chat_id," +
+            "chat_documents.created,  chat_documents.user_email, chat_documents.is_removed " +
+            "FROM public.chat_documents AS chat_documents WHERE chat_documents.id=CAST($1 AS UUID) AND chat_documents.is_removed=false")
+    Mono<ChatDocumentsEntity> findById(@NonNull UUID id);
 }

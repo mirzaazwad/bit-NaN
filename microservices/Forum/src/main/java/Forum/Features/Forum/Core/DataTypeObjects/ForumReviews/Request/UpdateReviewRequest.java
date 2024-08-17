@@ -2,8 +2,10 @@ package Forum.Features.Forum.Core.DataTypeObjects.ForumReviews.Request;
 
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class UpdateReviewRequest {
-    private String id;
+    private UUID id;
     private String review;
 }

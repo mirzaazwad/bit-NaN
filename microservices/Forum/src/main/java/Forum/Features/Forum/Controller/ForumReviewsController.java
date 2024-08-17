@@ -56,7 +56,7 @@ public class ForumReviewsController {
         }
     }
 
-    @GetMapping("/find-all/{forumId}")
+    @GetMapping("/findAll/{forumId}")
     public ResponseEntity<?> findAll(@PathVariable String forumId) {
         try{
             return ResponseEntity.ok(forumReviewsService.getAllReviewsForForum(forumId));
