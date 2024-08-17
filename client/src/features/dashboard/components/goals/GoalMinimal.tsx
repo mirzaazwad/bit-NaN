@@ -8,7 +8,7 @@ export const GoalMinimal = () => {
     return (
         <>
             <div className="rounded mt-1">
-                <TaskContainer goals={toDoGoals} view="minimal" />
+                <TaskContainer name="In Progress" goals={toDoGoals} view="minimal" />
             </div>
         </>
     );

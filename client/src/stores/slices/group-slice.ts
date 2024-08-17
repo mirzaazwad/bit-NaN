@@ -3,10 +3,12 @@ import { GroupType } from "../../utils/templates/Groups";
 
 export interface Group {
     groups: GroupType[];
+    selectedGroup?: GroupType;
 }
 
 const initGroupState: Group = {
     groups: [],
+    selectedGroup: undefined,
 };
 
 export const groupSlice = createSlice({
@@ -16,6 +18,9 @@ export const groupSlice = createSlice({
         setGroups: (state, action) => {
             state.groups = action.payload;
         },
+        setSelectedGroup: (state, action) => {
+            state.selectedGroup = action.payload;
+        }
     },
 });
 

@@ -61,7 +61,7 @@ const CreateGroup = () => {
                             />
                         </div>
                         <hr className="border-gray-300" />
-                        <div className="flex items-center justify-center">
+                        {/* <div className="flex items-center justify-center">
                             <h5 className="text-lg font-semibold text-gray-800">
                                 Picture
                             </h5>
@@ -74,7 +74,7 @@ const CreateGroup = () => {
                                 setImage={setImage}
                             />
                         </div>
-                        <hr className="border-gray-300" />
+                        <hr className="border-gray-300" /> */}
                         <div>
                             <AddMembers 
                                 members={members}
