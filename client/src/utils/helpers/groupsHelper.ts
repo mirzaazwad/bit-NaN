@@ -1,11 +1,12 @@
 import { API_ROUTES } from "../../api/apiRoutes";
-import { postData } from "../common/apiCall";
+import { appStore } from "../../stores/redux-store";
+import { groupActions } from "../../stores/slices/group-slice";
+import { getData, postData } from "../common/apiCall";
 import { FileType } from "../enums/FileEnums";
-import { GroupRequest } from "../templates/Groups";
 import FileHelper from "./fileHelper";
 
 class GroupsHelper{
-    static async createGroup(data: GroupRequest): Promise<string>{
+    static async createGroup(data: any): Promise<string>{
         let request = {};
 
         if(data.image !== undefined){
@@ -17,7 +18,7 @@ class GroupsHelper{
         if(data.members){
             request = {
                 ...request,
-                members: data.members
+                users: data.members
             }
         }
 
@@ -28,6 +29,15 @@ class GroupsHelper{
 
         const response = await postData(API_ROUTES.groups.create, data);
         return response.data;
+    }
+
+    static setData<T>(data: T, actionCreator: (data: T) => any): void {
+        appStore.dispatch(actionCreator(data));
+    }
+
+    static async fetchGroups(): Promise<void>{
+        const response = await getData(API_ROUTES.groups.fetch);
+        this.setData(response.data.groups, groupActions.setGroups);
     }
 }
 

@@ -43,12 +43,13 @@ const GoalDetailModal = () => {
         }));
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         ModalControlUtils.removeModal();
         appStore.dispatch(loaderActions.turnOnWithMessage("Saving Task..."));
-        GoalsHelper.AddOrEditNewTask(goalData)
+        await GoalsHelper.AddOrEditNewTask(goalData)
             .then(() => {
-
+                GoalsHelper.fetchGoalsOfToday();
+                GoalsHelper.fetchGoalsByUser();
             })
             .catch((error) => {
 
@@ -59,12 +60,13 @@ const GoalDetailModal = () => {
             });
     }
 
-    const deleteEvent = () => {
+    const deleteEvent = async () => {
         ModalControlUtils.removeModal();
         appStore.dispatch(loaderActions.turnOnWithMessage("Deleting Task..."));
-        GoalsHelper.deleteTask(goalData.id)
+        await GoalsHelper.deleteTask(goalData.id)
             .then(() => {
-
+                GoalsHelper.fetchGoalsOfToday();
+                GoalsHelper.fetchGoalsByUser();
             })
             .catch((error) => {
 

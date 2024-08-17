@@ -30,11 +30,11 @@ class GoalsHelper{
         return [toDoGoals, inProgressGoals, doneGoals];
     }
 
-    static AddOrEditNewTask(data: GoalType): Promise<GoalType> {
+    static async AddOrEditNewTask(data: GoalType): Promise<GoalType> {
         if(data.id !== ''){
-            return this.updateTask(data);
+            return await this.updateTask(data);
         }else{
-            return this.addNewTask(data);
+            return await this.addNewTask(data);
         }
     }
 
