@@ -33,7 +33,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.API Gateway.executor": "Run",
     "Spring Boot.APIGatewayApplication.executor": "Run",
+    "Spring Boot.FileApplication.executor": "Run",
     "Spring Boot.GoalsApplication.executor": "Run",
+    "Spring Boot.GroupsApplication.executor": "Run",
+    "Spring Boot.ProfileApplication.executor": "Run",
     "Spring Boot.ServerApplication (1).executor": "Run",
     "Spring Boot.ServerApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
@@ -83,6 +86,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Forum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Goals" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
@@ -112,6 +122,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.ForumApplication" />
       <item itemvalue="Spring Boot.FileApplication" />
       <item itemvalue="Spring Boot.GoalsApplication" />
       <item itemvalue="Spring Boot.GroupsApplication" />
@@ -139,6 +150,7 @@
       <workItem from="1721929961760" duration="11000" />
       <workItem from="1722002838624" duration="1187000" />
       <workItem from="1723370536017" duration="896000" />
+      <workItem from="1723648546742" duration="4320000" />
     </task>
     <servers />
   </component>
