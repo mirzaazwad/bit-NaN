@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +37,7 @@
     "Spring Boot.API Gateway.executor": "Run",
     "Spring Boot.APIGatewayApplication.executor": "Run",
     "Spring Boot.FileApplication.executor": "Run",
+    "Spring Boot.ForumApplication.executor": "Run",
     "Spring Boot.GoalsApplication.executor": "Run",
     "Spring Boot.GroupsApplication.executor": "Run",
     "Spring Boot.ProfileApplication.executor": "Run",
@@ -49,6 +53,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,11 +70,10 @@
       <set>
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.API Gateway">
+  <component name="RunManager" selected="Spring Boot.FileApplication">
     <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
