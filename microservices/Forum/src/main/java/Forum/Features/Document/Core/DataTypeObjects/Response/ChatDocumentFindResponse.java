@@ -11,6 +11,6 @@ public class ChatDocumentFindResponse {
     private String id;
     private String chatId;
     private String userEmail;
-    private String document;
+    private String url;
     private LocalDate created;
 }

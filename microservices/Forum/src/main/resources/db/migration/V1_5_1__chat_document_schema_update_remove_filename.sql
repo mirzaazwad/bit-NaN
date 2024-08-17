@@ -1,0 +1,1 @@
+ALTER TABLE chat_documents DROP COLUMN IF EXISTS filename;
