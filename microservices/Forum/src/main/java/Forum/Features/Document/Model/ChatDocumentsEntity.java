@@ -21,8 +21,6 @@ public class ChatDocumentsEntity {
     private UUID chatId;
     @Column("user_email")
     private String userEmail;
-    @Column("document")
-    private String filename;
     @Column("url")
     private String url;
     @Column("created")

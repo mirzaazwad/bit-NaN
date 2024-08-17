@@ -14,20 +14,20 @@ public interface ChatDocumentsRepository extends ReactiveCrudRepository<ChatDocu
     @NonNull
     @Query("select " +
             "chat_documents.id, chat_documents.chat_id," +
-            "chat_documents.created, chat_documents.document, chat_documents.user_email "+
-            "FROM public.chat_documents AS chat_documents WHERE chat_documents.id=CAST($1 AS UUID) AND chat_documents.is_removed=false")
-    Mono<ChatDocumentFindResponse> findOneById(@NonNull String id);
+            "chat_documents.created, chat_documents.url, chat_documents.user_email "+
+            "FROM public.chat_documents AS chat_documents WHERE chat_documents.chat_id=CAST($1 AS UUID) AND chat_documents.is_removed=false LIMIT 1")
+    Mono<ChatDocumentFindResponse> findOneById(@NonNull UUID id);
 
     @NonNull
     @Query("select " +
             "chat_documents.id, chat_documents.chat_id," +
-            "chat_documents.created, chat_documents.document, chat_documents.user_email "+
+            "chat_documents.created, chat_documents.url, chat_documents.user_email "+
             "FROM public.chat_documents AS chat_documents WHERE chat_documents.chat_id=CAST($1 AS UUID) AND  chat_documents.is_removed=false")
     Flux<ChatDocumentFindResponse> findAllSelected(String id);
 
     @NonNull
     @Query("select " +
-            "chat_documents.id, chat_documents.document, chat_documents.chat_id," +
+            "chat_documents.id, chat_documents.url, chat_documents.chat_id," +
             "chat_documents.created,  chat_documents.user_email, chat_documents.is_removed " +
             "FROM public.chat_documents AS chat_documents WHERE chat_documents.id=CAST($1 AS UUID) AND chat_documents.is_removed=false")
     Mono<ChatDocumentsEntity> findById(@NonNull UUID id);
