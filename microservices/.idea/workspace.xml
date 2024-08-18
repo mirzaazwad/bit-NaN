@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/TokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/Utils/Reusables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Service/JWTService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +175,7 @@
       <workItem from="1722002838624" duration="1187000" />
       <workItem from="1723370536017" duration="896000" />
       <workItem from="1723648546742" duration="4320000" />
-      <workItem from="1723967821888" duration="2138000" />
+      <workItem from="1723967821888" duration="2313000" />
     </task>
     <servers />
   </component>
