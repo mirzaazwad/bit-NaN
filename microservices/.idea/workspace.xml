@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/TokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/Utils/Reusables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Service/JWTService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -36,6 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.API Gateway.executor": "Run",
     "Spring Boot.APIGatewayApplication.executor": "Run",
+    "Spring Boot.ChatApplication.executor": "Run",
     "Spring Boot.FileApplication.executor": "Run",
     "Spring Boot.ForumApplication.executor": "Run",
     "Spring Boot.GoalsApplication.executor": "Run",
@@ -45,8 +53,9 @@
     "Spring Boot.ServerApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
     "git-widget-placeholder": "Groups",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Projects/bit-NaN/services/Groups/src/main/resources",
+    "last_opened_file_path": "F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,10 +68,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Projects\bit-NaN\microservices\Chat\src\main\java\Chat" />
       <recent name="F:\Projects\bit-NaN\services\Groups\src\main\resources" />
       <recent name="F:\Projects\bit-NaN\services\Goals\src\main\resources" />
       <recent name="F:\Projects\bit-NaN\services\Forum\src\main\resources" />
       <recent name="F:\Projects\bit-NaN\services\APIGateway\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Chat" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Chat.Core.Utils" />
+      <recent name="Chat.Service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -73,12 +90,19 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FileApplication">
+  <component name="RunManager" selected="Spring Boot.ChatApplication">
     <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="APIGateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Chat" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Chat.ChatApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,6 +150,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.ChatApplication" />
       <item itemvalue="Spring Boot.ForumApplication" />
       <item itemvalue="Spring Boot.FileApplication" />
       <item itemvalue="Spring Boot.GoalsApplication" />
@@ -155,10 +180,22 @@
       <workItem from="1722002838624" duration="1187000" />
       <workItem from="1723370536017" duration="896000" />
       <workItem from="1723648546742" duration="4320000" />
+      <workItem from="1723967821888" duration="2138000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
