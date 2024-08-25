@@ -9,7 +9,10 @@ export interface INavLinkProps {
 
 const NavLink = ({ href, currentPath, theme, children }: INavLinkProps) => {
     return (
-        <Link to={href}>
+        <Link to={href} style={{
+            all:"unset",
+            cursor:"pointer"
+        }}>
                 <li className={theme(currentPath, href)}>{children}</li>
         </Link>
     );

@@ -7,6 +7,5 @@ import java.util.UUID;
 @Data
 public class AddReviewRequest {
     private UUID forumId;
-    private String userEmail;
     private String review;
 }

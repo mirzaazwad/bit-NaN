@@ -24,7 +24,7 @@ public class ChatDocumentService {
         String user = Reusables.getCurrentUsername();
         return chatDocumentsRepository.save(
                 ChatDocumentsEntity.builder()
-                        .chatId(request.getChatId())
+                        .forumId(request.getForumId())
                         .userEmail(user)
                         .url(request.getUrl())
                         .created(LocalDate.now())
@@ -32,7 +32,7 @@ public class ChatDocumentService {
                         .build()
         ).map(chatDocumentsEntity -> AddDocumentResponse.builder()
                 .id(chatDocumentsEntity.getId())
-                .chatId(chatDocumentsEntity.getChatId())
+                .forumId(chatDocumentsEntity.getForumId())
                 .created(chatDocumentsEntity.getCreated())
                 .userEmail(chatDocumentsEntity.getUserEmail())
                 .url(chatDocumentsEntity.getUrl())

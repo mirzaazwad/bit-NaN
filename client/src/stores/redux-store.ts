@@ -5,6 +5,7 @@ import { authReducer } from "./slices/auth-slide";
 import { modalReducer } from "./slices/modal-slice";
 import { loaderReducer } from "./slices/loader-slice";
 import { groupReducer } from "./slices/group-slice";
+import { forumReducer } from "./slices/forum-slice";
 const appReducer = combineReducers({
     // Add reducers here
     goal: goalReducer,
@@ -12,6 +13,7 @@ const appReducer = combineReducers({
     modal: modalReducer,
     loader:loaderReducer,
     group: groupReducer,
+    forum: forumReducer
 });
 
 export const appStore = configureStore({

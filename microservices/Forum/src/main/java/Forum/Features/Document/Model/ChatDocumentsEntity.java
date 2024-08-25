@@ -17,8 +17,8 @@ import java.util.UUID;
 public class ChatDocumentsEntity {
     @Id
     private UUID id;
-    @Column("chat_id")
-    private UUID chatId;
+    @Column("forum_id")
+    private UUID forumId;
     @Column("user_email")
     private String userEmail;
     @Column("url")

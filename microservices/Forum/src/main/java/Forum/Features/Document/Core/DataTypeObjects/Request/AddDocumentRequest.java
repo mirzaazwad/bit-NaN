@@ -7,5 +7,6 @@ import java.util.UUID;
 @Data
 public class AddDocumentRequest {
     private String url;
-    private UUID chatId;
+    private UUID forumId;
 }
+
