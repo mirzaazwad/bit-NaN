@@ -34,7 +34,7 @@ const GoalsPage = () => {
 
     return (
         <AuthenticatedLayout>
-            <div className="flex w-full min-h-screen">
+            <div className="flex w-full">
                 <div className="flex flex-col w-full ">
                     {activeTab === "daily" ? (
                         <div className="flex w-full items-center justify-center">

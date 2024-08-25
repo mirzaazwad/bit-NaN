@@ -29,6 +29,6 @@ public interface ForumReviewsRepository extends ReactiveCrudRepository<ForumRevi
     @Query("select " +
             "forum_reviews.id, forum_reviews.review, forum_reviews.forum_id," +
             "forum_reviews.created, forum_reviews.modified, forum_reviews.user_email "+
-            "FROM public.forum_reviews AS forum_reviews WHERE forum_reviews.forum_id=CAST($1 AS UUID) AND  forum_reviews.is_removed=false")
+            "FROM public.forum_reviews AS forum_reviews WHERE forum_reviews.forum_id=CAST($1 AS UUID) AND  forum_reviews.is_removed=false ORDER BY forum_reviews.modified DESC")
     Flux<ReviewFindResponse> findAllSelected(String id);
 }

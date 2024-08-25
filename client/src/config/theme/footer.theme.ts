@@ -7,11 +7,11 @@ export const footerIcons=()=>{
 }
 
 export const footerContainer: string = `
-    bg-bitBrown bottom-0 w-full flex items-center justify-center
+    static bottom-0 bg-bitBrown w-full flex items-center justify-center
 `;
 
 export const footerContent: string = `
-    block text-white px-4 pb-4
+    block text-white px-4 py-2
 `;
 
 export const footerNavList: string = `

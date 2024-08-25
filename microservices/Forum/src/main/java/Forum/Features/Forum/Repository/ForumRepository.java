@@ -32,6 +32,6 @@ public interface ForumRepository extends ReactiveCrudRepository<ForumEntity,Stri
             "forum.id, forum.title, forum.description, " +
             "forum.created, forum.modified, forum.stars, " +
             "forum.reviews, forum.user_email, forum.type " +
-            "FROM public.forum AS forum WHERE forum.is_removed=false")
+            "FROM public.forum AS forum WHERE forum.is_removed=false ORDER BY forum.modified DESC ")
     Flux<ForumFindResponse> findAllSelected();
 }

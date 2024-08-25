@@ -42,17 +42,28 @@ public class ProfileController {
         }
     }
 
+<<<<<<< HEAD
     @GetMapping("/{email}")
     public ResponseEntity<?> fetchByEmail(@PathVariable String email){
         try{
             ProfileEntity getProfile = service.getProfileByEmail(email);
 
+=======
+    @GetMapping("/find/{email}")
+    public ResponseEntity<?> findByEmail(@PathVariable String email){
+        try{
+            Object getProfile = service.getProfileByEmail(email);
+>>>>>>> 455787c (ForumPrimary UI Updated)
             Map<String, Object> responseObj = new HashMap<>();
             responseObj.put("profile", getProfile);
             responseObj.put("message", "Profile fetched successfully");
 
             return ResponseEntity.ok(responseObj);
+<<<<<<< HEAD
         }catch (Exception e){
+=======
+        }catch(Exception e){
+>>>>>>> 455787c (ForumPrimary UI Updated)
             return ResponseEntity.status(500).body("Error fetching profile "+ e);
         }
     }

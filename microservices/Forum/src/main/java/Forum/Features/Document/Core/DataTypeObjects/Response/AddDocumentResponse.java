@@ -10,7 +10,7 @@ import java.util.UUID;
 @Builder
 public class AddDocumentResponse {
     private UUID id;
-    private UUID chatId;
+    private UUID forumId;
     private String url;
     private String userEmail;
     private LocalDate created;

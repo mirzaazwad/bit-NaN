@@ -7,6 +7,5 @@ import lombok.Data;
 public class ForumCreateRequest {
     private String title;
     private String description;
-    private String userEmail;
     private ForumType forumType;
 }

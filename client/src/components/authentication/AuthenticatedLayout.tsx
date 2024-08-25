@@ -7,9 +7,9 @@ const AuthenticatedLayout = ({
     children: React.ReactNode;
   }>) => {
     return ( 
-        <div className="main-wrapper flex flex-col min-h-screen w-full">
+        <div className="min-h-screen h-screen flex flex-col w-full">
             <NavBarLoggedIn/>
-            <main className="flex-grow min-h-screen pt-28">
+            <main className="flex-grow pt-28">
                 {children}
             </main>
             <Footer/>
