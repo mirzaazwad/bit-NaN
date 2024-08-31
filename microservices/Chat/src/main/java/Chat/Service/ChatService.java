@@ -3,6 +3,7 @@ package Chat.Service;
 import Chat.Core.DataTransferObjects.ChatMessage;
 import Chat.Core.Enums.MessageType;
 import Chat.Core.Interface.IChatService;
+import Chat.Core.Utils.Reusables;
 import Chat.Entity.Message;
 import Chat.Repository.ChatRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class ChatService implements IChatService {
     ) {
         Message message = Message.builder()
                 .groupId(chatMessage.getGroup())
-                .sender(chatMessage.getSender())
+                .sender(Reusables.getCurrentUsername())
                 .type(MessageType.CHAT)
                 .timestamp(LocalDateTime.now())
                 .build();

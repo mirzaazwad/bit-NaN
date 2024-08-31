@@ -26,5 +26,10 @@ export const API_ROUTES = {
     groups:{
         create: `${BASE_URL}/api/groups/create`,
         fetch: `${BASE_URL}/api/groups/all`,
+    },
+    chat: {
+        history: `${BASE_URL}/api/chat/history`,
+        subscribe: `/topic/group`,
+        publish: `/app/chat.sendMessage`,
     }
 }

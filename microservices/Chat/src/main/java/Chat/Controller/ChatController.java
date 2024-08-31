@@ -2,6 +2,7 @@ package Chat.Controller;
 
 import Chat.Core.DataTransferObjects.ChatMessage;
 import Chat.Core.Interface.IChatService;
+import Chat.Core.Utils.Reusables;
 import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -34,7 +35,7 @@ public class ChatController {
             SimpMessageHeaderAccessor headerAccessor
     ){
         //Add Username in websocket session
-        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
+        headerAccessor.getSessionAttributes().put("username", Reusables.getCurrentUsername());
         return chatMessage;
     }
 
