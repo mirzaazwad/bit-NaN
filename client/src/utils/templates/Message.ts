@@ -1,7 +1,9 @@
 import { MessageType } from "../enums/MessageEnums";
 
 export type Message = {
-    content?: string;
-    group: string;
+    message?: string;
+    groupId: string;
     type: MessageType;
+    sender: string;
+    timestamp: Date;
 }

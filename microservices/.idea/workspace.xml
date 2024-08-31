@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/WebSocketEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/DataTransferObjects/ChatMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/Enums/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/utils/helpers/groupsHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/helpers/groupsHelper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/utils/templates/Message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/templates/Message.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +95,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.API Gateway">
+  <component name="RunManager" selected="Spring Boot.ProfileApplication">
     <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -190,6 +189,10 @@
       <workItem from="1724170460822" duration="743000" />
       <workItem from="1724339281116" duration="1432000" />
       <workItem from="1724485790164" duration="3048000" />
+      <workItem from="1724512372895" duration="6462000" />
+      <workItem from="1724590273843" duration="1868000" />
+      <workItem from="1725126324830" duration="163000" />
+      <workItem from="1725126501602" duration="342000" />
     </task>
     <servers />
   </component>

@@ -40,6 +40,11 @@ class GroupsHelper{
         this.setData(response.data.groups, groupActions.setGroups);
         return response.data.groups;
     }
+
+    static async fetchGroupHistory(groupId: string): Promise<any>{
+        const response = await getData(`${API_ROUTES.groups.fetch}/${groupId}`);
+        return response.data;
+    }
 }
 
 export default GroupsHelper;
