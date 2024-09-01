@@ -16,16 +16,30 @@ const ChatView = (props: IProps) => {
     const webSocketService: WebSocketService = new WebSocketService();
 
     const [messages, setMessages] = useState<MessageType[]>([]);
+    const [message, setMessage] = useState<string>('');
 
     const fetchGroupHistory = async () => {
         if(selectedGroup?.id){
-            const histoy = await GroupsHelper.fetchGroupHistory(selectedGroup.id);
-            setMessages(histoy);
+            try{
+                const histoy = await GroupsHelper.fetchGroupHistory(selectedGroup.id);
+                setMessages(histoy);
+            }catch(error){
+                console.log(error);
+            }
+           
         }   
     }
 
     const handleMessageReceived = (receivedMessage:MessageType) => {
         setMessages((prevMessages) => [...prevMessages, receivedMessage]);
+    };
+
+    const sendMessage = async () => {
+        if(selectedGroup?.id){
+           const message = GroupsHelper.createMessage('Hello', selectedGroup.id);
+           webSocketService.sendMessage(message);
+        }
+        await fetchGroupHistory();
     }
 
     useEffect(() => {
@@ -36,7 +50,7 @@ const ChatView = (props: IProps) => {
         return () => {
             webSocketService.disconnect();
         }
-    }, [selectedGroup])
+    }, [selectedGroup]);
 
     return (
         <>
@@ -47,12 +61,17 @@ const ChatView = (props: IProps) => {
                 <div className="flex flex-col justify-end bg-gray-100 h-full">
                     <div className="flex flex-col w-full min-h-9">
                         <div className="flex flex-col">
-                            <Message name="John Doe" message="Hello World!" />
-                            <Message name="John Doe" message="Hello World!" />
+                            {messages && messages.map((message, index) => (
+                                <Message key={index} message={message.message} name={message.sender ?? "You"}/>
+                            ))}
                         </div>
                     </div>
                     <div className="flex w-full h-24">
-                        <InputComponent />
+                        <InputComponent 
+                            message={message}
+                            onSubmitClick={sendMessage}
+                            onChangeInput={(value) => setMessage(value)}
+                        />
                     </div>
                 </div>
             </div>

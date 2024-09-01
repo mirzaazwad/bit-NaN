@@ -1,6 +1,7 @@
 import { Client } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
 import { API_ROUTES } from "../../api/apiRoutes";
+import { Message } from "../templates/Message";
 
 const SOCKET_URL = '/ws';
 
@@ -30,9 +31,9 @@ export class WebSocketService {
         });
     }
 
-    sendMessage(groupId:string, message:any){
+    sendMessage(message:Message){
         this.client.publish({
-            destination: `${API_ROUTES.chat.publish}/${groupId}`,
+            destination: `${API_ROUTES.chat.publish}/${message.groupId}`,
             body: JSON.stringify(message)
         });
     }
