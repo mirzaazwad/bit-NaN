@@ -44,7 +44,7 @@ class GroupsHelper{
     }
 
     static async fetchGroupHistory(groupId: string): Promise<any>{
-        const response = await getData(`${API_ROUTES.groups.fetch}/${groupId}`);
+        const response = await getData(`${API_ROUTES.chat.history}/${groupId}`);
         return response.data;
     }
 
