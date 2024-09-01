@@ -3,8 +3,7 @@ import SockJS from "sockjs-client";
 import { API_ROUTES } from "../../api/apiRoutes";
 import { Message } from "../templates/Message";
 
-const SOCKET_URL = '/ws';
-
+const SOCKET_URL = API_ROUTES.websocket_url.url;
 export class WebSocketService {
     client: any;
 

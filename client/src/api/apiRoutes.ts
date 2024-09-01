@@ -31,5 +31,8 @@ export const API_ROUTES = {
         history: `${BASE_URL}/api/chat/history`,
         subscribe: `/topic/group`,
         publish: `/app/chat.sendMessage`,
+    },
+    websocket_url: {
+        url: `${BASE_URL}/ws`
     }
 }
