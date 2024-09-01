@@ -10,6 +10,5 @@ import lombok.*;
 @Builder
 public class ChatMessage{
     private String content;
-    private String group;
     private MessageType type;
 }

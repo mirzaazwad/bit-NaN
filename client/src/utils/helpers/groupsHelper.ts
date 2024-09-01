@@ -50,13 +50,10 @@ class GroupsHelper{
 
     static createMessage(
         message: string,
-        groupId: string,
     ): Message{
         return {
             message:message,
-            groupId: groupId,
             type: MessageType.CHAT,
-            timestamp: new Date(),
         };
     }
 }

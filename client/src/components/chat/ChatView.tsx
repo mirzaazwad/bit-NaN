@@ -36,8 +36,8 @@ const ChatView = (props: IProps) => {
 
     const sendMessage = async () => {
         if(selectedGroup?.id){
-           const message = GroupsHelper.createMessage('Hello', selectedGroup.id);
-           webSocketService.sendMessage(message);
+           const chat = GroupsHelper.createMessage(message);
+           webSocketService.sendMessage(selectedGroup.id, chat);
         }
         await fetchGroupHistory();
     }

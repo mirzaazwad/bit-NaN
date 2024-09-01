@@ -31,9 +31,9 @@ export class WebSocketService {
         });
     }
 
-    sendMessage(message:Message){
+    sendMessage(groupId: string, message:Message){
         this.client.publish({
-            destination: `${API_ROUTES.chat.publish}/${message.groupId}`,
+            destination: `${API_ROUTES.chat.publish}/${groupId}`,
             body: JSON.stringify(message)
         });
     }
