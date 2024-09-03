@@ -28,7 +28,7 @@ public class WebSocketEventListener {
             var chatMessage = ChatMessage.builder()
                     .type(MessageType.LEAVE)
                     .build();
-            messageTemplate.convertAndSend("/topic/public", chatMessage);
+            messageTemplate.convertAndSend("/topic/group", chatMessage);
         }
     }
 }

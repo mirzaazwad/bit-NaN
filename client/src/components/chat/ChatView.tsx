@@ -35,11 +35,16 @@ const ChatView = (props: IProps) => {
     };
 
     const sendMessage = async () => {
-        if(selectedGroup?.id){
-           const chat = GroupsHelper.createMessage(message);
-           webSocketService.sendMessage(selectedGroup.id, chat);
+        if(webSocketService.stompClient.connected){
+            if(selectedGroup?.id){
+                const chat = GroupsHelper.createMessage(message);
+                webSocketService.sendMessage(selectedGroup.id, chat);
+                setMessage('');
+            }
+            await fetchGroupHistory();
+        }else{
+            console.log("WebSocket is not connected.");
         }
-        await fetchGroupHistory();
     }
 
     useEffect(() => {
