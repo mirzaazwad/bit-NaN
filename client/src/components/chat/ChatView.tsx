@@ -10,10 +10,10 @@ import Message from "./Message";
 type IProps = {
     group: GroupType;
 }
+const webSocketService: WebSocketService = new WebSocketService();
 const ChatView = (props: IProps) => {
 
     const selectedGroup = useAppSelector(state => state.group.selectedGroup);
-    const webSocketService: WebSocketService = new WebSocketService();
 
     const [messages, setMessages] = useState<MessageType[]>([]);
     const [message, setMessage] = useState<string>('');
