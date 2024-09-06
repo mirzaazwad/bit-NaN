@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87074811-f60b-4afb-9705-4d655abd85c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumStars/Response/StarsFindByUserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_3__chat_document_forum_constraint.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_4__chat_document_uniq_constraint_replacement.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/authentication/AuthenticatedLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/authentication/AuthenticatedLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/general/DragDropFile.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/navbar/NavLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/navbar/NavLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/config/theme/footer.theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/config/theme/footer.theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/features/forum/pages/ForumPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/forum/pages/ForumPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/features/forum/pages/ForumSubPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/forum/pages/ForumSubPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/features/goals/pages/GoalsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/goals/pages/GoalsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/stores/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/stores/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/helpers/profileHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/helpers/profileHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/templates/comments.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Request/AddDocumentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Request/AddDocumentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Response/AddDocumentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Response/AddDocumentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Response/ChatDocumentFindResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Response/ChatDocumentFindResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Model/ChatDocumentsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Model/ChatDocumentsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Service/ChatDocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Service/ChatDocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Controller/ForumStarsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Controller/ForumStarsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/Forum/Request/ForumCreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/Forum/Request/ForumCreateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumReviews/Request/AddReviewRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumReviews/Request/AddReviewRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumReviews/Response/ReviewCreateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumReviews/Response/ReviewCreateResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumReviews/Response/ReviewUpdateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumReviews/Response/ReviewUpdateResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumStars/Request/AddStarRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumStars/Request/AddStarRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Repository/ForumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Repository/ForumRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Repository/ForumReviewsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Repository/ForumReviewsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Repository/ForumStarsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Repository/ForumStarsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Service/ForumReviewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Service/ForumReviewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Service/ForumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Service/ForumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Service/ForumStarsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Service/ForumStarsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Ollama/Controller/OllamaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Ollama/Controller/OllamaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +198,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724489795181</updated>
       <workItem from="1724489796423" duration="1460000" />
-      <workItem from="1724584739999" duration="801000" />
+      <workItem from="1724584739999" duration="2015000" />
     </task>
     <servers />
   </component>
