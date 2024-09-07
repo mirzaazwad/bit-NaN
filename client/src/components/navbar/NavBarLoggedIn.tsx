@@ -1,5 +1,4 @@
 import UserOptions from "./UserOptions";
-import StudyTimer from "../timer/StudyTimer";
 import TopbarUser from "./TopbarUser";
 import DropdownUser from "./DropDownUser";
 import NavBar from "./NavBar";
