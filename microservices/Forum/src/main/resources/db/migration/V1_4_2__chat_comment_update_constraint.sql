@@ -1,0 +1,2 @@
+ALTER TABLE chat_comments DROP COLUMN IF EXISTS comment;
+ALTER TABLE chat_comments ADD COLUMN IF NOT EXISTS comment TEXT NOT NULL;

@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -28,7 +28,9 @@ public class ChatCommentsEntity {
     @Column("downvotes")
     private Long downvotes;
     @Column("created")
-    private Date created;
+    private LocalDate created;
+    @Column("modified")
+    private LocalDate modified;
     @Column("is_removed")
     private Boolean isRemoved;
 }
