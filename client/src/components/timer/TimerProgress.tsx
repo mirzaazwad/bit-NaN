@@ -1,6 +1,7 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useAppSelector } from "../../stores/redux-store";
+import { TimerControlUtils } from "../../utils/helpers/timerHelper";
 
 interface TimerProgressProps {
   pomodoroValue: number;
@@ -26,9 +27,7 @@ const TimerProgress = (props: TimerProgressProps) => {
         trailColor: "#facc15",
       })}
       value={percentage}
-      text={`${minutes <= 9 ? "0" + minutes : minutes}:${
-        seconds <= 9 ? "0" + seconds : seconds
-      }`}
+      text={`${TimerControlUtils.formatTime(time)}`}
     />
   );
 };

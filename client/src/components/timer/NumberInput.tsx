@@ -27,7 +27,7 @@ const NumberInput = ({value,min,max,disabled}:INumberInput) => {
 
   return (
     <div className="m-2 flex">
-      <div className="w-1/4 bg-white px-2 py-2 me-2 text-bitBrown">{value}</div>
+      <div className="w-1/4 bg-gray-200 px-2 py-2 me-2 text-bitBrown">{value}</div>
       {!disabled && (<button
         onClick={handleIncrease}
         className="px-2 py-2 me-2 bg-bitBrown hover:bg-white text-white hover:text-bitBrown rounded-lg disabled:bg-gray-900"
