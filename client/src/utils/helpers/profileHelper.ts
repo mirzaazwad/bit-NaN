@@ -28,6 +28,11 @@ class ProfileHelper{
         const response = await getData(API_ROUTES.profile.fetch);
         return response.data.profile;
     }
+
+    static async getProfileByEmail(email:string): Promise<any>{
+        const response = await getData(`${API_ROUTES.profile.fetch}/${email}`);
+        return response.data.profile;
+    }
 }
 
 export default ProfileHelper;

@@ -38,7 +38,16 @@ public class ProfileService implements IProfileService {
     @Override
     public ProfileEntity getCurrentUserProfile(){
         String currentUserEmail = Reusables.getCurrentUsername();
-        List<ProfileEntity> profiles = this.repository.findByUserEmail(currentUserEmail);
+        return this.getProfile(currentUserEmail);
+    }
+
+    @Override
+    public ProfileEntity getProfileByEmail(String email){
+        return this.getProfile(email);
+    }
+
+    private ProfileEntity getProfile(String email){
+        List<ProfileEntity> profiles = this.repository.findByUserEmail(email);
 
         return profiles.isEmpty() ? new ProfileEntity() : profiles.getFirst();
     }

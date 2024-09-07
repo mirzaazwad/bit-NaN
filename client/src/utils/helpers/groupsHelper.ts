@@ -3,6 +3,8 @@ import { appStore } from "../../stores/redux-store";
 import { groupActions } from "../../stores/slices/group-slice";
 import { getData, postData } from "../common/apiCall";
 import { FileType } from "../enums/FileEnums";
+import { MessageType } from "../enums/MessageEnums";
+import { Message } from "../templates/Message";
 import FileHelper from "./fileHelper";
 
 class GroupsHelper{
@@ -39,6 +41,20 @@ class GroupsHelper{
         const response = await getData(API_ROUTES.groups.fetch);
         this.setData(response.data.groups, groupActions.setGroups);
         return response.data.groups;
+    }
+
+    static async fetchGroupHistory(groupId: string): Promise<any>{
+        const response = await getData(`${API_ROUTES.chat.history}/${groupId}`);
+        return response.data;
+    }
+
+    static createMessage(
+        message: string,
+    ): Message{
+        return {
+            message:message,
+            type: MessageType.CHAT,
+        };
     }
 }
 

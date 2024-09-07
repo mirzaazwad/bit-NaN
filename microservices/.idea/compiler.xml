@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Groups" />
+        <module name="Chat" />
         <module name="APIGateway" />
         <module name="ServiceRegistry" />
         <module name="Goals" />
@@ -20,6 +21,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="APIGateway" options="-parameters" />
+      <module name="Chat" options="-parameters" />
       <module name="File" options="-parameters" />
       <module name="Forum" options="-parameters" />
       <module name="Goals" options="-parameters" />
