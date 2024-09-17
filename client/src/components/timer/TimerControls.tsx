@@ -1,31 +1,19 @@
-"use client";
-import { ISettingsProps, ITimerProps, ISessionProps } from "@/app/utils/templates/timer";
 import NumberInput from "./NumberInput";
-
+import { TimerControlUtils } from "../../utils/helpers/timerHelper";
 interface TimerControlsProps {
-  settings: ISettingsProps;
-  timer: ITimerProps;
-  session: ISessionProps;
+  focusTime: number;
+  restTime: number;
+  handlePomodoroTime: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRestTime: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  sessions: number;
+  isRunning: boolean;
 }
 
-const TimerControls = ({ settings, timer, session }: TimerControlsProps) => {
-  const {
-    pomodoroValue,
-    restValue,
-    handlePomodoroTime,
-    handleRestTime,
-  } = settings;
+const TimerControls = (props: TimerControlsProps) => {
 
-  const {
-    minutes,
-    seconds,
-    percentage,
-    disabled,
-    handleStart,
-    error,
-  } = timer;
-
-  const { sessions, setSessions } = session;
+  const formatTime = (timeInSeconds: number): string => {
+    return TimerControlUtils.formatTime(timeInSeconds);
+  }
 
   return (
     <div className="mt-6">
@@ -33,43 +21,35 @@ const TimerControls = ({ settings, timer, session }: TimerControlsProps) => {
       <input
         id="default-range"
         type="range"
-        min={1}
-        max={120}
-        value={pomodoroValue}
-        onChange={(e) => handlePomodoroTime(parseInt(e.target.value))}
-        disabled={disabled}
-        className="w-11/12 h-2 mb-12 bg-bitBrown text-yellow-400 rounded-lg appearance-none cursor-pointer"
+        min={1*60}
+        max={120*60}
+        value={props.focusTime}
+        onChange={props.handlePomodoroTime}
+        disabled={props.isRunning}
+        className="w-11/12 h-2 bg-bitBrown text-yellow-400 rounded-lg appearance-none cursor-pointer"
       />
+      <div className="text-bitBrown mb-12">{formatTime(props.focusTime)}</div>
       <br />
       <label className="text-bitBrown font-bold">Rest Time</label>
       <input
         id="default-range"
         type="range"
-        min={1}
-        max={15}
-        value={restValue}
-        onChange={(e) => handleRestTime(parseInt(e.target.value))}
-        disabled={disabled}
+        min={1*60}
+        max={15*60}
+        value={props.restTime}
+        onChange={props.handleRestTime}
+        disabled={props.isRunning}
         className="w-11/12 h-2 bg-bitBrown text-yellow-400 rounded-lg appearance-none cursor-pointer"
       />
-      <div className="text-bitBrown mb-12">{`${restValue}:00`}</div>
+      <div className="text-bitBrown mb-12">{formatTime(props.restTime)}</div>
       <div className="text-bitBrown font-bold">Number Of Sessions</div>
       <NumberInput
-        value={sessions}
-        updateValue={setSessions}
+        value={props.sessions}
         min={1}
         max={15}
-        disabled={disabled}
+        disabled={props.isRunning}
       />
-      {!disabled && (
-        <button
-          onClick={handleStart}
-          className="bg-bitBrown text-white px-4 py-2 rounded-lg disabled:bg-gray-950 mb-4"
-        >
-          Start
-        </button>
-      )}
-      {error && <div className="text-red-500">{error}</div>}
+      {/* {error && <div className="text-red-500">{error}</div>} */}
     </div>
   );
 };

@@ -1,33 +1,33 @@
 import { IonIcon } from "@ionic/react";
 import { arrowUpOutline,arrowDownOutline } from "ionicons/icons";
-import { SetStateAction } from "react";
+import { appStore } from "../../stores/redux-store";
+import { timerActions } from "../../stores/slices/timer-slice";
 
 interface INumberInput{
     value:number;
-    updateValue:React.Dispatch<SetStateAction<number>>;
     min:number;
     max:number;
     disabled:boolean;
 }
 
-const NumberInput = ({value,updateValue,min,max,disabled}:INumberInput) => {
+const NumberInput = ({value,min,max,disabled}:INumberInput) => {
 
     const handleIncrease=()=>{
         if(value<max){
-            updateValue(value+1);
+            appStore.dispatch(timerActions.setSessions(value+1));
         }
     }
 
     const handleDecrease=()=>{
         if(value>min){
-            updateValue(value-1);
+            appStore.dispatch(timerActions.setSessions(value-1));
         }
     }
 
 
   return (
     <div className="m-2 flex">
-      <div className="w-1/4 bg-white px-2 py-2 me-2 text-bitBrown">{value}</div>
+      <div className="w-1/4 bg-gray-200 px-2 py-2 me-2 text-bitBrown">{value}</div>
       {!disabled && (<button
         onClick={handleIncrease}
         className="px-2 py-2 me-2 bg-bitBrown hover:bg-white text-white hover:text-bitBrown rounded-lg disabled:bg-gray-900"

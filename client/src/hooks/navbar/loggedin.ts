@@ -12,7 +12,6 @@ import { useLocation } from "react-router-dom";
 
 export const useLoggedInNavbar = () => {
   const [userOptionsOpen, setUserOptionsOpen] = useState(false);
-  const [openStudyTimer, setOpenStudyTimer] = useState(false);
   const location = useLocation();
   const currentPath=location.pathname;
   const toggleUserOptionsDropDown = () => {
@@ -38,10 +37,6 @@ export const useLoggedInNavbar = () => {
       toggleUserOptionsDropDown,
       userOptionsOpen,
       setUserOptionsOpen,
-    },
-    studyTimer: {
-      openStudyTimer,
-      setOpenStudyTimer,
     },
     navigation: {
       navigationContents,
