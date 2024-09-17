@@ -1,5 +1,5 @@
 import { appStore } from "../../stores/redux-store";
-import { timerActions } from "../../stores/slices/timer-slice";
+import { initTimerState, timerActions } from "../../stores/slices/timer-slice";
 
 export default class TimerService {
     private static instance: TimerService;
@@ -69,7 +69,7 @@ export default class TimerService {
     private completeSession() {
         const state = appStore.getState().timer;
 
-        if (state.sessions > 0) {
+        if (state.sessions > 1) {
 
             appStore.dispatch(timerActions.setFocus(this.initFocusTime));
             appStore.dispatch(timerActions.setRest(this.initRestTime));
@@ -85,6 +85,8 @@ export default class TimerService {
     private stop(): void {
         this.clearExistingInterval();
         appStore.dispatch(timerActions.stopTimer());
+
+        appStore.dispatch(timerActions.resetState());
     }
 
     private clearExistingInterval() {

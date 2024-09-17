@@ -9,7 +9,7 @@ export interface Timer {
     restState: boolean;
 }
 
-const initTimerState: Timer = {
+export const initTimerState: Timer = {
     isRunning: false,
     focus: 60,
     rest: 60,
@@ -22,6 +22,9 @@ export const timerSlice = createSlice({
     name: "timer",
     initialState: initTimerState,
     reducers: {
+        resetState: (state) => {
+            state = initTimerState;
+        },
         startTimer: (state) => {
             state.isRunning = true;
         },
