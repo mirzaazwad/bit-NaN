@@ -1,11 +1,14 @@
+import { API_ROUTES } from "../../api/apiRoutes";
 import { appStore } from "../../stores/redux-store";
-import { timerActions } from "../../stores/slices/timer-slice";
+import { initTimerState, timerActions } from "../../stores/slices/timer-slice";
+import { postData } from "../common/apiCall";
 
 export default class TimerService {
     private static instance: TimerService;
     private intervalId: any;
     private initFocusTime: number = 60;
     private initRestTime: number = 60;
+    private initSessions: number = 1;
 
     private constructor() { }
 
@@ -24,6 +27,7 @@ export default class TimerService {
         if (!state.isRunning) {
             this.initFocusTime = state.focus;
             this.initRestTime = state.rest;
+            this.initSessions = state.sessions;
 
             appStore.dispatch(timerActions.startTimer());
             appStore.dispatch(timerActions.startFocus());
@@ -86,7 +90,22 @@ export default class TimerService {
         this.clearExistingInterval();
         appStore.dispatch(timerActions.stopTimer());
 
-        appStore.dispatch(timerActions.resetState());
+        appStore.dispatch(timerActions.resetState(initTimerState));
+
+        const res = this.saveTimerInfo();
+        console.log(res);
+    }
+
+    private async saveTimerInfo(): Promise<any>{
+
+        const data = {
+            sessions: this.initSessions,
+            focusTime: this.initFocusTime,
+            restTime: this.initRestTime,
+        }
+
+        const response = await postData(API_ROUTES.timer.save, data);
+        return response.data;
     }
 
     private clearExistingInterval() {

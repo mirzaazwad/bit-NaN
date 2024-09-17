@@ -22,8 +22,13 @@ export const timerSlice = createSlice({
     name: "timer",
     initialState: initTimerState,
     reducers: {
-        resetState: (state) => {
-            state = initTimerState;
+        resetState: (state, action:PayloadAction<Timer>) => {
+            state.isRunning = action.payload.isRunning;
+            state.focus = action.payload.focus;
+            state.rest = action.payload.rest;
+            state.sessions = action.payload.sessions;
+            state.focusState = action.payload.focusState;
+            state.restState = action.payload.restState;
         },
         startTimer: (state) => {
             state.isRunning = true;
