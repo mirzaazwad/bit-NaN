@@ -23,6 +23,9 @@ export const API_ROUTES = {
         update: `${BASE_URL}/api/profile/update`,
         fetch: `${BASE_URL}/api/profile/`
     },
+    timer: {
+        save: `${BASE_URL}/api/timer/save`,
+    },
     groups:{
         create: `${BASE_URL}/api/groups/create`,
         fetch: `${BASE_URL}/api/groups/all`,
