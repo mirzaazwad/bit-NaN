@@ -4,14 +4,20 @@ import GoalsHelper from "../../../utils/helpers/goalsHelper";
 import { GoalMinimal } from "../components/goals/GoalMinimal";
 import Profile from "../components/profile/Profile";
 import ProgresWrapper from "../components/progress/ProgressWrapper.component";
+import { TimerControlUtils } from "../../../utils/helpers/timerHelper";
 const DashboardPage = () => {
 
   const fetchGoals = async () => {
     await GoalsHelper.fetchGoalsByUser();
   }
 
+  const fetchTimerInfo = async () => {
+    await TimerControlUtils.fetchTimerInfo();
+  }
+
   useEffect(() => {
     fetchGoals();
+    fetchTimerInfo();
   }, []);
 
   return (

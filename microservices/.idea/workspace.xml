@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/DataTransferObjects/TimerRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Entity/TimerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +57,7 @@
     "Spring Boot.ServerApplication (1).executor": "Run",
     "Spring Boot.ServerApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Timer",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat",
@@ -98,7 +95,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.API Gateway">
+  <component name="RunManager" selected="Spring Boot.ProfileApplication">
     <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -197,7 +194,7 @@
       <workItem from="1725126324830" duration="163000" />
       <workItem from="1725126501602" duration="342000" />
       <workItem from="1726155827639" duration="725000" />
-      <workItem from="1726577044064" duration="3814000" />
+      <workItem from="1726577044064" duration="4384000" />
     </task>
     <servers />
   </component>

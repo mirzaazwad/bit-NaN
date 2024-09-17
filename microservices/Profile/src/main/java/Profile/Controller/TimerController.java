@@ -4,10 +4,7 @@ import Profile.Core.DataTransferObjects.TimerRequest;
 import Profile.Core.Interfaces.ITimerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,6 +19,15 @@ public class TimerController {
             return ResponseEntity.ok("Timer saved successfully");
         }catch (Exception e) {
             return ResponseEntity.status(500).body("Error saving timer information " + e);
+        }
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<?> fetch(){
+        try{
+            return ResponseEntity.ok(service.fetch());
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error fetching timer data " + e);
         }
     }
 }
