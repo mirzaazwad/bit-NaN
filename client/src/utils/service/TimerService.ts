@@ -1,5 +1,5 @@
 import { appStore } from "../../stores/redux-store";
-import { initTimerState, timerActions } from "../../stores/slices/timer-slice";
+import { timerActions } from "../../stores/slices/timer-slice";
 
 export default class TimerService {
     private static instance: TimerService;
