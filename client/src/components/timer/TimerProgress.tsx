@@ -1,20 +1,17 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useAppSelector } from "../../stores/redux-store";
 import { TimerControlUtils } from "../../utils/helpers/timerHelper";
 
 interface TimerProgressProps {
-  pomodoroValue: number;
-  restValue: number;
+  focusState: boolean;
+  focusTime: number;
+  restTime: number;
+  restState: boolean;
 }
 
 const TimerProgress = (props: TimerProgressProps) => {
-  const time = useAppSelector((state) => state.timer.time);
-  const focus = useAppSelector((state) => state.timer.isRunning);
 
-  const percentage = (time / (focus ? props.pomodoroValue * 60 : props. restValue * 60)) * 100;
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
+  const percentage = (props.restState ? props.restTime : props.focusTime) / (120*60) * 100;
 
   return (
     <CircularProgressbar
@@ -27,7 +24,7 @@ const TimerProgress = (props: TimerProgressProps) => {
         trailColor: "#facc15",
       })}
       value={percentage}
-      text={`${TimerControlUtils.formatTime(time)}`}
+      text={`${TimerControlUtils.formatTime(props.restState ? props.restTime : props.focusTime)}`}
     />
   );
 };

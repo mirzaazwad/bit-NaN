@@ -2,22 +2,27 @@ import { IconButton, Modal } from "rsuite";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import ModalHeader from "./ModalHeader";
 import TimerProgress from "./TimerProgress";
-import { useState } from "react";
+import React from "react";
 import { appStore, useAppSelector } from "../../stores/redux-store";
 import TimerControls from "./TimerControls";
 import { timerActions } from "../../stores/slices/timer-slice";
 import TimeIcon from '@rsuite/icons/Time';
 const StudyTimer = () => {
 
-    const [pomodoroTime, setPomodoroTime] = useState<number>(60);
-    const [restTime, setRestTime] = useState<number>(60);
+    const focusTime = useAppSelector((state) => state.timer.focus);
+    const restTime = useAppSelector((state) => state.timer.rest);
     const sessions = useAppSelector((state) => state.timer.sessions);
+    const isRunning = useAppSelector((state) => state.timer.isRunning);
 
-    const disabled = useAppSelector((state) => state.timer.disabled);
+    const focusState = useAppSelector((state) => state.timer.focusState);
+    const restState = useAppSelector((state) => state.timer.restState);
 
-    const handlePomodoroTime = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPomodoroTime(parseInt(event.target.value));
-        appStore.dispatch(timerActions.setTime(parseInt(event.target.value)));
+    const handleFocusTime = (event: React.ChangeEvent<HTMLInputElement>) => {
+        appStore.dispatch(timerActions.setFocus(parseInt(event.target.value)));
+    }
+
+    const handleRestTime = (event: React.ChangeEvent<HTMLInputElement>) => {
+        appStore.dispatch(timerActions.setRest(parseInt(event.target.value)));
     }
 
     return (
@@ -38,23 +43,26 @@ const StudyTimer = () => {
                     <div className="w-full flex flex-row bg-white">
                         <div className="w-3/5 p-4">
                             <TimerProgress
-                                pomodoroValue={pomodoroTime}
-                                restValue={restTime}
+                                focusState={focusState}
+                                focusTime={focusTime}
+                                restTime={restTime}
+                                restState={restState}
                             />
                         </div>
                         <div className="w-2/5 p-4">
                             <TimerControls
-                                pomodoroValue={pomodoroTime}
-                                restValue={restTime}
-                                handlePomodoroTime={handlePomodoroTime}
-                                handleRestTime={(event) => setRestTime(parseInt(event.target.value))}
+                                focusTime={focusTime}
+                                restTime={restTime}
+                                handlePomodoroTime={handleFocusTime}
+                                handleRestTime={handleRestTime}
                                 sessions={sessions}
+                                isRunning={isRunning}
                             />
                         </div>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    {!disabled && (
+                    {!isRunning && (
                         <div className="p-1 pr-3">
                             <IconButton
                                 onClick={() => console.log("Start")}

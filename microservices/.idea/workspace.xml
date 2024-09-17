@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/helpers/groupsHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/helpers/groupsHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/templates/Message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/templates/Message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/timer/TimerProgress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/timer/TimerProgress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/stores/slices/timer-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/stores/slices/timer-slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +55,7 @@
     &quot;Spring Boot.ServerApplication (1).executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ServerApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Groups&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Timer&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat&quot;,
@@ -95,7 +93,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProfileApplication">
+  <component name="RunManager" selected="Spring Boot.API Gateway">
     <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -193,6 +191,7 @@
       <workItem from="1724590273843" duration="1868000" />
       <workItem from="1725126324830" duration="163000" />
       <workItem from="1725126501602" duration="342000" />
+      <workItem from="1726155827639" duration="725000" />
     </task>
     <servers />
   </component>

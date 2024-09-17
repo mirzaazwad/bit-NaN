@@ -1,17 +1,15 @@
-import { useAppSelector } from "../../stores/redux-store";
 import NumberInput from "./NumberInput";
 import { TimerControlUtils } from "../../utils/helpers/timerHelper";
 interface TimerControlsProps {
-  pomodoroValue: number;
-  restValue: number;
+  focusTime: number;
+  restTime: number;
   handlePomodoroTime: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleRestTime: (event: React.ChangeEvent<HTMLInputElement>) => void;
   sessions: number;
+  isRunning: boolean;
 }
 
 const TimerControls = (props: TimerControlsProps) => {
-
-  const disabled = useAppSelector((state) => state.timer.disabled);
 
   const formatTime = (timeInSeconds: number): string => {
     return TimerControlUtils.formatTime(timeInSeconds);
@@ -25,12 +23,12 @@ const TimerControls = (props: TimerControlsProps) => {
         type="range"
         min={1*60}
         max={120*60}
-        value={props.pomodoroValue}
+        value={props.focusTime}
         onChange={props.handlePomodoroTime}
-        disabled={disabled}
+        disabled={props.isRunning}
         className="w-11/12 h-2 bg-bitBrown text-yellow-400 rounded-lg appearance-none cursor-pointer"
       />
-      <div className="text-bitBrown mb-12">{formatTime(props.pomodoroValue)}</div>
+      <div className="text-bitBrown mb-12">{formatTime(props.focusTime)}</div>
       <br />
       <label className="text-bitBrown font-bold">Rest Time</label>
       <input
@@ -38,18 +36,18 @@ const TimerControls = (props: TimerControlsProps) => {
         type="range"
         min={1*60}
         max={15*60}
-        value={props.restValue}
+        value={props.restTime}
         onChange={props.handleRestTime}
-        disabled={disabled}
+        disabled={props.isRunning}
         className="w-11/12 h-2 bg-bitBrown text-yellow-400 rounded-lg appearance-none cursor-pointer"
       />
-      <div className="text-bitBrown mb-12">{formatTime(props.restValue)}</div>
+      <div className="text-bitBrown mb-12">{formatTime(props.restTime)}</div>
       <div className="text-bitBrown font-bold">Number Of Sessions</div>
       <NumberInput
         value={props.sessions}
-        min={1*60}
-        max={15*60}
-        disabled={disabled}
+        min={1}
+        max={15}
+        disabled={props.isRunning}
       />
       {/* {error && <div className="text-red-500">{error}</div>} */}
     </div>
