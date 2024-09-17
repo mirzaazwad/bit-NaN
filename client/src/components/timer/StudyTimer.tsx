@@ -7,7 +7,10 @@ import { appStore, useAppSelector } from "../../stores/redux-store";
 import TimerControls from "./TimerControls";
 import { timerActions } from "../../stores/slices/timer-slice";
 import TimeIcon from '@rsuite/icons/Time';
+import TimerService from "../../utils/service/TimerService";
 const StudyTimer = () => {
+
+    const timerService: TimerService = TimerService.getInstance();
 
     const focusTime = useAppSelector((state) => state.timer.focus);
     const restTime = useAppSelector((state) => state.timer.rest);
@@ -65,7 +68,7 @@ const StudyTimer = () => {
                     {!isRunning && (
                         <div className="p-1 pr-3">
                             <IconButton
-                                onClick={() => console.log("Start")}
+                                onClick={() => timerService.start()}
                                 className="bg-bitBrown text-white px-4 py-2 rounded-lg disabled:bg-gray-950 mb-4"
                                 icon={<TimeIcon color="black" />}
                             >
