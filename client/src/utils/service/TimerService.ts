@@ -4,6 +4,8 @@ import { timerActions } from "../../stores/slices/timer-slice";
 export default class TimerService {
     private static instance: TimerService;
     private intervalId: any;
+    private initFocusTime: number = 60;
+    private initRestTime: number = 60;
 
     private constructor() { }
 
@@ -20,6 +22,9 @@ export default class TimerService {
         const state = appStore.getState().timer;
 
         if (!state.isRunning) {
+            this.initFocusTime = state.focus;
+            this.initRestTime = state.rest;
+
             appStore.dispatch(timerActions.startTimer());
             appStore.dispatch(timerActions.startFocus());
 
@@ -29,6 +34,10 @@ export default class TimerService {
 
     private startFocusCountdown() {
         this.clearExistingInterval();
+        const state = appStore.getState().timer;
+        if(state.focus===0){
+
+        }
 
         this.intervalId = setInterval(() => {
             const currentState = appStore.getState().timer;
@@ -61,6 +70,10 @@ export default class TimerService {
         const state = appStore.getState().timer;
 
         if (state.sessions > 0) {
+
+            appStore.dispatch(timerActions.setFocus(this.initFocusTime));
+            appStore.dispatch(timerActions.setRest(this.initRestTime));
+
             appStore.dispatch(timerActions.setSessions(state.sessions - 1));
             appStore.dispatch(timerActions.startFocus());
             this.startFocusCountdown();
