@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/WeeklyProgress.component.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/pages/DashboardPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/pages/DashboardPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/utils/templates/timer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/templates/timer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" afterDir="false" />
@@ -38,39 +43,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.API Gateway.executor": "Run",
-    "Spring Boot.APIGatewayApplication.executor": "Run",
-    "Spring Boot.ChatApplication.executor": "Run",
-    "Spring Boot.FileApplication.executor": "Run",
-    "Spring Boot.ForumApplication.executor": "Run",
-    "Spring Boot.GoalsApplication.executor": "Run",
-    "Spring Boot.GroupsApplication.executor": "Run",
-    "Spring Boot.ProfileApplication.executor": "Run",
-    "Spring Boot.ServerApplication (1).executor": "Run",
-    "Spring Boot.ServerApplication.executor": "Run",
-    "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "git-widget-placeholder": "Timer",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.API Gateway.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.APIGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ChatApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.FileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ForumApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GoalsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GroupsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProfileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServerApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Timer&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projects\bit-NaN\microservices\Chat\src\main\java\Chat" />
@@ -195,6 +200,7 @@
       <workItem from="1725126501602" duration="342000" />
       <workItem from="1726155827639" duration="725000" />
       <workItem from="1726577044064" duration="4384000" />
+      <workItem from="1726679670395" duration="1397000" />
     </task>
     <servers />
   </component>

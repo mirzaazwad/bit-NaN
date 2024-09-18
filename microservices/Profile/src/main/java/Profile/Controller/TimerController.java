@@ -30,4 +30,13 @@ public class TimerController {
             return ResponseEntity.status(500).body("Error fetching timer data " + e);
         }
     }
+
+    @GetMapping("/{today}")
+    public ResponseEntity<?> fetchToday(){
+        try{
+            return ResponseEntity.ok(service.fetchToday());
+        }catch(Exception e) {
+            return ResponseEntity.status(500).body("Error fetching timer daily data " + e);
+        }
+    }
 }

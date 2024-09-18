@@ -8,7 +8,9 @@ import Profile.Repository.TimerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -30,5 +32,12 @@ public class TimerService implements ITimerService {
     @Override
     public List<TimerEntity> fetch() {
         return this.repository.findByUserEmail(Reusables.getCurrentUsername());
+    }
+
+    @Override
+    public List<TimerEntity> fetchToday() {
+        LocalDateTime startOfDay = LocalDate.now().atStartOfDay();
+        LocalDateTime endOfDay = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
+        return this.repository.findByUserEmailAndTimeBetween(Reusables.getCurrentUsername(), startOfDay, endOfDay);
     }
 }

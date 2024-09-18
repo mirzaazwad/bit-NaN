@@ -8,4 +8,5 @@ import java.util.List;
 public interface ITimerService {
     void saveTimerInfo(TimerRequest request);
     List<TimerEntity> fetch();
+    List<TimerEntity> fetchToday();
 }
