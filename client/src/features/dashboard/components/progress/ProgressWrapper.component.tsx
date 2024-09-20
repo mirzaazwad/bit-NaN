@@ -34,7 +34,7 @@ const ProgresWrapper = () => {
             <div className="w-full h-full flex items-center justify-center mt-2">
                 <div className="flex flex-col min-w-full">
                     <Progress hours={dailyHours} goal={1.5}/>
-                    <DailyProgress/>
+                    <DailyProgress timerData={timerData}/>
                 </div>
             </div>
         </div>

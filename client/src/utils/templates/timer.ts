@@ -26,4 +26,5 @@ export interface TimerInfo {
   focusTime: number;
   restTime: number;
   sessions: number;
+  time: string;
 }
