@@ -15,6 +15,6 @@ public class ReviewCreateResponse {
     private UUID id;
     private String forumId;
     private String review;
-    private String email;
+    private String userEmail;
     private LocalDate created;
 }

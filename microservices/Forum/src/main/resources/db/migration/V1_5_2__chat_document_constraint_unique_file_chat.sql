@@ -1,0 +1,1 @@
+ALTER TABLE chat_documents ADD UNIQUE (chat_id,url);

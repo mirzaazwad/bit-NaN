@@ -9,8 +9,8 @@ import java.time.LocalDate;
 @Builder
 public class ChatDocumentFindResponse {
     private String id;
-    private String chatId;
+    private String forumId;
     private String userEmail;
-    private String document;
+    private String url;
     private LocalDate created;
 }

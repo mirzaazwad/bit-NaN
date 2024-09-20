@@ -15,11 +15,6 @@ public class OllamaController {
 
     private final OllamaService ollamaService;
 
-    @GetMapping("/test")
-    public ResponseEntity<String> test() {
-        return ResponseEntity.ok("Hello World");
-    }
-
     @PostMapping("/generate")
     public ResponseEntity<?> generate(@RequestBody LllamaRequest lllamaRequest) {
         try{

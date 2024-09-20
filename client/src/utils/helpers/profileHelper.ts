@@ -4,6 +4,9 @@ import { FileType } from "../enums/FileEnums";
 import FileHelper from "./fileHelper";
 
 class ProfileHelper{
+
+    private static profileMap=new Map<String,Object>();
+
     static async updateProfile(data:any): Promise<string>{
         let request = {};
 
@@ -26,11 +29,16 @@ class ProfileHelper{
 
     static async getProfile(): Promise<any>{
         const response = await getData(API_ROUTES.profile.fetch);
+        this.profileMap.set(response.data.profile.userEmail,response.data.profile);
         return response.data.profile;
     }
 
     static async getProfileByEmail(email:string): Promise<any>{
-        const response = await getData(`${API_ROUTES.profile.fetch}/${email}`);
+        if(this.profileMap.has(email)){
+            return this.profileMap.get(email);
+        }
+        const response = await getData(API_ROUTES.profile.findByEmail+email);
+        this.profileMap.set(response.data.profile.userEmail,response.data.profile);
         return response.data.profile;
     }
 }

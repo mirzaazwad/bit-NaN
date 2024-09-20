@@ -10,13 +10,13 @@ import Forum.Features.Forum.Core.DataTypeObjects.ForumReviews.Response.ReviewUpd
 import Forum.Features.Forum.Model.ForumReviewsEntity;
 import Forum.Features.Forum.Repository.ForumRepository;
 import Forum.Features.Forum.Repository.ForumReviewsRepository;
+import Forum.Lib.Reusables;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -29,7 +29,7 @@ public class ForumReviewsService {
         return forumReviewsRepository.save(
                 ForumReviewsEntity.builder()
                         .forumId(request.getForumId())
-                        .userEmail(request.getUserEmail())
+                        .userEmail(Reusables.getCurrentUsername())
                         .review(request.getReview())
                         .created(LocalDate.now())
                         .modified(LocalDate.now())
@@ -41,7 +41,7 @@ public class ForumReviewsService {
                     return forumRepository.save(forumEntity);
                 }).then(Mono.just(ReviewCreateResponse.builder()
                                 .id(forumReviewsEntity.getId())
-                                .email(forumReviewsEntity.getUserEmail())
+                                .userEmail(forumReviewsEntity.getUserEmail())
                                 .created(forumReviewsEntity.getCreated())
                                 .forumId(forumReviewsEntity.getForumId().toString())
                                 .review(forumReviewsEntity.getReview())
@@ -49,9 +49,15 @@ public class ForumReviewsService {
     }
 
     public Mono<ReviewDeleteResponse> deleteReview(DeleteReviewRequest request) {
+        String currentUserEmail = Reusables.getCurrentUsername();
         return forumReviewsRepository.findById(request.getId())
                 .flatMap(existingForumReview -> {
-                    existingForumReview.setIsRemoved(true);
+                    if(existingForumReview.getUserEmail().equals(currentUserEmail)){
+                        existingForumReview.setIsRemoved(true);
+                    }
+                    else{
+                        return Mono.error(new RuntimeException("User Does not have permission to delete this review"));
+                    }
                     return forumReviewsRepository.save(existingForumReview)
                             .flatMap(forumReviewsEntity -> forumRepository.findById(forumReviewsEntity.getForumId())
                                     .flatMap(forumEntity -> {
@@ -63,13 +69,19 @@ public class ForumReviewsService {
     }
 
     public Mono<ReviewUpdateResponse> updateReview(UpdateReviewRequest request){
+        String currentUserEmail = Reusables.getCurrentUsername();
         return forumReviewsRepository.findById(request.getId())
                 .flatMap(existingForumReview->{
-                    existingForumReview.setReview(request.getReview());
+                    if(existingForumReview.getUserEmail().equals(currentUserEmail)){
+                        existingForumReview.setReview(request.getReview());
+                    }
+                    else{
+                        return Mono.error(new RuntimeException("User Does not have permission to edit this review"));
+                    }
                     return forumReviewsRepository.save(existingForumReview)
                             .map(forumReviewsEntity -> ReviewUpdateResponse.builder()
                                     .id(forumReviewsEntity.getId())
-                                    .email(forumReviewsEntity.getUserEmail())
+                                    .userEmail(forumReviewsEntity.getUserEmail())
                                     .created(forumReviewsEntity.getCreated())
                                     .modified(forumReviewsEntity.getModified())
                                     .forumId(forumReviewsEntity.getForumId())

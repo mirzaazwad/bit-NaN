@@ -50,4 +50,9 @@ public class ForumStarsController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @GetMapping("/isStarred/{forumId}")
+    public ResponseEntity<?> isStarred(@PathVariable String forumId) {
+        return ResponseEntity.ok(forumStarsService.isStarred(forumId));
+    }
 }

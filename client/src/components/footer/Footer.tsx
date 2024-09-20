@@ -1,5 +1,3 @@
-
-import React from "react";
 import { footerContainer, footerContent } from "../../config/theme/footer.theme";
 import FooterNavigation from "./FooterNavigation";
 import FooterIcons from "./FooterIcons";

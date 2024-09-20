@@ -3,7 +3,7 @@ package Forum.Features.Document.Service;
 
 import Forum.Features.Document.Core.DataTypeObjects.Request.AddDocumentRequest;
 import Forum.Features.Document.Core.DataTypeObjects.Response.AddDocumentResponse;
-import Forum.Features.Document.Core.Utils.FileService;
+import Forum.Features.Document.Core.DataTypeObjects.Response.ChatDocumentFindResponse;
 import Forum.Features.Document.Model.ChatDocumentsEntity;
 import Forum.Features.Document.Repository.ChatDocumentsRepository;
 import Forum.Lib.Reusables;
@@ -12,47 +12,35 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class ChatDocumentService extends FileService {
+public class ChatDocumentService {
 
     private final ChatDocumentsRepository chatDocumentsRepository;
 
-    public Mono<AddDocumentResponse> saveDocument(AddDocumentRequest request) throws Exception{
-        try{
-            String user = Reusables.getCurrentUsername();
-            var uploadResult = this.uploadFile(request.getFile());
-            String createdAtString = (String) uploadResult.get("created_at");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
-            LocalDate createdAt = LocalDate.parse(createdAtString,formatter);
-            System.out.println("Comes Here");
-            System.out.println(request);
-            return chatDocumentsRepository.save(
-                    ChatDocumentsEntity.builder()
-                            .chatId(request.getChatId())
-                            .userEmail(user)
-                            .filename(request.getFile().getOriginalFilename())
-                            .url((String) uploadResult.get("url"))
-                            .created(createdAt)
-                            .isRemoved(false)
-                            .build()
-            ).map(chatDocumentsEntity -> AddDocumentResponse.builder()
-                    .chatId(chatDocumentsEntity.getChatId())
-                    .created(chatDocumentsEntity.getCreated())
-                    .userEmail(chatDocumentsEntity.getUserEmail())
-                    .filename(chatDocumentsEntity.getFilename())
-                    .url(chatDocumentsEntity.getUrl())
-                    .build()
-            );
-        } catch (DateTimeParseException e) {
-            System.out.println(e.getMessage());
-            throw new Exception("Error parsing created_at date from upload result: " + e.getMessage(), e);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            throw new Exception("Error saving file information to database: " + e.getMessage(), e);
-        }
+    public Mono<AddDocumentResponse> saveDocument(AddDocumentRequest request){
+        String user = Reusables.getCurrentUsername();
+        return chatDocumentsRepository.save(
+                ChatDocumentsEntity.builder()
+                        .forumId(request.getForumId())
+                        .userEmail(user)
+                        .url(request.getUrl())
+                        .created(LocalDate.now())
+                        .isRemoved(false)
+                        .build()
+        ).map(chatDocumentsEntity -> AddDocumentResponse.builder()
+                .id(chatDocumentsEntity.getId())
+                .forumId(chatDocumentsEntity.getForumId())
+                .created(chatDocumentsEntity.getCreated())
+                .userEmail(chatDocumentsEntity.getUserEmail())
+                .url(chatDocumentsEntity.getUrl())
+                .build()
+        );
+    }
+
+    public Mono<ChatDocumentFindResponse> getDocument(UUID chatId){
+        return chatDocumentsRepository.findOneById(chatId);
     }
 }

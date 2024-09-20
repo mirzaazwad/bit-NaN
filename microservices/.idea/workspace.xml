@@ -35,10 +35,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mirzaazwad"
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mirzaazwad&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mirzaazwad/bit-NaN.git&quot;,
+    &quot;accountId&quot;: &quot;1bc41d09-56a6-4024-b478-c6a930fd1bf3&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2jkRAr310urrHggLgoSeKDwe6ug" />
+  <component name="ProjectId" id="2l69jQaBM9mJf1w2p0BZS344b2u" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -92,9 +116,38 @@
       <recent name="Chat.Service" />
     </key>
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.FileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ForumApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GoalsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GroupsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProfileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Forum&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
       </set>
@@ -106,6 +159,16 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="APIGateway.ApiGatewayApplication" />
+  <component name="RunManager" selected="Spring Boot.ProfileApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" temporary="true" nameIsGenerated="true">
+      <module name="APIGateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="APIGateway.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="APIGateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,6 +190,18 @@
     <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Forum" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
+  <component name="RunManager" selected="Spring Boot.FileApplication">
+    <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" temporary="true" nameIsGenerated="true">
+    <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" temporary="true" nameIsGenerated="true">
+      <module name="File" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="File.FileApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="File.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,6 +209,16 @@
     <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Goals" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
+    <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Forum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Forum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,6 +226,21 @@
     <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Groups" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
+    <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Goals" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Goals.*" />
+    <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Forum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Forum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,11 +248,73 @@
     <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Profile" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
+    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Groups" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Groups.*" />
+    <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Goals" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Goals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServiceRegistry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
+    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Profile" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Profile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Groups" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Groups.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Profile" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Profile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" nameIsGenerated="true">
+      <module name="ServiceRegistry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" nameIsGenerated="true">
       <module name="ServiceRegistry" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
       <method v="2">
@@ -168,20 +330,38 @@
       <item itemvalue="Spring Boot.ProfileApplication" />
       <item itemvalue="Spring Boot.ServiceRegistryApplication" />
       <item itemvalue="Spring Boot.API Gateway" />
+    <list>
+      <item itemvalue="Spring Boot.ProfileApplication" />
+      <item itemvalue="Spring Boot.ForumApplication" />
+      <item itemvalue="Spring Boot.GoalsApplication" />
+      <item itemvalue="Spring Boot.GroupsApplication" />
+      <item itemvalue="Spring Boot.ServiceRegistryApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.FileApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.GroupsApplication" />
+        <item itemvalue="Spring Boot.GoalsApplication" />
+        <item itemvalue="Spring Boot.ForumApplication" />
+        <item itemvalue="Spring Boot.ProfileApplication" />
+        <item itemvalue="Spring Boot.FileApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="" />
-      <created>1721928952987</created>
+      <changelist id="87074811-f60b-4afb-9705-4d655abd85c0" name="Changes" comment="" />
+      <created>1724489795181</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721928952987</updated>
@@ -206,16 +386,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

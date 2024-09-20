@@ -4,10 +4,12 @@ import Forum.Features.Forum.Core.DataTypeObjects.ForumStars.Request.AddStarReque
 import Forum.Features.Forum.Core.DataTypeObjects.ForumStars.Request.DeleteStarRequest;
 import Forum.Features.Forum.Core.DataTypeObjects.ForumStars.Response.StarCreateResponse;
 import Forum.Features.Forum.Core.DataTypeObjects.ForumStars.Response.StarDeleteResponse;
+import Forum.Features.Forum.Core.DataTypeObjects.ForumStars.Response.StarsFindByUserResponse;
 import Forum.Features.Forum.Core.DataTypeObjects.ForumStars.Response.StarsFindResponse;
 import Forum.Features.Forum.Model.ForumStarsEntity;
 import Forum.Features.Forum.Repository.ForumRepository;
 import Forum.Features.Forum.Repository.ForumStarsRepository;
+import Forum.Lib.Reusables;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -27,7 +29,7 @@ public class ForumStarsService {
         return forumStarsRepository.save(
                 ForumStarsEntity.builder()
                         .forumId(request.getForumId())
-                        .userEmail(request.getUserEmail())
+                        .userEmail(Reusables.getCurrentUsername())
                         .created(LocalDate.now())
                         .modified(LocalDate.now())
                         .build()
@@ -44,14 +46,20 @@ public class ForumStarsService {
     }
 
     public Mono<StarDeleteResponse> deleteStar(DeleteStarRequest request) {
+        String currentUserEmail = Reusables.getCurrentUsername();
         return forumStarsRepository.findById(request.getId())
-                .flatMap(existingStar -> forumStarsRepository.delete(existingStar)
-                        .then(forumRepository.findById(existingStar.getForumId()))
-                        .flatMap(forumEntity -> {
-                            forumEntity.setStars(forumEntity.getStars() - 1);
-                            return forumRepository.save(forumEntity);
-                        })
-                        .then(Mono.just(StarDeleteResponse.builder().success(true).build()))
+                .flatMap(existingStar -> {
+                    if(!existingStar.getUserEmail().equals(currentUserEmail)) {
+                        return Mono.error(new RuntimeException("User cannot delete this forum star"));
+                    }
+                    return forumStarsRepository.delete(existingStar)
+                            .then(forumRepository.findById(existingStar.getForumId()))
+                            .flatMap(forumEntity -> {
+                                forumEntity.setStars(forumEntity.getStars() - 1);
+                                return forumRepository.save(forumEntity);
+                            })
+                            .then(Mono.just(StarDeleteResponse.builder().success(true).build()));
+                        }
                 );
     }
 
@@ -61,5 +69,11 @@ public class ForumStarsService {
 
     public Mono<StarsFindResponse> getStar(String id) {
         return forumStarsRepository.findOneById(id);
+    }
+
+    public Mono<StarsFindByUserResponse> isStarred(String forumId) {
+        return forumStarsRepository.findByEmailAndForumId(Reusables.getCurrentUsername(),forumId)
+                .map(foundStarredUser->StarsFindByUserResponse.builder().starred(true).id(foundStarredUser.getId()).build())
+                .switchIfEmpty(Mono.just(StarsFindByUserResponse.builder().starred(false).build()));
     }
 }

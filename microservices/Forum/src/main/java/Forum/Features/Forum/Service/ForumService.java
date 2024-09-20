@@ -8,6 +8,7 @@ import Forum.Features.Forum.Core.DataTypeObjects.Forum.Response.ForumFindRespons
 import Forum.Features.Forum.Core.DataTypeObjects.Forum.Response.ForumUpdateResponse;
 import Forum.Features.Forum.Model.ForumEntity;
 import Forum.Features.Forum.Repository.ForumRepository;
+import Forum.Lib.Reusables;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -31,7 +32,7 @@ public class ForumService {
                         .reviews(0L)
                         .created(LocalDate.now())
                         .modified(LocalDate.now())
-                        .userEmail(request.getUserEmail())
+                        .userEmail(Reusables.getCurrentUsername())
                         .isRemoved(false)
                         .build()
         ).map(forumEntity -> ForumCreateResponse.builder()
@@ -47,11 +48,17 @@ public class ForumService {
     }
 
     public Mono<ForumUpdateResponse> update(ForumUpdateRequest request) {
+        String currentUserEmail = Reusables.getCurrentUsername();
         return forumRepository.findById(request.getId())
                 .flatMap(existingForum -> {
-                    existingForum.setTitle(request.getTitle());
-                    existingForum.setDescription(request.getDescription());
-                    existingForum.setModified(LocalDate.now());
+                    if(existingForum.getUserEmail().equals(currentUserEmail)) {
+                        existingForum.setTitle(request.getTitle());
+                        existingForum.setDescription(request.getDescription());
+                        existingForum.setModified(LocalDate.now());
+                    }
+                    else{
+                        return Mono.error(new RuntimeException("User does not have permission to update forum"));
+                    }
                     return forumRepository.save(existingForum);
                 }).map(forumEntity -> ForumUpdateResponse.builder()
                         .id(forumEntity.getId())
@@ -67,10 +74,15 @@ public class ForumService {
     }
 
     public Mono<ForumDeleteResponse> delete(ForumDeleteRequest request){
+        String currentUserEmail = Reusables.getCurrentUsername();
         return forumRepository.findById(request.getId())
                 .flatMap(existingForum -> {
-                    existingForum.setModified(LocalDate.now());
-                    existingForum.setIsRemoved(true);
+                    if(existingForum.getUserEmail().equals(currentUserEmail)) {
+                        existingForum.setIsRemoved(true);
+                    }
+                    else{
+                        return Mono.error(new RuntimeException("User does not have permission to delete forum"));
+                    }
                     return forumRepository.save(existingForum)
                             .then(Mono.just(ForumDeleteResponse.builder().success(true).build()));
                 });

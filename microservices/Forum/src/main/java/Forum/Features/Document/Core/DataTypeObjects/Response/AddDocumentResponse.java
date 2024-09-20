@@ -9,8 +9,8 @@ import java.util.UUID;
 @Data
 @Builder
 public class AddDocumentResponse {
-    private UUID chatId;
-    private String filename;
+    private UUID id;
+    private UUID forumId;
     private String url;
     private String userEmail;
     private LocalDate created;

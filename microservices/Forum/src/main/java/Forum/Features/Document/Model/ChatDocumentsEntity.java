@@ -17,12 +17,10 @@ import java.util.UUID;
 public class ChatDocumentsEntity {
     @Id
     private UUID id;
-    @Column("chat_id")
-    private UUID chatId;
+    @Column("forum_id")
+    private UUID forumId;
     @Column("user_email")
     private String userEmail;
-    @Column("document")
-    private String filename;
     @Column("url")
     private String url;
     @Column("created")
