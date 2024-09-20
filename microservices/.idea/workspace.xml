@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="Fixing file size issue in file upload strategies, application.yml shared seperately">
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/DataTransferObjects/TimerRequest.java" afterDir="false" />
@@ -12,6 +13,9 @@
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Entity/TimerEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" afterDir="false" />
+=======
+    <list default="true" id="87074811-f60b-4afb-9705-4d655abd85c0" name="Changes" comment="">
+>>>>>>> 01f6646 (Changes to workspace.xml)
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_1__chat_document_schema_update_remove_filename.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_2__chat_document_constraint_unique_file_chat.sql" afterDir="false" />
@@ -119,23 +123,31 @@
     <option name="showLibraryContents" value="true" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 01f6646 (Changes to workspace.xml)
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+<<<<<<< HEAD
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.API Gateway.executor": "Run",
     "Spring Boot.APIGatewayApplication.executor": "Run",
     "Spring Boot.ChatApplication.executor": "Run",
+=======
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+>>>>>>> 01f6646 (Changes to workspace.xml)
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.FileApplication.executor": "Run",
     "Spring Boot.ForumApplication.executor": "Run",
     "Spring Boot.GoalsApplication.executor": "Run",
     "Spring Boot.GroupsApplication.executor": "Run",
     "Spring Boot.ProfileApplication.executor": "Run",
+<<<<<<< HEAD
     "Spring Boot.ServerApplication (1).executor": "Run",
     "Spring Boot.ServerApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
@@ -144,12 +156,19 @@
     "git-widget-placeholder": "Forum",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat",
+=======
+    "Spring Boot.ServiceRegistryApplication.executor": "Run",
+    "git-widget-placeholder": "Forum",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/mirza-mohammad-azwad/Documents/IUT/Extra-Curricular/bit-NaN/microservices",
+>>>>>>> 01f6646 (Changes to workspace.xml)
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+<<<<<<< HEAD
     "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   }
@@ -197,6 +216,11 @@
   }
 }</component>
 >>>>>>> 455787c (ForumPrimary UI Updated)
+=======
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+>>>>>>> 01f6646 (Changes to workspace.xml)
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -384,8 +408,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
@@ -417,8 +441,14 @@
 =======
       <updated>1724489795181</updated>
       <workItem from="1724489796423" duration="1460000" />
+<<<<<<< HEAD
       <workItem from="1724584739999" duration="801000" />
 >>>>>>> 455787c (ForumPrimary UI Updated)
+=======
+      <workItem from="1724584739999" duration="2015000" />
+      <workItem from="1725593993149" duration="23000" />
+      <workItem from="1726676673841" duration="1479000" />
+>>>>>>> 01f6646 (Changes to workspace.xml)
     </task>
     <servers />
   </component>
