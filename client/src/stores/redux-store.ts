@@ -5,11 +5,9 @@ import { authReducer } from "./slices/auth-slide";
 import { modalReducer } from "./slices/modal-slice";
 import { loaderReducer } from "./slices/loader-slice";
 import { groupReducer } from "./slices/group-slice";
-<<<<<<< HEAD
 import { timerReducer } from "./slices/timer-slice";
-=======
 import { forumReducer } from "./slices/forum-slice";
->>>>>>> 455787c (ForumPrimary UI Updated)
+import { forumReducer } from "./slices/forum-slice";
 const appReducer = combineReducers({
     // Add reducers here
     goal: goalReducer,
@@ -17,11 +15,9 @@ const appReducer = combineReducers({
     modal: modalReducer,
     loader:loaderReducer,
     group: groupReducer,
-<<<<<<< HEAD
     timer: timerReducer,
-=======
     forum: forumReducer
->>>>>>> 455787c (ForumPrimary UI Updated)
+    forum: forumReducer
 });
 
 export const appStore = configureStore({

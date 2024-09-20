@@ -31,7 +31,6 @@ export const API_ROUTES = {
         create: `${BASE_URL}/api/groups/create`,
         fetch: `${BASE_URL}/api/groups/all`,
     },
-<<<<<<< HEAD
     chat: {
         history: `${BASE_URL}/api/chat/history`,
         subscribe: `/topic/group`,
@@ -39,7 +38,7 @@ export const API_ROUTES = {
     },
     websocket_url: {
         url: `${BASE_URL}/ws`
-=======
+    },
     forum:{
         create: `${BASE_URL}/api/forum/create`,
         fetchById:`${BASE_URL}/api/forum/find/`,
@@ -104,6 +103,5 @@ export const API_ROUTES = {
                 fetchByChatId: `${BASE_URL}/api/forum/chat/document/find/`,
             }
         }
->>>>>>> 455787c (ForumPrimary UI Updated)
     }
 }

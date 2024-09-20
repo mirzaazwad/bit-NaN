@@ -4,8 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
       <list default="true" id="2f6074ec-f443-4edf-880e-537add5bf2f1" name="Changes" comment="Fixing file size issue in file upload strategies, application.yml shared seperately">
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/DataTransferObjects/TimerRequest.java" afterDir="false" />
@@ -13,13 +11,10 @@
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Entity/TimerEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/TimerRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" afterDir="false" />
-=======
     <list default="true" id="87074811-f60b-4afb-9705-4d655abd85c0" name="Changes" comment="">
->>>>>>> 01f6646 (Changes to workspace.xml)
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_1__chat_document_schema_update_remove_filename.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_2__chat_document_constraint_unique_file_chat.sql" afterDir="false" />
-=======
     <list default="true" id="87074811-f60b-4afb-9705-4d655abd85c0" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Forum/Core/DataTypeObjects/ForumStars/Response/StarsFindByUserResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Forum/src/main/resources/db/migration/V1_5_3__chat_document_forum_constraint.sql" afterDir="false" />
@@ -43,7 +38,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
->>>>>>> 455787c (ForumPrimary UI Updated)
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Request/AddDocumentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Request/AddDocumentRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Response/AddDocumentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/src/main/java/Forum/Features/Document/Core/DataTypeObjects/Response/AddDocumentResponse.java" afterDir="false" />
@@ -66,13 +60,14 @@
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
+    <list default="true" id="87074811-f60b-4afb-9705-4d655abd85c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -92,7 +87,6 @@
   "lastFilter": {
     "state": "OPEN",
     "assignee": "mirzaazwad"
-=======
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -100,7 +94,6 @@
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;mirzaazwad&quot;
->>>>>>> 455787c (ForumPrimary UI Updated)
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
@@ -122,32 +115,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 01f6646 (Changes to workspace.xml)
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-<<<<<<< HEAD
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.API Gateway.executor": "Run",
     "Spring Boot.APIGatewayApplication.executor": "Run",
     "Spring Boot.ChatApplication.executor": "Run",
-=======
     "RunOnceActivity.ShowReadmeOnStart": "true",
->>>>>>> 01f6646 (Changes to workspace.xml)
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.FileApplication.executor": "Run",
     "Spring Boot.ForumApplication.executor": "Run",
     "Spring Boot.GoalsApplication.executor": "Run",
     "Spring Boot.GroupsApplication.executor": "Run",
     "Spring Boot.ProfileApplication.executor": "Run",
-<<<<<<< HEAD
     "Spring Boot.ServerApplication (1).executor": "Run",
     "Spring Boot.ServerApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
@@ -156,19 +142,22 @@
     "git-widget-placeholder": "Forum",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "F:/Projects/bit-NaN/microservices/Chat/src/main/java/Chat",
-=======
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
     "git-widget-placeholder": "Forum",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/mirza-mohammad-azwad/Documents/IUT/Extra-Curricular/bit-NaN/microservices",
->>>>>>> 01f6646 (Changes to workspace.xml)
+    "Spring Boot.ServiceRegistryApplication.executor": "Run",
+    "git-widget-placeholder": "Forum",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/mirza-mohammad-azwad/Documents/IUT/Extra-Curricular/bit-NaN/microservices",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
-<<<<<<< HEAD
+
     "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   }
@@ -189,7 +178,6 @@
       <recent name="Chat.Service" />
     </key>
   </component>
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -215,12 +203,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
->>>>>>> 455787c (ForumPrimary UI Updated)
-=======
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
->>>>>>> 01f6646 (Changes to workspace.xml)
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -230,14 +215,12 @@
       </set>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="RunManager" selected="Spring Boot.API Gateway">
     <configuration name="API Gateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="APIGateway.ApiGatewayApplication" />
-=======
   <component name="RunManager" selected="Spring Boot.ProfileApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" temporary="true" nameIsGenerated="true">
       <module name="APIGateway" />
@@ -248,12 +231,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
->>>>>>> 455787c (ForumPrimary UI Updated)
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <configuration name="ChatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Chat" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Chat.ChatApplication" />
@@ -273,9 +254,8 @@
       <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
   <component name="RunManager" selected="Spring Boot.FileApplication">
     <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-=======
     <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" temporary="true" nameIsGenerated="true">
->>>>>>> 455787c (ForumPrimary UI Updated)
+    <configuration name="FileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" temporary="true" nameIsGenerated="true">
       <module name="File" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="File.FileApplication" />
       <extension name="coverage">
@@ -288,14 +268,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Goals" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
     <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-=======
     <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
->>>>>>> 455787c (ForumPrimary UI Updated)
       <module name="Forum" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
       <extension name="coverage">
@@ -308,14 +285,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Groups" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
-    <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-=======
     <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
->>>>>>> 455787c (ForumPrimary UI Updated)
+      <module name="Goals" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Goals.*" />
+    <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Forum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Forum.ForumApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Forum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Profile" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
+    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
+      <module name="Groups" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Groups.*" />
+    <configuration name="GoalsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
       <module name="Goals" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Goals.GoalsApplication" />
       <extension name="coverage">
@@ -328,14 +330,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ServiceRegistry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
+    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
       <module name="Profile" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
-    <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-=======
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Profile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     <configuration name="GroupsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
->>>>>>> 455787c (ForumPrimary UI Updated)
       <module name="Groups" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Groups.GroupsApplication" />
       <extension name="coverage">
@@ -348,14 +356,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ServiceRegistry" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
-    <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-=======
     <configuration name="ProfileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="services" temporary="true" nameIsGenerated="true">
->>>>>>> 455787c (ForumPrimary UI Updated)
       <module name="Profile" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Profile.ProfileApplication" />
       <extension name="coverage">
@@ -375,8 +376,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="startup" nameIsGenerated="true">
+      <module name="ServiceRegistry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ServiceRegistry.ServiceRegistryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-<<<<<<< HEAD
       <item itemvalue="Spring Boot.ChatApplication" />
       <item itemvalue="Spring Boot.ForumApplication" />
       <item itemvalue="Spring Boot.FileApplication" />
@@ -385,7 +392,7 @@
       <item itemvalue="Spring Boot.ProfileApplication" />
       <item itemvalue="Spring Boot.ServiceRegistryApplication" />
       <item itemvalue="Spring Boot.API Gateway" />
-=======
+    <list>
       <item itemvalue="Spring Boot.ProfileApplication" />
       <item itemvalue="Spring Boot.ForumApplication" />
       <item itemvalue="Spring Boot.GoalsApplication" />
@@ -393,7 +400,6 @@
       <item itemvalue="Spring Boot.ServiceRegistryApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.FileApplication" />
->>>>>>> 455787c (ForumPrimary UI Updated)
     </list>
     <recent_temporary>
       <list>
@@ -420,7 +426,6 @@
       <created>1724489795181</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
       <updated>1721928952987</updated>
       <workItem from="1721928956195" duration="864000" />
       <workItem from="1721929961760" duration="11000" />
@@ -438,17 +443,17 @@
       <workItem from="1726155827639" duration="725000" />
       <workItem from="1726577044064" duration="3814000" />
       <workItem from="1723906256840" duration="16248000" />
-=======
       <updated>1724489795181</updated>
       <workItem from="1724489796423" duration="1460000" />
-<<<<<<< HEAD
       <workItem from="1724584739999" duration="801000" />
->>>>>>> 455787c (ForumPrimary UI Updated)
-=======
       <workItem from="1724584739999" duration="2015000" />
       <workItem from="1725593993149" duration="23000" />
       <workItem from="1726676673841" duration="1479000" />
->>>>>>> 01f6646 (Changes to workspace.xml)
+      <updated>1724489795181</updated>
+      <workItem from="1724489796423" duration="1460000" />
+      <workItem from="1724584739999" duration="2015000" />
+      <workItem from="1725593993149" duration="23000" />
+      <workItem from="1726676673841" duration="1479000" />
     </task>
     <servers />
   </component>

@@ -11,11 +11,8 @@
         <option value="$PROJECT_DIR$/Profile/pom.xml" />
         <option value="$PROJECT_DIR$/APIGateway/pom.xml" />
         <option value="$PROJECT_DIR$/ServiceRegistry/pom.xml" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Profile/pom.xml" />
         <option value="$PROJECT_DIR$/Chat/pom.xml" />
-=======
->>>>>>> 455787c (ForumPrimary UI Updated)
       </list>
     </option>
   </component>

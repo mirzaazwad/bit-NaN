@@ -16,11 +16,8 @@
     "@types/highlightjs": "^9.12.6",
     "@types/react-syntax-highlighter": "^15.5.13",
     "axios": "^1.7.2",
-<<<<<<< HEAD
     "global": "^4.4.0",
-=======
     "axios-cache-interceptor": "^1.5.3",
->>>>>>> 455787c (ForumPrimary UI Updated)
     "highlight.js": "^11.10.0",
     "ionicons": "^7.4.0",
     "moment": "^2.30.1",
