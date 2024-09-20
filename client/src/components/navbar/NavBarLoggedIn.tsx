@@ -1,5 +1,4 @@
 import UserOptions from "./UserOptions";
-import StudyTimer from "../timer/StudyTimer";
 import TopbarUser from "./TopbarUser";
 import DropdownUser from "./DropDownUser";
 import NavBar from "./NavBar";
@@ -15,10 +14,6 @@ const NavBarLoggedIn: React.FC = () => {
           userOptionsOpen,
           setUserOptionsOpen,
         },
-        studyTimer: {
-          openStudyTimer,
-          setOpenStudyTimer,
-        },
         navigation: {
           navigationContents,
           userOptionsNavigationContents,
@@ -27,14 +22,13 @@ const NavBarLoggedIn: React.FC = () => {
 
     return (
         <>
-            <NavBar topbarChildren={<TopbarUser setOpenStudyTimer={setOpenStudyTimer} toggleUserOptionsDropDown={toggleUserOptionsDropDown} />}
-                dropdownChildren={<DropdownUser currentPath={currentPath} navigationContents={userOptionsNavigationContents} setOpenStudyTimer={setOpenStudyTimer} />}
+            <NavBar topbarChildren={<TopbarUser toggleUserOptionsDropDown={toggleUserOptionsDropDown} />}
+                dropdownChildren={<DropdownUser currentPath={currentPath} navigationContents={userOptionsNavigationContents} />}
                 onMouseLeave={() => setUserOptionsOpen(false)}
                 navigationContents={navigationContents}
             >
                 {userOptionsOpen && <UserOptions currentPath={currentPath} navigationContents={userOptionsNavigationContents} />}
             </NavBar>
-            <StudyTimer show={openStudyTimer} setShow={setOpenStudyTimer} />
         </>
     );
 }

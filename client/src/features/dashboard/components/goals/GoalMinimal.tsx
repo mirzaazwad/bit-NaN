@@ -7,9 +7,11 @@ export const GoalMinimal = () => {
     const [toDoGoals, __, _] = GoalsHelper.separateGoals(goals);
     return (
         <>
-            <div className="rounded mt-1">
-                <TaskContainer goals={toDoGoals} view="minimal" />
-            </div>
+            {goals.length > 0 && (
+                <div className="rounded mt-1">
+                    <TaskContainer name="In Progress" goals={toDoGoals} view="minimal" />
+                </div>
+            )}
         </>
     );
 }

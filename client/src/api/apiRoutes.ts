@@ -24,9 +24,20 @@ export const API_ROUTES = {
         fetch: `${BASE_URL}/api/profile/`,
         findByEmail: `${BASE_URL}/api/profile/find/`
     },
+    timer: {
+        save: `${BASE_URL}/api/timer/save`,
+    },
     groups:{
         create: `${BASE_URL}/api/groups/create`,
         fetch: `${BASE_URL}/api/groups/all`,
+    },
+    chat: {
+        history: `${BASE_URL}/api/chat/history`,
+        subscribe: `/topic/group`,
+        publish: `/app/chat.sendMessage`,
+    },
+    websocket_url: {
+        url: `${BASE_URL}/ws`
     },
     forum:{
         create: `${BASE_URL}/api/forum/create`,

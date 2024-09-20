@@ -1,15 +1,17 @@
 import { IonIcon } from "@ionic/react";
 import { timerOutline } from "ionicons/icons";
+import { ModalName } from "../../utils/enums/ModalEnums";
+import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 
 interface ITopbarUserProps {
-    setOpenStudyTimer:  React.Dispatch<React.SetStateAction<boolean>>;
     toggleUserOptionsDropDown:  ()=>void;
 }
 
-const TopbarUser = ({setOpenStudyTimer,toggleUserOptionsDropDown}:ITopbarUserProps) => {
+const TopbarUser = ({toggleUserOptionsDropDown}:ITopbarUserProps) => {
     return ( 
         <>
-        <li className={`ms-4 me-4 rounded-lg py-2 px-6 mt-6 hover:bg-yellow-600 hover:text-black hover:border-black hover:rounded-full hover:cursor-pointer`} onClick={() => setOpenStudyTimer(true)}>
+        <li className={`ms-4 me-4 rounded-lg py-2 px-6 mt-6 hover:bg-yellow-600 hover:text-black hover:border-black hover:rounded-full hover:cursor-pointer`} 
+            onClick={() => ModalControlUtils.updateModalType(ModalName.Timer)}>
             <IonIcon icon={timerOutline} className="text-2xl text-white" />
         </li>
         <li className={`ms-4 me-4 rounded-lg px-4 py-2 mt-4 hover:bg-yellow-600 hover:text-black hover:border-black hover:rounded-full hover:cursor-pointer`} onClick={()=> toggleUserOptionsDropDown()}>

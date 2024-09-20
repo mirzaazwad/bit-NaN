@@ -1,14 +1,18 @@
-"use client";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { TimerControlUtils } from "../../utils/helpers/timerHelper";
 
 interface TimerProgressProps {
-  minutes: number;
-  seconds: number;
-  percentage: number;
+  focusState: boolean;
+  focusTime: number;
+  restTime: number;
+  restState: boolean;
 }
 
-const TimerProgress = ({ minutes, seconds, percentage }: TimerProgressProps) => {
+const TimerProgress = (props: TimerProgressProps) => {
+
+  const percentage = (props.restState ? props.restTime : props.focusTime) / (120*60) * 100;
+
   return (
     <CircularProgressbar
       styles={buildStyles({
@@ -20,9 +24,7 @@ const TimerProgress = ({ minutes, seconds, percentage }: TimerProgressProps) => 
         trailColor: "#facc15",
       })}
       value={percentage}
-      text={`${minutes <= 9 ? "0" + minutes : minutes}:${
-        seconds <= 9 ? "0" + seconds : seconds
-      }`}
+      text={`${TimerControlUtils.formatTime(props.restState ? props.restTime : props.focusTime)}`}
     />
   );
 };
