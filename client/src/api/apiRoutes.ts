@@ -17,7 +17,10 @@ export const API_ROUTES = {
         logout: `${BASE_URL}/api/token/logout`
     },
     files:{
-        upload: `${BASE_URL}/api/files/upload`
+        upload: `${BASE_URL}/api/files/upload`,
+    },
+    market:{
+        publish: `${BASE_URL}/api/market/publish`,
     },
     profile:{
         update: `${BASE_URL}/api/profile/update`,

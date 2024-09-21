@@ -16,6 +16,7 @@ import LogOut from './features/user-authentication/pages/LogOut'
 import {Suspense, lazy } from 'react'
 import 'rsuite/dist/rsuite.min.css';
 import Groups from './features/groups/pages/Groups'
+import MarketPage from './features/market/pages/MarketPage'
 const ModalSelector = lazy(() => import('./components/ModalSelector'));
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="goals" element={<GoalsPage />} />
           <Route path="groups" element={<Groups />}/>
           <Route path="logout" element={<LogOut />} />
+          <Route path='market' element={<MarketPage/>}/>
         </Route>
         <Route path="/error404" element={<Error404 />} />
         <Route path="/error401" element={<Error401 />} />

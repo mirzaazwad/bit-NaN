@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Entity/ProgressEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/ProgressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/Progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/Progress.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Controller/MarketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Core/Interfaces/IMarketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Entity/AvatarEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Repositoy/MarketRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Service/MarketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/utils/enums/FileEnums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/enums/FileEnums.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +46,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -83,7 +83,8 @@
     "Spring Boot.GroupsApplication.executor": "Run",
     "Spring Boot.ProfileApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "git-widget-placeholder": "Timer",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "MarketPlace",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
