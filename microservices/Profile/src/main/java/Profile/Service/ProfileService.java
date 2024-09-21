@@ -51,11 +51,4 @@ public class ProfileService implements IProfileService {
 
         return profiles.isEmpty() ? new ProfileEntity() : profiles.getFirst();
     }
-
-    @Override
-    public Object getProfileByEmail(String email){
-        List<ProfileEntity> profiles= this.repository.findByUserEmail(email);
-        if (profiles.isEmpty()) return null;
-        return profiles.getFirst();
-    }
 }

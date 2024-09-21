@@ -27,7 +27,8 @@ export const API_ROUTES = {
     timer: {
         save: `${BASE_URL}/api/timer/save`,
         fetch: `${BASE_URL}/api/timer/`,
-        fetchToday: `${BASE_URL}/api/timer/today`
+        fetchToday: `${BASE_URL}/api/timer/today`,
+        fetchPoints: `${BASE_URL}/api/timer/points`,
     },
     groups:{
         create: `${BASE_URL}/api/groups/create`,

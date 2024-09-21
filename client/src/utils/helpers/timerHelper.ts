@@ -23,6 +23,11 @@ export class TimerControlUtils {
         return response.data;
     }
 
+    static async fetchPoints (): Promise<any>{
+        const response = await getData(API_ROUTES.timer.fetchPoints);
+        return response.data;
+    }
+
     static async returnTimerHoursToday(): Promise<number> {
         let totalSeconds = 0;
         const response = await this.fetchTodayTimerInfo();

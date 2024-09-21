@@ -31,12 +31,21 @@ public class TimerController {
         }
     }
 
-    @GetMapping("/{today}")
+    @GetMapping("/today")
     public ResponseEntity<?> fetchToday(){
         try{
             return ResponseEntity.ok(service.fetchToday());
         }catch(Exception e) {
             return ResponseEntity.status(500).body("Error fetching timer daily data " + e);
+        }
+    }
+
+    @GetMapping("/points")
+    public ResponseEntity<?> fetchPoints(){
+        try{
+            return ResponseEntity.ok(service.fetchPoints());
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error fetching points "+ e);
         }
     }
 }

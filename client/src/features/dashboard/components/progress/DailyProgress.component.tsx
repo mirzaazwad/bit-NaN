@@ -42,7 +42,7 @@ const DailyProgress = (props:Props) => {
 
     return (
         <>
-            <div className="rounded-md shadow-md p-3 bg-white">
+            <div className="p-3 bg-white">
                 <div className="text-xl font-semibold mr-1 my-2">Progress in last 30 days</div>
                 <div className="grid grid-cols-7 gap-2 md:grid-cols-7 md:gap-2">
                     {[...Array(Math.ceil(dates.length / 7))].map((_, rowIndex) => (
