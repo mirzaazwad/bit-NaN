@@ -3,12 +3,15 @@ import AuthenticatedLayout from "../../../components/authentication/Authenticate
 import ItemPublisher from "../components/ItemPublisher";
 import ItemsContainer from "../components/ItemsContainer";
 import AvatarHelper from "../../../utils/helpers/AvatarHelper";
+import { useAppSelector } from "../../../stores/redux-store";
 
 const MarketPage = () => {
 
+    const modal = useAppSelector((state)=> state.modal.type);
+
     useEffect(() => {
         AvatarHelper.fetchItemsAndSave();
-    }, []);
+    }, [modal]);
 
     return (
         <AuthenticatedLayout>

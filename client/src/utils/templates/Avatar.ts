@@ -1,5 +1,5 @@
 export type Avatar = {
-    _id:string;
+    id:string;
     name: string;
     url: string;
     uploaderEmail:string;

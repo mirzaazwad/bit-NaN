@@ -4,6 +4,7 @@ import FileHelper from "../../utils/helpers/fileHelper";
 import { useEffect, useState } from "react";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import { ModalName } from "../../utils/enums/ModalEnums";
+import { TimerControlUtils } from "../../utils/helpers/timerHelper";
 
 type Props = {
     item: Avatar
@@ -13,6 +14,7 @@ const MarketItemCard = (props: Props) => {
     const [image, setImage] = useState(undefined);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
+    const [points, setPoints] = useState<number>(0);
 
     const fetchItemImage = async () => {
         try {
@@ -26,7 +28,13 @@ const MarketItemCard = (props: Props) => {
         }
     }
 
+    const fetchPoints = async () =>{
+        const points =await TimerControlUtils.fetchPoints();
+        setPoints(points);
+    }
+
     useEffect(() => {
+        fetchPoints();
         fetchItemImage();
     }, []);
 
@@ -70,10 +78,11 @@ const MarketItemCard = (props: Props) => {
                         </div>
                         <div className="flex items-center justify-center">
                             <Button
+                                disabled={points < 100}
                                 appearance="primary"
                                 className="bg-amber-500 hover:bg-amber-700 focus:bg-amber-700"
                                 onClick={() => ModalControlUtils.updateModalType(ModalName.Confirmation, {
-                                    id:props.item._id,
+                                    id:props.item.id,
                                     name: props.item.name
                                 })}
                             >

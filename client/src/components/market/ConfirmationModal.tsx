@@ -1,13 +1,25 @@
 import { Button, Modal } from "rsuite";
 import { useAppSelector } from "../../stores/redux-store";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
+import ProfileHelper from "../../utils/helpers/profileHelper";
 
 const ConfirmationModal = () => {
     const data = useAppSelector(state => state.modal?.data);
     if (!data) return null;
-
+    console.log(data)
     const removeModal = () => {
         ModalControlUtils.removeModal();
+    }
+
+    const handleOk = async () =>{
+        try{
+            await ProfileHelper.saveProduct(data.id);
+        }catch(error){
+            console.error(error);
+        }finally{
+            removeModal();
+        }
+        
     }
 
     return (
@@ -30,6 +42,7 @@ const ConfirmationModal = () => {
                 <Button 
                     appearance="primary"
                     className="bg-amber-500 hover:bg-amber-700 focus:bg-amber-700"
+                    onClick={handleOk}
                 >
                     Ok
                 </Button>

@@ -4,10 +4,13 @@ import Profile.Core.DataTransferObjects.ProfileRequest;
 import Profile.Core.Interfaces.IProfileService;
 import Profile.Core.Utils.Reusables;
 import Profile.Entity.ProfileEntity;
+import Profile.Entity.UserProductEntity;
 import Profile.Repository.ProfileRepository;
+import Profile.Repository.UserProductsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,7 +18,7 @@ import java.util.List;
 public class ProfileService implements IProfileService {
 
     private final ProfileRepository repository;
-
+    private final UserProductsRepository productsRepository;
     @Override
     public void update(ProfileRequest request){
         String currentUserEmail = Reusables.getCurrentUsername();
@@ -44,6 +47,28 @@ public class ProfileService implements IProfileService {
     @Override
     public ProfileEntity getProfileByEmail(String email){
         return this.getProfile(email);
+    }
+
+    @Override
+    public void saveProduct(String productId) {
+
+        List<UserProductEntity> productEntities = this.productsRepository.findByUserEmail(Reusables.getCurrentUsername());
+        UserProductEntity productEntity;
+
+        if(productEntities.isEmpty()){
+            List<String> items = new ArrayList<>();
+            items.add(productId);
+            productEntity = UserProductEntity.builder()
+                    .items(items)
+                    .userEmail(Reusables.getCurrentUsername())
+                    .build();
+        }else{
+            productEntity = productEntities.get(0);
+            List<String> items = productEntity.getItems();
+            items.add(productId);
+            productEntity.setItems(items);
+        }
+        this.productsRepository.save(productEntity);
     }
 
     private ProfileEntity getProfile(String email){

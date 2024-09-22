@@ -26,7 +26,8 @@ export const API_ROUTES = {
     profile:{
         update: `${BASE_URL}/api/profile/update`,
         fetch: `${BASE_URL}/api/profile/`,
-        findByEmail: `${BASE_URL}/api/profile/find/`
+        findByEmail: `${BASE_URL}/api/profile/find/`,
+        saveProduct: `${BASE_URL}/api/profile/saveProduct`
     },
     timer: {
         save: `${BASE_URL}/api/timer/save`,

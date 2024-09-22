@@ -66,4 +66,14 @@ public class ProfileController {
             return ResponseEntity.status(500).body("Error fetching profile "+ e);
         }
     }
+
+    @PostMapping("/saveProduct")
+    public ResponseEntity<?> saveProduct(@RequestBody String id){
+        try{
+            service.saveProduct(id);
+            return ResponseEntity.ok("Product saved successfully");
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error saving product " + e);
+        }
+    }
 }

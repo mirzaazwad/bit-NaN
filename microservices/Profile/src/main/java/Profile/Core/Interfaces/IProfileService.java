@@ -7,4 +7,5 @@ public interface IProfileService {
     void update(ProfileRequest request);
     ProfileEntity getCurrentUserProfile();
     ProfileEntity getProfileByEmail(String email);
+    void saveProduct(String productId);
 }
