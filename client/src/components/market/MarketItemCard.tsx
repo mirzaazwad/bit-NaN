@@ -2,6 +2,8 @@ import { Avatar as ImageContainer, Button, Loader } from "rsuite";
 import { Avatar } from "../../utils/templates/Avatar";
 import FileHelper from "../../utils/helpers/fileHelper";
 import { useEffect, useState } from "react";
+import { ModalControlUtils } from "../../utils/helpers/modalHelper";
+import { ModalName } from "../../utils/enums/ModalEnums";
 
 type Props = {
     item: Avatar
@@ -56,6 +58,7 @@ const MarketItemCard = (props: Props) => {
                                     size="lg"
                                     src={imageUrl || undefined}
                                     circle
+                                    color="yellow"
                                     alt="Img"
                                 />
                             </div>
@@ -68,7 +71,11 @@ const MarketItemCard = (props: Props) => {
                         <div className="flex items-center justify-center">
                             <Button
                                 appearance="primary"
-                                className="bg-amber-500 hover:bg-amber-700"
+                                className="bg-amber-500 hover:bg-amber-700 focus:bg-amber-700"
+                                onClick={() => ModalControlUtils.updateModalType(ModalName.Confirmation, {
+                                    id:props.item._id,
+                                    name: props.item.name
+                                })}
                             >
                                 Buy
                             </Button>

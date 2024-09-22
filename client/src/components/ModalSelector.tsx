@@ -5,6 +5,7 @@ import { ModalName } from "../utils/enums/ModalEnums";
 import GoalDetailModal from "./goal/GoalDetailModal";
 import CreateGroup from "./group/CreateGroup";
 import StudyTimer from "./timer/StudyTimer";
+import ConfirmationModal from "./market/ConfirmationModal";
 
 const ModalSelector = () =>{
     const currentSelectedModal = useAppSelector(
@@ -23,6 +24,9 @@ const ModalSelector = () =>{
                 )},
                 {currentSelectedModal == ModalName.Timer && (
                     <StudyTimer />
+                )},
+                {currentSelectedModal == ModalName.Confirmation && (
+                    <ConfirmationModal />
                 )}
             </React.Fragment>
         </>
