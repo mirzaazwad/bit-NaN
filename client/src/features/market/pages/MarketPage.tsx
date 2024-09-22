@@ -1,8 +1,15 @@
+import { useEffect } from "react";
 import AuthenticatedLayout from "../../../components/authentication/AuthenticatedLayout";
 import ItemPublisher from "../components/ItemPublisher";
 import ItemsContainer from "../components/ItemsContainer";
+import AvatarHelper from "../../../utils/helpers/AvatarHelper";
 
 const MarketPage = () => {
+
+    useEffect(() => {
+        AvatarHelper.fetchItemsAndSave();
+    }, []);
+
     return (
         <AuthenticatedLayout>
             <div className="flex flex-row w-full">

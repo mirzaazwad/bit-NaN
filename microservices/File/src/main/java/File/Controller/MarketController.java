@@ -39,4 +39,13 @@ public class MarketController {
             return ResponseEntity.status(500).body("Error uploading avatar " + e);
         }
     }
+
+    @GetMapping("/")
+    public ResponseEntity<?> fetchAll(){
+        try{
+            return ResponseEntity.ok(marketService.fetchAll());
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error fetching avatars "+e);
+        }
+    }
 }

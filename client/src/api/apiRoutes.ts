@@ -21,6 +21,7 @@ export const API_ROUTES = {
     },
     market:{
         publish: `${BASE_URL}/api/market/publish`,
+        fetch:`${BASE_URL}/api/market/`
     },
     profile:{
         update: `${BASE_URL}/api/profile/update`,

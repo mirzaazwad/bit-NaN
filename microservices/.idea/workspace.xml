@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
-      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Controller/MarketController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Core/Interfaces/IMarketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Entity/AvatarEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Repositoy/MarketRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/File/src/main/java/File/Service/MarketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/utils/enums/FileEnums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/enums/FileEnums.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Controller/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Controller/MarketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Core/Interfaces/IMarketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Core/Interfaces/IMarketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Repositoy/MarketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Repositoy/MarketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Service/MarketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Service/MarketService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +53,7 @@
         <option name="downloadDocsAutomatically" value="true" />
         <option name="downloadSourcesAutomatically" value="true" />
         <option name="jdkForImporter" value="openjdk-23" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -74,6 +72,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.ChatApplication.executor": "Run",
@@ -163,12 +162,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.ChatApplication" />
+      <item itemvalue="Spring Boot.FileApplication" />
+      <item itemvalue="Spring Boot.ForumApplication" />
+      <item itemvalue="Spring Boot.GoalsApplication" />
+      <item itemvalue="Spring Boot.GroupsApplication" />
+      <item itemvalue="Spring Boot.ProfileApplication" />
+      <item itemvalue="Spring Boot.ServiceRegistryApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
         <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
@@ -182,6 +189,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726814864526</updated>
       <workItem from="1726814865894" duration="2869000" />
+      <workItem from="1727010116258" duration="813000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing Merge Conflicts for workspace.xml">
       <option name="closed" value="true" />

@@ -7,6 +7,8 @@ import File.Repositoy.MarketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class MarketService implements IMarketService {
@@ -22,4 +24,8 @@ public class MarketService implements IMarketService {
         this.repository.save(entity);
     }
 
+    @Override
+    public List<AvatarEntity> fetchAll() {
+        return this.repository.findAll();
+    }
 }

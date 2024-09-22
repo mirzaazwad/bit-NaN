@@ -7,6 +7,7 @@ import { loaderReducer } from "./slices/loader-slice";
 import { groupReducer } from "./slices/group-slice";
 import { timerReducer } from "./slices/timer-slice";
 import { forumReducer } from "./slices/forum-slice";
+import { marketReducer } from "./slices/market-slice";
 const appReducer = combineReducers({
     // Add reducers here
     goal: goalReducer,
@@ -15,7 +16,8 @@ const appReducer = combineReducers({
     loader:loaderReducer,
     group: groupReducer,
     timer: timerReducer,
-    forum: forumReducer
+    forum: forumReducer,
+    market: marketReducer
 });
 
 export const appStore = configureStore({

@@ -24,6 +24,7 @@ const ItemPublisher = () => {
         }finally{
             setImage(undefined);
             setName("");
+            await AvatarHelper.fetchItemsAndSave();
             appStore.dispatch(loaderActions.turnOff());
         }
     }
