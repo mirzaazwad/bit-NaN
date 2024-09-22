@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -27,5 +28,10 @@ public class MarketService implements IMarketService {
     @Override
     public List<AvatarEntity> fetchAll() {
         return this.repository.findAll();
+    }
+
+    @Override
+    public Optional<AvatarEntity> fetchById(String id) {
+        return this.repository.findById(id);
     }
 }

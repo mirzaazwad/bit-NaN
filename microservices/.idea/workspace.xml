@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
+      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Controller/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Controller/MarketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Core/Interfaces/IMarketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Core/Interfaces/IMarketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Repositoy/MarketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Repositoy/MarketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/src/main/java/File/Service/MarketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/File/src/main/java/File/Service/MarketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +193,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726814864526</updated>
       <workItem from="1726814865894" duration="2869000" />
-      <workItem from="1727010116258" duration="5401000" />
+      <workItem from="1727010116258" duration="8164000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing Merge Conflicts for workspace.xml">
       <option name="closed" value="true" />

@@ -6,6 +6,7 @@ import Progress from "./Progress";
 import { TimerInfo } from "../../../../utils/templates/timer";
 import { useAppSelector } from "../../../../stores/redux-store";
 import Points from "./Points";
+import CollectedAvatars from "./CollectedAvatars";
 
 const ProgresWrapper = () => {
 
@@ -45,6 +46,9 @@ const ProgresWrapper = () => {
                     <div className="rounded-md shadow-md">
                         <DailyProgress timerData={timerData}/>
                         <Points points={points}/>
+                        <div className="flex w-full max-h-16 px-2 py-1">
+                            <CollectedAvatars />
+                        </div>
                     </div>
                 </div>
             </div>

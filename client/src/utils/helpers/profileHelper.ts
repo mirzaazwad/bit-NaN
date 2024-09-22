@@ -43,7 +43,7 @@ class ProfileHelper{
     }
 
     static async saveProduct(id:string):Promise<any>{
-        await postData(API_ROUTES.profile.saveProduct, {id:id});
+        await postData(API_ROUTES.profile.saveProduct, id);
     }
 }
 

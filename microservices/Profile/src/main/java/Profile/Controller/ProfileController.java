@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -74,6 +75,16 @@ public class ProfileController {
             return ResponseEntity.ok("Product saved successfully");
         }catch(Exception e){
             return ResponseEntity.status(500).body("Error saving product " + e);
+        }
+    }
+
+    @GetMapping("/products")
+    public ResponseEntity<?> getProducts(){
+        try{
+            List<String> productIds = service.getProducts();
+            return ResponseEntity.ok(productIds);
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error fetching products "+e);
         }
     }
 }

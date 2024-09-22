@@ -31,4 +31,5 @@ export default class AvatarHelper {
         const items = await this.fetchAllItems();
         this.setData(items, marketActions.setItems);
     }
+    
 }

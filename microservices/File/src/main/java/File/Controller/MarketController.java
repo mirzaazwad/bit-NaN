@@ -48,4 +48,13 @@ public class MarketController {
             return ResponseEntity.status(500).body("Error fetching avatars "+e);
         }
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> fetchById(@RequestParam String id){
+        try{
+            return ResponseEntity.ok(marketService.fetchById(id));
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error fetching avatar by id "+e);
+        }
+    }
 }

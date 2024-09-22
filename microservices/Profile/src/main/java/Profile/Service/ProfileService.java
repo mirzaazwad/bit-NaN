@@ -77,6 +77,12 @@ public class ProfileService implements IProfileService {
         this.updatePoints();
     }
 
+    @Override
+    public List<String> getProducts() {
+        List<UserProductEntity> entities = this.productsRepository.findByUserEmail(Reusables.getCurrentUsername());
+        return entities.isEmpty() ? null : entities.get(0).getItems();
+    }
+
     private ProfileEntity getProfile(String email){
         List<ProfileEntity> profiles = this.repository.findByUserEmail(email);
 
