@@ -5,16 +5,19 @@ import { useEffect, useState } from "react";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import { ModalName } from "../../utils/enums/ModalEnums";
 import { TimerControlUtils } from "../../utils/helpers/timerHelper";
+import { useAppSelector } from "../../stores/redux-store";
 
 type Props = {
     item: Avatar
 }
 const MarketItemCard = (props: Props) => {
 
+    const modal = useAppSelector((state) => state.modal.type);
+
     const [image, setImage] = useState(undefined);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
-    const [points, setPoints] = useState<number>(0);
+    const [disabled, setIsDisabled] = useState<boolean>(false);
 
     const fetchItemImage = async () => {
         try {
@@ -30,13 +33,18 @@ const MarketItemCard = (props: Props) => {
 
     const fetchPoints = async () =>{
         const points =await TimerControlUtils.fetchPoints();
-        setPoints(points);
+        if(points<100){
+            setIsDisabled(true);
+        }
     }
 
     useEffect(() => {
-        fetchPoints();
         fetchItemImage();
     }, []);
+
+    useEffect(() => {
+        fetchPoints();
+    }, [modal])
 
     useEffect(() => {
         if (image) {
@@ -78,7 +86,7 @@ const MarketItemCard = (props: Props) => {
                         </div>
                         <div className="flex items-center justify-center">
                             <Button
-                                disabled={points < 100}
+                                disabled={disabled}
                                 appearance="primary"
                                 className="bg-amber-500 hover:bg-amber-700 focus:bg-amber-700"
                                 onClick={() => ModalControlUtils.updateModalType(ModalName.Confirmation, {

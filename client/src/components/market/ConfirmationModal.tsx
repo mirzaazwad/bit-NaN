@@ -1,7 +1,8 @@
 import { Button, Modal } from "rsuite";
-import { useAppSelector } from "../../stores/redux-store";
+import { appStore, useAppSelector } from "../../stores/redux-store";
 import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import ProfileHelper from "../../utils/helpers/profileHelper";
+import { loaderActions } from "../../stores/slices/loader-slice";
 
 const ConfirmationModal = () => {
     const data = useAppSelector(state => state.modal?.data);
@@ -13,11 +14,13 @@ const ConfirmationModal = () => {
 
     const handleOk = async () =>{
         try{
+            appStore.dispatch(loaderActions.turnOn());
             await ProfileHelper.saveProduct(data.id);
         }catch(error){
             console.error(error);
         }finally{
             removeModal();
+            appStore.dispatch(loaderActions.turnOff());
         }
         
     }
