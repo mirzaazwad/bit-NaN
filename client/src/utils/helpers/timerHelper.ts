@@ -42,11 +42,15 @@ export class TimerControlUtils {
         return totalHours;
     }
     static formatHour = (hours: number): string => {
-        if (hours < 1) {
-            const minutes = Math.round(hours * 60);
+        const wholeHours = Math.floor(hours);
+        const minutes = Math.round((hours - wholeHours) * 60);
+    
+        if (wholeHours === 0) {
             return `${minutes}min`;
+        } else if (minutes === 0) {
+            return `${wholeHours}hr`;
         } else {
-            return `${hours.toFixed(2)}hr`;
+            return `${wholeHours}hr ${minutes}min`;
         }
     }
 }

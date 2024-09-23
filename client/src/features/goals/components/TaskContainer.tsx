@@ -26,7 +26,7 @@ export default function TaskContainer (props:Props) {
                     <div className={`py-1 ${taskContainerLayout(props.view)}`}>
                         {props.goals.length > 0 ? (props.goals.map((goal: GoalType, index: number) => (
                             <React.Fragment key={index}>
-                                <Goal goal={goal}/>
+                                <div className="flex max-w-fit"><Goal goal={goal}/></div>
                             </React.Fragment>
                         ))): (
                             <>
