@@ -41,6 +41,11 @@ class ProfileHelper{
         this.profileMap.set(response.data.profile.userEmail,response.data.profile);
         return response.data.profile;
     }
+
+    static async saveProduct(id:string):Promise<any>{
+        const data = {id:id};
+        await postData(API_ROUTES.profile.saveProduct, data);
+    }
 }
 
 export default ProfileHelper;

@@ -1,5 +1,6 @@
 export enum ModalName {
     GoalDetails = "GoalDetails",
     CreateGroup = "CreateGroup",
-    Timer = "Timer"
+    Timer = "Timer",
+    Confirmation = "Confirmation",
 }

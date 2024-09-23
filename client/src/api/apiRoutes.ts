@@ -17,12 +17,18 @@ export const API_ROUTES = {
         logout: `${BASE_URL}/api/token/logout`
     },
     files:{
-        upload: `${BASE_URL}/api/files/upload`
+        upload: `${BASE_URL}/api/files/upload`,
+    },
+    market:{
+        publish: `${BASE_URL}/api/market/publish`,
+        fetch:`${BASE_URL}/api/market/`,
     },
     profile:{
         update: `${BASE_URL}/api/profile/update`,
         fetch: `${BASE_URL}/api/profile/`,
-        findByEmail: `${BASE_URL}/api/profile/find/`
+        findByEmail: `${BASE_URL}/api/profile/find/`,
+        saveProduct: `${BASE_URL}/api/profile/saveProduct`,
+        fetchProducts: `${BASE_URL}/api/profile/products`
     },
     timer: {
         save: `${BASE_URL}/api/timer/save`,

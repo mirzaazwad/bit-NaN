@@ -1,5 +1,6 @@
 package Profile.Controller;
 
+import Profile.Core.DataTransferObjects.ProductSaveRequest;
 import Profile.Core.DataTransferObjects.ProfileRequest;
 import Profile.Core.Interfaces.IProfileService;
 import Profile.Entity.ProfileEntity;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -64,6 +66,26 @@ public class ProfileController {
             return ResponseEntity.ok(responseObj);
         }catch(Exception e){
             return ResponseEntity.status(500).body("Error fetching profile "+ e);
+        }
+    }
+
+    @PostMapping("/saveProduct")
+    public ResponseEntity<?> saveProduct(@RequestBody ProductSaveRequest request){
+        try{
+            service.saveProduct(request.getId());
+            return ResponseEntity.ok("Product saved successfully");
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error saving product " + e);
+        }
+    }
+
+    @GetMapping("/products")
+    public ResponseEntity<?> getProducts(){
+        try{
+            List<String> productIds = service.getProducts();
+            return ResponseEntity.ok(productIds);
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error fetching products "+e);
         }
     }
 }

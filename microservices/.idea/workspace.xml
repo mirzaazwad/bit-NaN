@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Entity/ProgressEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Repository/ProgressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/Progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/Progress.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/dashboard/components/progress/ProgressWrapper.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/DataTransferObjects/ProductSaveRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/TimerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/IProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Core/Interfaces/ITimerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Service/TimerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Profile/src/main/java/Profile/Controller/ProfileController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +41,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -56,6 +51,7 @@
         <option name="downloadDocsAutomatically" value="true" />
         <option name="downloadSourcesAutomatically" value="true" />
         <option name="jdkForImporter" value="openjdk-23" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -68,33 +64,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.ChatApplication.executor": "Run",
-    "Spring Boot.FileApplication.executor": "Run",
-    "Spring Boot.ForumApplication.executor": "Run",
-    "Spring Boot.GoalsApplication.executor": "Run",
-    "Spring Boot.GroupsApplication.executor": "Run",
-    "Spring Boot.ProfileApplication.executor": "Run",
-    "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "git-widget-placeholder": "Timer",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ChatApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.FileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ForumApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GoalsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GroupsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProfileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;MarketPlace&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -162,12 +160,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.ChatApplication" />
+      <item itemvalue="Spring Boot.FileApplication" />
+      <item itemvalue="Spring Boot.ForumApplication" />
+      <item itemvalue="Spring Boot.GoalsApplication" />
+      <item itemvalue="Spring Boot.GroupsApplication" />
+      <item itemvalue="Spring Boot.ProfileApplication" />
+      <item itemvalue="Spring Boot.ServiceRegistryApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
         <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
@@ -181,6 +187,8 @@
       <option name="presentableId" value="Default" />
       <updated>1726814864526</updated>
       <workItem from="1726814865894" duration="2869000" />
+      <workItem from="1727010116258" duration="8332000" />
+      <workItem from="1727107755329" duration="2236000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing Merge Conflicts for workspace.xml">
       <option name="closed" value="true" />
