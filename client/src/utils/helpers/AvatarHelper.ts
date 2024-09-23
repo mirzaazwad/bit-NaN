@@ -3,6 +3,7 @@ import { appStore } from "../../stores/redux-store";
 import { marketActions } from "../../stores/slices/market-slice";
 import { getData, postData } from "../common/apiCall";
 import { Avatar } from "../templates/Avatar";
+import FileHelper from "./fileHelper";
 import ProfileHelper from "./profileHelper";
 
 export default class AvatarHelper {
@@ -30,6 +31,24 @@ export default class AvatarHelper {
     static async fetchItemsAndSave():Promise<void>{
         const items = await this.fetchAllItems();
         this.setData(items, marketActions.setItems);
+    }
+
+    static async fetchProductIds():Promise<any>{
+        const response = await getData(API_ROUTES.profile.fetchProducts);
+        return response.data;
+    }
+
+    static async fetchAvatars():Promise<any>{
+        const ids = await this.fetchProductIds();
+        const avatars = await this.fetchAllItems();
+        const results = avatars.filter((avatar:Avatar) => ids.includes(avatar.id));
+
+        const files = await Promise.all(results.map(async (avatar: Avatar) => {
+            const file = await FileHelper.getFile(avatar.url);
+            return { ...avatar, file }; 
+        }));
+    
+        return files
     }
     
 }

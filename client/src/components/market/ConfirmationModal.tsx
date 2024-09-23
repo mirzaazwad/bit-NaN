@@ -7,7 +7,6 @@ import { loaderActions } from "../../stores/slices/loader-slice";
 const ConfirmationModal = () => {
     const data = useAppSelector(state => state.modal?.data);
     if (!data) return null;
-    console.log(data)
     const removeModal = () => {
         ModalControlUtils.removeModal();
     }

@@ -43,10 +43,10 @@ const ProgresWrapper = () => {
             <div className="w-full h-full flex items-center justify-center mt-2">
                 <div className="flex flex-col min-w-full">
                     <Progress hours={dailyHours} goal={3}/>
-                    <div className="rounded-md shadow-md">
+                    <div className="rounded-md shadow-md py-1 ">
                         <DailyProgress timerData={timerData}/>
                         <Points points={points}/>
-                        <div className="flex w-full max-h-16 px-2 py-1">
+                        <div className="flex w-full max-h-20 px-2 py-1">
                             <CollectedAvatars />
                         </div>
                     </div>
