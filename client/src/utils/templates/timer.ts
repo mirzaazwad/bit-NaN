@@ -21,3 +21,10 @@ export interface ISessionProps {
   sessions: number;
   setSessions: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface TimerInfo {
+  focusTime: number;
+  restTime: number;
+  sessions: number;
+  time: string;
+}

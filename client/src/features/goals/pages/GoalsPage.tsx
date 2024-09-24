@@ -10,6 +10,7 @@ import SideNavGoals from "../components/SideNavGoals";
 const GoalsPage = () => {
 
     const activeTab = useAppSelector(state => state.goal?.layoutType);
+    const modal = useAppSelector(state => state.modal.type);
 
     const renderGoals = () => {
         return (activeTab === "daily") ? <DailyGoals /> : <MonthlyGoals />;
@@ -30,7 +31,7 @@ const GoalsPage = () => {
 
     useEffect(() => {
         fetchGoals();
-    }, []);
+    }, [modal]);
 
     return (
         <AuthenticatedLayout>
