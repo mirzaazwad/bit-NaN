@@ -1,5 +1,4 @@
 import { InputGroup, Input, Button } from 'rsuite';
-import AttachmentIcon from '@rsuite/icons/Attachment';
 type IProps = {
     message: string;
     onSubmitClick: () => void;
@@ -16,15 +15,6 @@ const InputComponent = (props:IProps) => {
                 onChange={props.onChangeInput}
             />
             <div className='flex flex-row  h-full items-center justify-center'>
-                <InputGroup.Button>
-                    <Button
-                        appearance="subtle"
-                        className="bg-gradient-to-r from-gray-400 to-gray-600 text-white hover:text-white rounded-full hover:scale-105"
-                        size="lg"
-                    >
-                        <AttachmentIcon />
-                    </Button>
-                </InputGroup.Button>
                 <InputGroup.Button>
                     <Button
                         appearance="subtle"

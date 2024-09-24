@@ -1,5 +1,6 @@
 package Groups.Controller;
 
+import Groups.Core.DataTransferObjects.FileUploadRequest;
 import Groups.Core.DataTransferObjects.GroupsRequest;
 import Groups.Core.Interfaces.IGroupsService;
 import Groups.Entity.GroupsEntity;
@@ -37,6 +38,25 @@ public class GroupsController {
             return ResponseEntity.ok().body(map);
         }catch (Exception e){
             return ResponseEntity.status(500).body("Error fetching Groups " + e);
+        }
+    }
+
+    @PostMapping("/uploadFile")
+    public ResponseEntity<?> uploadFile(@RequestBody FileUploadRequest request){
+        try{
+            GroupsService.uploadFile(request);
+            return ResponseEntity.ok().body("File uploaded successfully");
+        }catch(Exception e){
+            return ResponseEntity.status(500).body("Error uploading file "+e);
+        }
+    }
+
+    @GetMapping("/files/{id}")
+    public ResponseEntity<?> getFiles(@PathVariable String id){
+        try{
+            return ResponseEntity.ok(GroupsService.getFiles(id));
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("Error fetching files "+e);
         }
     }
 }

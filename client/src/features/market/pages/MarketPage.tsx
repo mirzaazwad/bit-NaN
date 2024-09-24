@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import AuthenticatedLayout from "../../../components/authentication/AuthenticatedLayout";
-import ItemPublisher from "../components/ItemPublisher";
 import ItemsContainer from "../components/ItemsContainer";
 import AvatarHelper from "../../../utils/helpers/AvatarHelper";
 import { useAppSelector } from "../../../stores/redux-store";
@@ -22,7 +21,7 @@ const MarketPage = () => {
                     <ItemsContainer />
                 </div>
                 <div className="flex w-1/6 px-1 rounded-md">
-                    <ItemPublisher/>
+                    {/* <ItemPublisher/> */}
                 </div>
             </div>
         </AuthenticatedLayout>

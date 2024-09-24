@@ -6,6 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="3186d520-c7ca-4d5c-8ea6-5031afb501e5" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
+      <change afterPath="$PROJECT_DIR$/Groups/src/main/java/Groups/Core/DataTransferObjects/FileUploadRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Groups/src/main/java/Groups/Entity/GroupFilesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Groups/src/main/java/Groups/Repository/GroupFilesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/chat/InputComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/chat/InputComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/features/groups/pages/Groups.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/groups/pages/Groups.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/features/market/pages/MarketPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/features/market/pages/MarketPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groups/src/main/java/Groups/Controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Groups/src/main/java/Groups/Controller/GroupsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groups/src/main/java/Groups/Core/Interfaces/IGroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Groups/src/main/java/Groups/Core/Interfaces/IGroupsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groups/src/main/java/Groups/Service/GroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Groups/src/main/java/Groups/Service/GroupsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +32,95 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.ForumApplication">
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mirzaazwad&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mirzaazwad/bit-NaN.git&quot;,
+    &quot;accountId&quot;: &quot;bdcf52b5-42c1-4334-a8fe-518ec043e2b9&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="jdkForImporter" value="openjdk-23" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+    &quot;customColor&quot;: &quot;&quot;,
+    &quot;associatedIndex&quot;: 6
+    }</component>
+  <component name="ProjectId" id="2mKAOkRyGVh8MDkWi04sk1kkbjk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ChatApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.FileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ForumApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GoalsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GroupsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProfileApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="APIGateway.ApiGatewayApplication" />
@@ -89,6 +190,35 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="" />
+      <created>1726814864526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726814864526</updated>
+      <workItem from="1726814865894" duration="2869000" />
+      <workItem from="1727161032588" duration="1448000" />
+      <workItem from="1727176456547" duration="12775000" />
+      <workItem from="1727010116258" duration="8332000" />
+      <workItem from="1727107755329" duration="2856000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixing Merge Conflicts for workspace.xml">
+      <option name="closed" value="true" />
+      <created>1726816204125</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726816204125</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixing Merge Conflicts for ProfileService.java">
+      <option name="closed" value="true" />
+      <created>1726816468411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726816468411</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
