@@ -20,7 +20,7 @@ public class ChatController {
 
     private final IChatService chatService;
 
-    @MessageMapping("/chat.sendMessage/{groupId}")
+    @MessageMapping("/group/{groupId}")
     @SendTo("/topic/group/{groupId}")
     public ChatMessage sendMessage(
             @DestinationVariable String groupId,
@@ -30,7 +30,7 @@ public class ChatController {
         return chatMessage;
     }
 
-    @MessageMapping("/chat/message")
+    @MessageMapping("/message")
     @SendTo("/topic/public")
     public ChatMessage sendPublicMessage(
             @Payload ChatMessage chatMessage

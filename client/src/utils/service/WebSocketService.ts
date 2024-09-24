@@ -5,57 +5,57 @@ import { Message } from "../templates/Message";
 
 const SOCKET_URL = "http://localhost:8087/ws";
 const token = localStorage.getItem("access");
+
 export class WebSocketService {
   public static isConnected: boolean = false;
-  private stompClient: Client = new Client({
-    webSocketFactory: () => {
-      const sock = new WebSocket(SOCKET_URL);
-      return sock;
-    },
-    reconnectDelay: 5000,
-    debug: (msg: string) => {
-      console.log(msg);
-    },
-    onConnect: (frame: Frame) => {
-      console.log("Connected to WebSocket", frame);
-      WebSocketService.isConnected = true;
-    },
-    onStompError: (frame: Frame) => {
-      console.error("STOMP error", frame);
-      WebSocketService.isConnected = false;
-    },
-    onWebSocketClose: (event: any) => {
-      console.info("Web Socket Closed: ", event);
-      WebSocketService.isConnected = false;
-    },
-    onWebSocketError: (event: any) => {
-      console.warn("Web Socket Error", event);
-      WebSocketService.isConnected = false;
-    },
-    forceBinaryWSFrames: true,
-    appendMissingNULLonIncoming: true,
-    connectHeaders: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  public static groupId: string = "";
+  public static onMessageReceived: any;
+  private static stompClient: Client;
 
-  connect = async (groupId: string, onMessageReceived: any) => {
+  static onConnect=(frame: Frame) => {
+    console.log("Connected to WebSocket", frame);
+    WebSocketService.isConnected = true;
+    WebSocketService.subscribeToGroup(WebSocketService.groupId, WebSocketService.onMessageReceived);
+  }
+
+  connect = async (onConnect:any=WebSocketService.onConnect) => {
+
     try {
-      if (!WebSocketService.isConnected) {
-        await this.stompClient.activate();
-        if (WebSocketService.isConnected) {
-          this.subscribeToGroup(groupId, onMessageReceived);
-        }
-      } else {
-        this.subscribeToGroup(groupId, onMessageReceived);
-      }
+      WebSocketService.stompClient=new Client({
+        webSocketFactory: () => {
+          return new WebSocket(SOCKET_URL);
+        },
+        reconnectDelay: 5000,
+        debug: (msg: string) => {
+          console.log(msg);
+        },
+        onConnect,
+        onStompError: (frame: Frame) => {
+          console.error("STOMP error", frame);
+          WebSocketService.isConnected = false;
+        },
+        onWebSocketClose: (event: any) => {
+          console.info("Web Socket Closed: ", event);
+          WebSocketService.isConnected = false;
+        },
+        onWebSocketError: (event: any) => {
+          console.warn("Web Socket Error", event);
+          WebSocketService.isConnected = false;
+        },
+        forceBinaryWSFrames: true,
+        appendMissingNULLonIncoming: true,
+        connectHeaders: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      await WebSocketService.stompClient.activate();
     } catch (error: any) {
-      console.error(error);
+      console.error("WebSocket connection error:", error);
     }
   };
 
-  subscribeToGroup = (groupId: string, onMessageReceived: any) => {
-    this.stompClient?.subscribe(
+  static subscribeToGroup = async (groupId: string, onMessageReceived: any) => {
+    return this.stompClient.subscribe(
       `${API_ROUTES.chat.subscribe}/${groupId}`,
       (message: any) => {
         onMessageReceived(JSON.parse(message.body));
@@ -63,19 +63,33 @@ export class WebSocketService {
     );
   };
 
-  sendMessage = (groupId: string, message: Message) => {
-    this.stompClient?.publish({
-      destination: `${API_ROUTES.chat.publish}/${groupId}`,
-      body: JSON.stringify(message),
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  sendMessage = async (groupId: string, message: Message) => {
+    if (!WebSocketService.isConnected) {
+      console.error("WebSocket is not connected. Message cannot be sent.");
+      return;
+    }
+    try {
+        await this.connect((frame:Frame)=>{
+            WebSocketService.onConnect(frame);
+            WebSocketService.stompClient.publish({
+                destination: `${API_ROUTES.chat.publish}/${groupId}`,
+                body: JSON.stringify(message),
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              });
+        });
+        console.log("Sending Message To: ",`${API_ROUTES.chat.publish}/${groupId}`)
+      
+      console.log("Message sent:", message);
+    } catch (error) {
+      console.error("Error while sending message:", error);
+    }
   };
 
   disconnect = () => {
-    if (this.stompClient && this.stompClient.active) {
-      this.stompClient.deactivate();
+    if (WebSocketService.stompClient && WebSocketService.stompClient.active) {
+      WebSocketService.stompClient.deactivate();
     }
   };
 }

@@ -50,10 +50,13 @@ const ChatView = (props: IProps) => {
 
     useEffect(() => {
         fetchGroupHistory();
-        
-        if(selectedGroup) webSocketService.connect(selectedGroup.id, handleMessageReceived).then(()=>{
-            setLoading(false);
-        })
+        if(selectedGroup) {
+            WebSocketService.groupId=selectedGroup.id;
+            WebSocketService.onMessageReceived=handleMessageReceived
+            webSocketService.connect().then(()=>{
+                setLoading(false);
+            }).catch(err=>console.error(err))
+        }
 
         return () => {
             webSocketService.disconnect();
