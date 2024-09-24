@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { API_ROUTES } from "../../api/apiRoutes";
 import { appStore } from "../../stores/redux-store";
 import { authActions } from "../../stores/slices/auth-slide";

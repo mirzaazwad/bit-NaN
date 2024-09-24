@@ -68,10 +68,10 @@ export const forumSlice = createSlice({
     addForumDocument:(state,action:PayloadAction<IDoc>)=>{
       state.document.push(action.payload);
     },
-    getForumPost:(state,action:PayloadAction<String>)=>{
+    getForumPost:(state,action:PayloadAction<string>)=>{
       state.forumPost=state.forumPosts.find((forum)=>forum.id===action.payload);
     },
-    removeForumDocument:(state,action:PayloadAction<String>)=>{
+    removeForumDocument:(state,action:PayloadAction<string>)=>{
       const id=action.payload;
       state.forumPosts=state.forumPosts.filter((forum)=>forum.id!==id);
       state.filteredForumPosts = state.forumPosts.filter((forum) =>

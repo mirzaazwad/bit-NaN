@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import AxiosAuth from "../../config/axios/AxiosAuth";
 
 async function handleRequest<T>(request: () => Promise<T>): Promise<T | any> {

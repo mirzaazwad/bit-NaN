@@ -9,6 +9,7 @@ import { IMessage as MessageType } from "../../utils/templates/Message";
 import Message from "./Message";
 import LoadingComponent from "../general/Loading";
 import ProfileHelper from "../../utils/helpers/profileHelper";
+
 type IProps = {
   group: GroupType;
 };
@@ -17,33 +18,24 @@ const ChatView = (props: IProps) => {
   const [loading, setLoading] = useState(true);
   const selectedGroup = useAppSelector((state) => state.group.selectedGroup);
   const webSocketService = WebSocketService.getInstance();
-  const [messages, setMessages] = useState<MessageType[]>([]);
+  const messages = useAppSelector((state) => state.message.messages);
   const [message, setMessage] = useState<string>("");
   const [username, setUsername] = useState<string>("");
 
   const fetchChatHistory = async () => {
     if (selectedGroup?.id) {
       try {
-        const histoy = await GroupsHelper.fetchGroupHistory(selectedGroup.id);
-        setMessages(histoy);
-        console.log(histoy);
+        const history = await GroupsHelper.fetchGroupHistory(selectedGroup.id);
+        const fetchedMessages: MessageType[] = history ?? [];
+        fetchedMessages.forEach((element: MessageType) => {
+          GroupsHelper.setMessage(element);
+        });
+        console.log(messages);
       } catch (error) {
         console.log(error);
       }
     }
   };
-
-  function removeDuplicates<T>(array: T[]): T[] {
-    const seen = new Set<string>();
-    return array.filter((item) => {
-      const serializedItem = JSON.stringify(item);
-      if (seen.has(serializedItem)) {
-        return false;
-      }
-      seen.add(serializedItem);
-      return true;
-    });
-  }
 
   const fetchProfileInformation = async () => {
     const user = await ProfileHelper.getProfile();
@@ -51,11 +43,7 @@ const ChatView = (props: IProps) => {
   };
 
   const handleMessageReceived = (receivedMessage: MessageType) => {
-    setMessages((prevMessages) => {
-      const temp = [...prevMessages, receivedMessage];
-      const uniqueEntries = removeDuplicates<MessageType>(temp);
-      return uniqueEntries;
-    });
+    GroupsHelper.setMessage(receivedMessage);
   };
 
   const sendMessage = async () => {
@@ -72,6 +60,7 @@ const ChatView = (props: IProps) => {
   };
 
   useEffect(() => {
+    GroupsHelper.clearMessages()
     fetchProfileInformation().then(() => {
       if (selectedGroup) {
         console.log(username);

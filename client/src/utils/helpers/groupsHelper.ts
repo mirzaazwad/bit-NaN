@@ -2,7 +2,9 @@
 import { API_ROUTES } from "../../api/apiRoutes";
 import { appStore } from "../../stores/redux-store";
 import { groupActions } from "../../stores/slices/group-slice";
+import { messageActions } from "../../stores/slices/message-slice";
 import { getData, postData } from "../common/apiCall";
+import { isDuplicate } from "../common/helper";
 import { FileType } from "../enums/FileEnums";
 import { MessageType } from "../enums/MessageEnums";
 import { IMessage } from "../templates/Message";
@@ -58,6 +60,16 @@ class GroupsHelper{
             message:message,
             type: MessageType.CHAT,
         };
+    }
+
+    static setMessage(message:IMessage){
+        if(!isDuplicate(appStore.getState().message.messages,message)){
+            this.setData(message,messageActions.setMessage);
+        }
+    }
+
+    static clearMessages(){
+        appStore.dispatch(messageActions.clearMessage());
     }
 
     static async addFileToGroup(formData:FormData, groupId:string): Promise<any>{
