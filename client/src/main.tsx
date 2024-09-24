@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import  { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './App.css'
@@ -9,7 +9,6 @@ import { BrowserRouter } from 'react-router-dom'
 import Spinner from './components/loading/Spinner.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
     <BrowserRouter>
       <Provider store={appStore}>
         <CustomProvider theme='light'>
@@ -20,5 +19,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </CustomProvider>
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
 )

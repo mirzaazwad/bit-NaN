@@ -7,12 +7,13 @@ import { GroupType } from "../../utils/templates/Groups";
 import InputComponent from "./InputComponent";
 import { Message as MessageType } from "../../utils/templates/Message";
 import Message from "./Message";
+import LoadingComponent from "../general/Loading";
 type IProps = {
     group: GroupType;
 }
-const webSocketService: WebSocketService = new WebSocketService();
 const ChatView = (props: IProps) => {
-
+    const [loading,setLoading]=useState(true);
+    const webSocketService: WebSocketService = new WebSocketService();
     const selectedGroup = useAppSelector(state => state.group.selectedGroup);
 
     const [messages, setMessages] = useState<MessageType[]>([]);
@@ -35,7 +36,7 @@ const ChatView = (props: IProps) => {
     };
 
     const sendMessage = async () => {
-        if(webSocketService.stompClient.connected){
+        if(WebSocketService.isConnected){
             if(selectedGroup?.id){
                 const chat = GroupsHelper.createMessage(message);
                 webSocketService.sendMessage(selectedGroup.id, chat);
@@ -49,13 +50,24 @@ const ChatView = (props: IProps) => {
 
     useEffect(() => {
         fetchGroupHistory();
-        
-        if(selectedGroup) webSocketService.connect(selectedGroup.id, handleMessageReceived);
+        if(selectedGroup) {
+            WebSocketService.groupId=selectedGroup.id;
+            WebSocketService.onMessageReceived=handleMessageReceived
+            webSocketService.connect().then(()=>{
+                setLoading(false);
+            }).catch(err=>console.error(err))
+        }
 
         return () => {
             webSocketService.disconnect();
         }
     }, [selectedGroup]);
+
+    if(loading){
+        return (
+            <LoadingComponent/>
+        )
+    }
 
     return (
         <>
