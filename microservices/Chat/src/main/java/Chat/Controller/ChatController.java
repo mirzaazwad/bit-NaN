@@ -10,7 +10,10 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
+@CrossOrigin("http://localhost:3000")
 @Controller
 @RequiredArgsConstructor
 public class ChatController {
@@ -24,6 +27,14 @@ public class ChatController {
             @Payload ChatMessage chatMessage
     ){
         chatService.saveMessage(groupId, chatMessage);
+        return chatMessage;
+    }
+
+    @MessageMapping("/chat/message")
+    @SendTo("/topic/public")
+    public ChatMessage sendPublicMessage(
+            @Payload ChatMessage chatMessage
+    ){
         return chatMessage;
     }
 

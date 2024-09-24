@@ -37,7 +37,7 @@ export const API_ROUTES = {
         publish: `/app/chat.sendMessage`,
     },
     websocket_url: {
-        url: `${BASE_URL}/ws`
+        url: "http://localhost:8087/ws"
     },
     forum:{
         create: `${BASE_URL}/api/forum/create`,

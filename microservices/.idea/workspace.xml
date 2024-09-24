@@ -5,32 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/CorsConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/Constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/stores/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/stores/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/utils/service/WebSocketService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/service/WebSocketService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/TokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Configuration/WebSocketConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/DataTransferObjects/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/DataTransferObjects/ChatMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "mirzaazwad"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mirzaazwad&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mirzaazwad/bit-NaN.git",
-    "accountId": "bdcf52b5-42c1-4334-a8fe-518ec043e2b9"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mirzaazwad/bit-NaN.git&quot;,
+    &quot;accountId&quot;: &quot;bdcf52b5-42c1-4334-a8fe-518ec043e2b9&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -52,11 +74,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.ChatApplication.executor": "Run",
     "Spring Boot.FileApplication.executor": "Run",
@@ -162,6 +187,8 @@
       <option name="presentableId" value="Default" />
       <updated>1726814864526</updated>
       <workItem from="1726814865894" duration="2869000" />
+      <workItem from="1727161032588" duration="1448000" />
+      <workItem from="1727176456547" duration="10135000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing Merge Conflicts for workspace.xml">
       <option name="closed" value="true" />
