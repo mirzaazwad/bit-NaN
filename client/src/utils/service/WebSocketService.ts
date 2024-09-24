@@ -9,10 +9,13 @@ const token = localStorage.getItem("access");
 
 export class WebSocketService {
   private static instance: WebSocketService;
+  public static sender:string;
   public isConnected: boolean = false;
   public static groupId: string = "";
   public static onMessageReceived: any;
   private stompClient?: Client;
+
+
 
   private constructor() {
     this.connect();
@@ -31,6 +34,7 @@ export class WebSocketService {
     this.subscribeToGroup(WebSocketService.groupId, WebSocketService.onMessageReceived);
     if (firstConnection) {
       const message: IMessage = {
+        sender: WebSocketService.sender,
         message: "Hello",
         type: MessageType.JOIN,
       };

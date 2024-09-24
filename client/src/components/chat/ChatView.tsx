@@ -8,17 +8,20 @@ import InputComponent from "./InputComponent";
 import { IMessage as MessageType } from "../../utils/templates/Message";
 import Message from "./Message";
 import LoadingComponent from "../general/Loading";
+import ProfileHelper from "../../utils/helpers/profileHelper";
 type IProps = {
   group: GroupType;
 };
+
 const ChatView = (props: IProps) => {
   const [loading, setLoading] = useState(true);
   const selectedGroup = useAppSelector((state) => state.group.selectedGroup);
   const webSocketService = WebSocketService.getInstance();
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [message, setMessage] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
 
-  const fetchGroupHistory = async () => {
+  const fetchChatHistory = async () => {
     if (selectedGroup?.id) {
       try {
         const histoy = await GroupsHelper.fetchGroupHistory(selectedGroup.id);
@@ -30,37 +33,60 @@ const ChatView = (props: IProps) => {
     }
   };
 
+  function removeDuplicates<T>(array: T[]): T[] {
+    const seen = new Set<string>();
+    return array.filter((item) => {
+      const serializedItem = JSON.stringify(item);
+      if (seen.has(serializedItem)) {
+        return false;
+      }
+      seen.add(serializedItem);
+      return true;
+    });
+  }
+
+  const fetchProfileInformation = async () => {
+    const user = await ProfileHelper.getProfile();
+    setUsername(user.userName);
+  };
+
   const handleMessageReceived = (receivedMessage: MessageType) => {
-    setMessages((prevMessages) => [...prevMessages, receivedMessage]);
+    setMessages((prevMessages) => {
+      const temp = [...prevMessages, receivedMessage];
+      const uniqueEntries = removeDuplicates<MessageType>(temp);
+      return uniqueEntries;
+    });
   };
 
   const sendMessage = async () => {
     if (webSocketService.isConnected) {
       if (selectedGroup?.id) {
         console.log(message);
-        const chat = GroupsHelper.createMessage(message);
+        const chat = GroupsHelper.createMessage(message, username);
         webSocketService.sendMessage(selectedGroup.id, chat);
         setMessage("");
       }
-      await fetchGroupHistory();
     } else {
       console.log("WebSocket is not connected.");
     }
   };
 
   useEffect(() => {
-    fetchGroupHistory();
-    if (selectedGroup) {
-      WebSocketService.groupId = selectedGroup.id;
-      WebSocketService.onMessageReceived = handleMessageReceived;
-      webSocketService
-        .connect()
-        .then(() => {
-          setLoading(false);
-        })
-        .catch((err) => console.error(err));
-    }
-
+    fetchProfileInformation().then(() => {
+      if (selectedGroup) {
+        console.log(username);
+        WebSocketService.sender = username;
+        WebSocketService.groupId = selectedGroup.id;
+        WebSocketService.onMessageReceived = handleMessageReceived;
+        webSocketService
+          .connect()
+          .then(async () => {
+            await fetchChatHistory();
+            setLoading(false);
+          })
+          .catch((err) => console.error(err));
+      }
+    });
     return () => {
       webSocketService.disconnect();
     };
@@ -86,7 +112,7 @@ const ChatView = (props: IProps) => {
                   <Message
                     key={index}
                     message={message.message}
-                    name={message.sender ?? "You"}
+                    name={message.sender}
                   />
                 ))}
             </div>

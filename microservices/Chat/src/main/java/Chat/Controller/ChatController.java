@@ -31,14 +31,11 @@ public class ChatController {
             SimpMessageHeaderAccessor headerAccessor
     ){
         Objects.requireNonNull(headerAccessor.getSessionAttributes()).put("username", Reusables.getCurrentUsername());
-        System.out.println(chatMessage.getMessage());
         if(chatMessage.getMessage().isEmpty() || chatMessage.getType().equals(MessageType.JOIN) || chatMessage.getType().equals(MessageType.LEAVE)){
             return chatMessage;
         }
         else{
-            System.out.println(chatMessage.getMessage());
-            System.out.println(chatMessage.getType());
-            System.out.println(Reusables.getCurrentUsername());
+            System.out.println(chatMessage.getSender());
             chatService.saveMessage(groupId, chatMessage);
         }
         return chatMessage;

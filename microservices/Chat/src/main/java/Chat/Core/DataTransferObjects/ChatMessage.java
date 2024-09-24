@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class ChatMessage{
+    private String sender;
     private String message;
-    private Date timestamp;
     private MessageType type;
 }
