@@ -12,8 +12,6 @@ import java.util.Date;
 @Builder
 public class ChatMessage{
     private String message;
-    private String sender;
     private Date timestamp;
-    private String groupId;
     private MessageType type;
 }

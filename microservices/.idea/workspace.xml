@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28169593-a78b-4819-a3d4-1078d22cc99e" name="Changes" comment="Fixing Merge Conflicts for ProfileService.java">
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/apiRoutes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/chat/ChatView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/utils/service/WebSocketService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/utils/service/WebSocketService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/DataTransferObjects/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Core/DataTransferObjects/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat/src/main/java/Chat/Service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat/src/main/java/Chat/Service/ChatService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

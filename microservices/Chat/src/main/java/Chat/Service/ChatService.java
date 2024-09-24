@@ -25,6 +25,7 @@ public class ChatService implements IChatService {
         Message message = Message.builder()
                 .groupId(groupId)
                 .sender(Reusables.getCurrentUsername())
+                .message(chatMessage.getMessage())
                 .type(MessageType.CHAT)
                 .timestamp(LocalDateTime.now())
                 .build();
