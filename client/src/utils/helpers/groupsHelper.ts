@@ -56,6 +56,29 @@ class GroupsHelper{
             type: MessageType.CHAT,
         };
     }
+
+    static async addFileToGroup(formData:FormData, groupId:string): Promise<any>{
+        const res = await postData(API_ROUTES.files.upload, formData);
+        
+        const data = {
+            groupId: groupId,
+            url: res.data.url,
+        }
+        const response = await postData(API_ROUTES.groups.upload, data);
+        console.log(response)
+    }
+
+    static async getFiles(groupId: string): Promise<any>{
+        const response = await getData(`${API_ROUTES.groups.fetchFiles}/${groupId}`);
+        const urls = response.data;
+
+        if(urls && urls.length > 0){
+            const files = await Promise.all(urls.map(async (url:string) => {
+                return await FileHelper.getFile(url);
+            }));
+            return files;
+        }
+    }
 }
 
 export default GroupsHelper;
