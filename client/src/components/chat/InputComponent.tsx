@@ -3,8 +3,18 @@ type IProps = {
     message: string;
     onSubmitClick: () => void;
     onChangeInput: (value: string) => void;
+    type?:string;
 }
 const InputComponent = (props:IProps) => {
+
+    const handleKeyPressEnter = (event: React.KeyboardEvent<HTMLInputElement>) =>{
+        if(props.type==="chat"){
+            if(event.key==='Enter'){
+                props.onSubmitClick();
+            }
+        }
+    }
+
     return (
         <InputGroup inside style={{ width: '100%', margin: '0 auto', padding: '1rem' }}>
             <Input
@@ -13,6 +23,7 @@ const InputComponent = (props:IProps) => {
                 style={{ flex: 1 }}
                 value={props.message}
                 onChange={props.onChangeInput}
+                onKeyDown={(e)=>handleKeyPressEnter(e)}
             />
             <div className='flex flex-row  h-full items-center justify-center'>
                 <InputGroup.Button>

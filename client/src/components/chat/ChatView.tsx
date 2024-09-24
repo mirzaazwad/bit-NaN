@@ -111,6 +111,7 @@ const ChatView = (props: IProps) => {
               message={message}
               onSubmitClick={sendMessage}
               onChangeInput={(value) => setMessage(value)}
+              type="chat"
             />
           </div>
         </div>

@@ -37,6 +37,7 @@ const GroupFiles = () => {
 
       const handleMessageReceived = (receivedMessage: IMessage) => {
         GroupsHelper.setMessage(receivedMessage);
+        fetchFiles();
       };
 
     const handleUpload = async () => {
@@ -78,10 +79,14 @@ const GroupFiles = () => {
         }catch(error){
             console.log(error);
         }
+        finally{
+            setLoading(false);
+        }
     }
 
     useEffect(() => {
         fetchFiles().then(()=>{
+            setLoading(true);
             WebSocketService.sender = username;
             WebSocketService.groupId = id!;
             WebSocketService.onMessageReceived = handleMessageReceived;
