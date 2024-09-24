@@ -48,7 +48,7 @@ export const API_ROUTES = {
         publish: `/app/group`,
     },
     websocket_url: {
-        url: "http://localhost:8087/ws"
+        url: `${BASE_URL}/ws`
     },
     forum:{
         create: `${BASE_URL}/api/forum/create`,

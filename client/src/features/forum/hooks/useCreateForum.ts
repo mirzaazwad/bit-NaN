@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { SetStateAction, useState } from "react";
 import { ForumType } from "../../../utils/templates/Forum";
 import { forumClientHelper } from "../../../utils/helpers/forumClientHelper";

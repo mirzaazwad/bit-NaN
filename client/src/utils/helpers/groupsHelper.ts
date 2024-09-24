@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { API_ROUTES } from "../../api/apiRoutes";
 import { appStore } from "../../stores/redux-store";
 import { groupActions } from "../../stores/slices/group-slice";
 import { getData, postData } from "../common/apiCall";
 import { FileType } from "../enums/FileEnums";
 import { MessageType } from "../enums/MessageEnums";
-import { Message } from "../templates/Message";
+import { IMessage } from "../templates/Message";
 import FileHelper from "./fileHelper";
 
 class GroupsHelper{
@@ -50,8 +51,10 @@ class GroupsHelper{
 
     static createMessage(
         message: string,
-    ): Message{
+        sender: string
+    ): IMessage{
         return {
+            sender:sender,
             message:message,
             type: MessageType.CHAT,
         };

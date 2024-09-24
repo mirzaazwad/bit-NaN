@@ -4,8 +4,6 @@ import { BiCommentDots, BiStar } from "react-icons/bi";
 import LoadingComponent from "../../../../components/general/Loading";
 import {ReviewElements} from "./ReviewCards";
 import { useForum } from "../../hooks/useForum";
-import { IonIcon } from "@ionic/react";
-import { chatbubbleEllipsesSharp, documentSharp } from "ionicons/icons";
 import { memo } from "react";
 
 
@@ -32,7 +30,7 @@ const ForumCard = ({ forum }: IForum) => {
     return (<div className="w-full rounded-lg mt-4 mb-6" key={forum.id} onMouseLeave={() => lazyClosingOfReviews()} onMouseEnter={()=>keepDropdownOpen()}>
         <div className="w-full rounded-t-lg text-xl bg-yellow-600 text-bitBrown px-4 py-2 font-semibold hover:cursor-pointer" onClick={() => navigate(`/forum/${forum.id}`)}>
             <div className="w-full text-xl px-4 py-2">
-                <IonIcon icon={forum.type==="CHAT"?chatbubbleEllipsesSharp:documentSharp} className="me-4"></IonIcon>{forum.title}
+                {forum.title}
             </div>
             <div className="w-full text-sm px-4 py-2">
                 {username}
