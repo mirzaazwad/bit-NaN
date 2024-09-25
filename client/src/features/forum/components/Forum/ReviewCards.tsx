@@ -31,12 +31,6 @@ const ReviewCards = ({ id, reveal }: IReviewCard) => {
 
     return (
         <div className="w-full flex flex-col bg-white p-6 space-y-4 my-4 rounded-lg">
-            {!loading && reviews.length > 0 && reviews.map((review) => {
-                return (
-                    <ReviewCardElement key={review.id} review={review} />
-                )
-            })}
-            {loading && (<Loader/>)}
             <h5 className="text-lg font-semibold text-gray-800">Give Review</h5>
             <div className="flex">
                 <input value={review} onChange={(e) => setReview(e.target.value)} placeholder="review this forum" className="rounded-lg border border-bitBrown text-bitBrown w-full px-4" />
@@ -45,6 +39,12 @@ const ReviewCards = ({ id, reveal }: IReviewCard) => {
                     Add Review
                 </button>
             </div>
+            {!loading && reviews.length > 0 && reviews.map((review) => {
+                return (
+                    <ReviewCardElement key={review.id} review={review} />
+                )
+            })}
+            {loading && (<Loader/>)}
         </div>
     );
 }

@@ -1,12 +1,10 @@
 import { appStore } from "../../stores/redux-store";
 import { forumActions } from "../../stores/slices/forum-slice";
-import { ForumType, IForumCreateRequest, IForumStarCreate, IForumStarDelete } from "../templates/Forum";
+import { ForumType, IForumCreateRequest } from "../templates/Forum";
 import FileHelper from "./fileHelper";
 import { ForumHelper } from "./forumHelper";
 
 export class forumClientHelper {
-
-  private static forumStarMap = new Map<String,Object>();
 
 
   static async getForumPosts() {

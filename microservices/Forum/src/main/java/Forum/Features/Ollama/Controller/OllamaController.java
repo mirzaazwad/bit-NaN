@@ -18,9 +18,11 @@ public class OllamaController {
     @PostMapping("/generate")
     public ResponseEntity<?> generate(@RequestBody LllamaRequest lllamaRequest) {
         try{
+            System.out.println(lllamaRequest.getPrompt());
             return ResponseEntity.ok(ollamaService.generateMessage(lllamaRequest.getPrompt()));
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             ErrorResponse errorResponse = ErrorResponse.builder().error(e.getMessage()).build();
             return ResponseEntity.badRequest().body(errorResponse);
         }

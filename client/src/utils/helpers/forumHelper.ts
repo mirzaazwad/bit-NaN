@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { API_ROUTES } from "../../api/apiRoutes";
 import { getData, postData } from "../common/apiCall";
 import { ForumCreateResponse, ForumDocumentCreateResponse, ForumFindResponse, ForumReviewCreateResponse, ForumReviewFindResponse, ForumStarCreateResponse, IForumCreateRequest, IForumDocumentCreate, IForumReviewCreate, IForumStarCreate, IForumStarDelete, IStarred } from "../templates/Forum";
@@ -41,6 +42,22 @@ export class ForumHelper{
     static async postReview(data:IForumReviewCreate):Promise<ForumReviewCreateResponse>{
         const review = await postData(API_ROUTES.forum.review.create,data);
         return review.data;
+    }
+
+    static async getForumById(id:string){
+        const forum = await getData(API_ROUTES.forum.fetchById+id);
+        return forum.data;
+    }
+
+    static async postForumChat(data:any){
+        const chat = await postData(API_ROUTES.forum.chat.create,data)
+        console.log(data)
+        return chat.data;
+    }
+
+    static async getAllForumChats(forumId:string){
+        const chat = await getData(API_ROUTES.forum.chat.fetchByForumId+forumId);
+        return chat.data;
     }
 
     static async postDocument(data:IForumDocumentCreate):Promise<ForumDocumentCreateResponse>{

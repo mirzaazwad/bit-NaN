@@ -5,7 +5,7 @@ import FileHelper from "./fileHelper";
 
 class ProfileHelper{
 
-    private static profileMap=new Map<String,Object>();
+    private static profileMap=new Map<string,NonNullable<unknown>>();
 
     static async updateProfile(data:any): Promise<string>{
         let request = {};
@@ -38,6 +38,7 @@ class ProfileHelper{
             return this.profileMap.get(email);
         }
         const response = await getData(API_ROUTES.profile.findByEmail+email);
+        console.log(response)
         this.profileMap.set(response.data.profile.userEmail,response.data.profile);
         return response.data.profile;
     }
