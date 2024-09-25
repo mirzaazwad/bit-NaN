@@ -1,5 +1,6 @@
 package Groups.Controller;
 
+import Groups.Core.DataTransferObjects.AddRequest;
 import Groups.Core.DataTransferObjects.FileUploadRequest;
 import Groups.Core.DataTransferObjects.GroupsRequest;
 import Groups.Core.Interfaces.IGroupsService;
@@ -57,6 +58,16 @@ public class GroupsController {
             return ResponseEntity.ok(GroupsService.getFiles(id));
         }catch (Exception e){
             return ResponseEntity.status(500).body("Error fetching files "+e);
+        }
+    }
+
+    @PostMapping("/addUsers")
+    public ResponseEntity<?> addUsers(@RequestBody AddRequest request){
+        try{
+            GroupsService.addUsers(request);
+            return ResponseEntity.ok("Users added successfully");
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("Error adding user "+e);
         }
     }
 }

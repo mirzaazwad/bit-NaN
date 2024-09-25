@@ -41,6 +41,7 @@ export const API_ROUTES = {
         fetch: `${BASE_URL}/api/groups/all`,
         upload: `${BASE_URL}/api/groups/uploadFile`,
         fetchFiles : `${BASE_URL}/api/groups/files`,
+        addUsers: `${BASE_URL}/api/groups/addUsers`,
     },
     chat: {
         history: `${BASE_URL}/api/chat/history`,

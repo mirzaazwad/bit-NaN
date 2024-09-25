@@ -1,5 +1,6 @@
 package Groups.Core.Interfaces;
 
+import Groups.Core.DataTransferObjects.AddRequest;
 import Groups.Core.DataTransferObjects.FileUploadRequest;
 import Groups.Core.DataTransferObjects.GroupsRequest;
 import Groups.Entity.GroupsEntity;
@@ -12,4 +13,5 @@ public interface IGroupsService {
     List<GroupsEntity> fetchGroups();
     void uploadFile(FileUploadRequest request);
     List<String> getFiles(String id);
+    void addUsers(AddRequest request);
 }

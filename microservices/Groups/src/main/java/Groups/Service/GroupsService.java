@@ -1,5 +1,6 @@
 package Groups.Service;
 
+import Groups.Core.DataTransferObjects.AddRequest;
 import Groups.Core.DataTransferObjects.FileUploadRequest;
 import Groups.Core.DataTransferObjects.GroupsRequest;
 import Groups.Core.Interfaces.IGroupsService;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -63,5 +65,27 @@ public class GroupsService implements IGroupsService {
             return entities.get(0).getUrls();
         }
         return new ArrayList<>();
+    }
+
+    @Override
+    public void addUsers(AddRequest request) {
+        Optional<GroupsEntity> entityOpt = this.GroupsRepository.findById(request.getGroupId());
+
+        if (entityOpt.isPresent()) {
+            GroupsEntity entity = entityOpt.get();
+
+            List<String> currentUsers = entity.getUsers();
+
+            List<String> newUsers = request.getUsers();
+            if (currentUsers != null) {
+                currentUsers.addAll(newUsers);
+            } else {
+                currentUsers = new ArrayList<>(newUsers);
+            }
+
+            entity.setUsers(currentUsers);
+
+            this.GroupsRepository.save(entity);
+        }
     }
 }
