@@ -10,6 +10,7 @@ const UserList = () => {
 
     const selectedGroup = useAppSelector(state => state.group.selectedGroup);
     const [loading, setLoading] = useState(false);
+    const modal = useAppSelector(state => state.modal.type);
 
     const fetchUsers = async () => {
         try {
@@ -34,7 +35,7 @@ const UserList = () => {
 
     useEffect(() => {
         fetchUsers();
-    }, [selectedGroup])
+    }, [selectedGroup, modal])
 
     const users = useAppSelector(state => state.group.users);
 

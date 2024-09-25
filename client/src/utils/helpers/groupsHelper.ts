@@ -94,6 +94,16 @@ class GroupsHelper{
             return files;
         }
     }
+
+    static async addUsersToGroup(groupId: string, users: any): Promise<any>{
+        const data = {
+            groupId: groupId,
+            users: users.map((user: any) => user.id)
+        }
+
+        const response = await postData(API_ROUTES.groups.addUsers, data);
+        return response.data;
+    }
 }
 
 export default GroupsHelper;

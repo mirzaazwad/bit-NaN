@@ -3,4 +3,5 @@ export enum ModalName {
     CreateGroup = "CreateGroup",
     Timer = "Timer",
     Confirmation = "Confirmation",
+    AddMembers = "AddMembers",
 }

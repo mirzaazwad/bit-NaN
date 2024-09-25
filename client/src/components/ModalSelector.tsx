@@ -6,6 +6,7 @@ import GoalDetailModal from "./goal/GoalDetailModal";
 import CreateGroup from "./group/CreateGroup";
 import StudyTimer from "./timer/StudyTimer";
 import ConfirmationModal from "./market/ConfirmationModal";
+import AddUsers from "./group/AddUsers";
 
 const ModalSelector = () =>{
     const currentSelectedModal = useAppSelector(
@@ -27,6 +28,9 @@ const ModalSelector = () =>{
                 )},
                 {currentSelectedModal == ModalName.Confirmation && (
                     <ConfirmationModal />
+                )},
+                {currentSelectedModal == ModalName.AddMembers && (
+                    <AddUsers />
                 )}
             </React.Fragment>
         </>

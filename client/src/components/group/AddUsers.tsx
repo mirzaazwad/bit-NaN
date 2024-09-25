@@ -3,14 +3,24 @@ import { ModalControlUtils } from "../../utils/helpers/modalHelper";
 import AddMembers from "../general/AddMembers";
 import { Tag } from "../../utils/templates/Groups";
 import { useState } from "react";
-import { useAppSelector } from "../../stores/redux-store";
+import { appStore, useAppSelector } from "../../stores/redux-store";
+import { loaderActions } from "../../stores/slices/loader-slice";
+import GroupsHelper from "../../utils/helpers/groupsHelper";
 
 const AddUsers = () => {
     const id = useAppSelector(state => state.group.selectedGroup?.id);
     const [members, setMembers] = useState<Tag[]>([]);
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = async () => {
+        try{
+            appStore.dispatch(loaderActions.turnOnWithMessage("Adding Users..."));
+            if(id) await GroupsHelper.addUsersToGroup(id, members);
+        }catch(error){
+            console.error(error);
+        }finally{
+            appStore.dispatch(loaderActions.turnOff());
+            ModalControlUtils.removeModal();
+        }
     }
 
     return (
